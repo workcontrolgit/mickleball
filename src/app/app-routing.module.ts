@@ -28,9 +28,14 @@ const routes: Routes = [
       path: 'about',
       loadChildren: () => import('./about/about.module').then((m) => m.AboutModule),
     },
+    {
+      path: 'skillrating',
+      loadChildren: () => import('./features/skillrating/skillrating.module').then((m) => m.SkillratingModule),
+    },
   ]),
 
   { path: 'should-login', component: ShouldLoginComponent },
+  // { path: 'skillrating', loadChildren: () => import('./features/skillrating/skillrating.module').then(m => m.SkillratingModule) },
   // Fallback when no prior route is matched
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
