@@ -1,0 +1,578 @@
+<div class="container-fluid">
+  <!-- HTML form mark up -->
+  <form [formGroup]="entryForm" novalidate>
+    <div class="card">
+      <div class="card-header">
+        <div class="float-left"><h3 class="text-secondary">Skill Assessment for 3.5 Players</h3></div>
+        <div class="float-right">
+          <!-- HTML markup for form mode New or Edit -->
+          <a class="btn text-dark" [routerLink]="['/skillrating']"><i class="fa fa-arrow-left"></i> Back</a>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="alert alert-danger" [hidden]="!error" translate>
+          Position Number, Title, Description or Salary incorrect.
+        </div>
+        <div class="form-group">
+          <label for="id">Name</label>
+          <label class="d-block">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="id"
+              autocomplete="id"
+              [placeholder]="'Enter name'"
+              readonly
+            />
+            <span hidden translate>Name</span>
+            <small
+              [hidden]="entryForm.controls.id.valid || entryForm.controls.id.untouched"
+              class="text-danger"
+              translate
+            >
+              Name is required
+            </small>
+          </label>
+
+          <label for="positionNumber">Self-Rating</label>
+          <label class="d-block">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="positionNumber"
+              autocomplete="positionNumber"
+              [placeholder]="'Enter self-rating level here'"
+              required
+            />
+            <span hidden translate>Self-Rating</span>
+            <small
+              [hidden]="entryForm.controls.positionNumber.valid || entryForm.controls.positionNumber.untouched"
+              class="text-danger"
+              translate
+            >
+              Self-Rating is required
+            </small>
+          </label>
+          <label for="positionTitle">Date</label>
+
+          <label class="d-block">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="positionTitle"
+              autocomplete="current-positionTitle"
+              [placeholder]="'Enter assessment date here'"
+              required
+            />
+            <span hidden translate>Position Title</span>
+            <small
+              [hidden]="entryForm.controls.positionTitle.valid || entryForm.controls.positionTitle.untouched"
+              class="text-danger"
+              translate
+            >
+              Position Title is required
+            </small>
+          </label>
+          <label for="positionDescription">Email</label>
+
+          <label class="d-block">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="positionDescription"
+              autocomplete="current-positionDescription"
+              [placeholder]="'Enter email here'"
+              required
+            />
+            <span hidden translate>Email</span>
+            <small
+              [hidden]="
+                entryForm.controls.positionDescription.valid || entryForm.controls.positionDescription.untouched
+              "
+              class="text-danger"
+              translate
+            >
+              Email is required
+            </small>
+          </label>
+
+          <label for="positionSalary">Cell Phone</label>
+
+          <label class="d-block">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="positionSalary"
+              autocomplete="current-positionSalary"
+              [placeholder]="'Enter cell phone here'"
+              required
+            />
+            <span hidden translate>Cell Phone</span>
+            <small
+              [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger"
+              translate
+            >
+              Cell Phone is required
+            </small>
+          </label>
+
+          <label for="positionSalary">#Games Observed</label>
+
+          <label class="d-block">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="positionSalary"
+              autocomplete="current-positionSalary"
+              [placeholder]="'Enter number of games observed here'"
+              required
+            />
+            <span hidden translate>#Games Observed</span>
+            <small
+              [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger"
+              translate
+            >
+              #Games Observed is required
+            </small>
+          </label>
+
+          <label for="positionSalary">Weather Conditions</label>
+
+          <label class="d-block">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="positionSalary"
+              autocomplete="current-positionSalary"
+              [placeholder]="'Enter weather conditions here'"
+              required
+            />
+            <span hidden translate>Weather Conditions</span>
+            <small
+              [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger"
+              translate
+            >
+            Weather Conditions is required
+            </small>
+          </label>
+
+          <h5 class="text-center">To be filled out by the Rating Team</h5>
+
+          <h5>3.5 Skill Level – should ALSO possess all 3.0 Skills</h5>
+          <p>0 = Not observed or not able to execute, 1 = attempted but very poorly executed/needs work,
+            2 = good basic form, but needs work, 3 = solid, consistent performance</p>
+
+          <label for="positionSalary">Able to use a forehand with moderate level of shot control
+          </label>
+
+          <label class="d-block">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="positionSalary"
+              autocomplete="current-positionSalary"
+              [placeholder]="'Enter rating 0-3 here'"
+              required
+            />
+            <small
+              [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger"
+              translate
+            >
+            Rating is required
+            </small>
+          </label>
+
+          <label for="positionSalary">Able to use a backhand with moderate level of shot control
+          </label>
+
+          <label class="d-block">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="positionSalary"
+              autocomplete="current-positionSalary"
+              [placeholder]="'Enter rating 0-3 here'"
+              required
+            />
+            <small
+              [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger"
+              translate
+            >
+            Rating is required
+            </small>
+          </label>
+
+<label for="positionSalary">Consistently gets serve in
+</label>
+
+<label class="d-block">
+  <input
+    type="text"
+    class="form-control"
+    formControlName="positionSalary"
+    autocomplete="current-positionSalary"
+    [placeholder]="'Enter rating 0-3 here'"
+    required
+  />
+  <small
+    [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+    class="text-danger"
+    translate
+  >
+  Rating is required
+  </small>
+</label>
+<label for="positionSalary">Consistently gets return of serve in
+</label>
+
+<label class="d-block">
+  <input
+    type="text"
+    class="form-control"
+    formControlName="positionSalary"
+    autocomplete="current-positionSalary"
+    [placeholder]="'Enter rating 0-3 here'"
+    required
+  />
+  <small
+    [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+    class="text-danger"
+    translate
+  >
+  Rating is required
+  </small>
+</label>
+<label for="positionSalary">Able to place serves deep in the court
+</label>
+
+<label class="d-block">
+  <input
+    type="text"
+    class="form-control"
+    formControlName="positionSalary"
+    autocomplete="current-positionSalary"
+    [placeholder]="'Enter rating 0-3 here'"
+    required
+  />
+  <small
+    [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+    class="text-danger"
+    translate
+  >
+  Rating is required
+  </small>
+</label>
+<label for="positionSalary">Able to place return of serves deep into the court
+</label>
+
+<label class="d-block">
+  <input
+    type="text"
+    class="form-control"
+    formControlName="positionSalary"
+    autocomplete="current-positionSalary"
+    [placeholder]="'Enter rating 0-3 here'"
+    required
+  />
+  <small
+    [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+    class="text-danger"
+    translate
+  >
+  Rating is required
+  </small>
+</label>
+<label for="positionSalary">Able to dink and sustains medium length rallies
+
+</label>
+
+<label class="d-block">
+  <input
+    type="text"
+    class="form-control"
+    formControlName="positionSalary"
+    autocomplete="current-positionSalary"
+    [placeholder]="'Enter rating 0-3 here'"
+    required
+  />
+  <small
+    [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+    class="text-danger"
+    translate
+  >
+  Rating is required
+  </small>
+</label>
+<label for="positionSalary">Able to control height/depth of dink shot
+
+</label>
+
+<label class="d-block">
+  <input
+    type="text"
+    class="form-control"
+    formControlName="positionSalary"
+    autocomplete="current-positionSalary"
+    [placeholder]="'Enter rating 0-3 here'"
+    required
+  />
+  <small
+    [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+    class="text-danger"
+    translate
+  >
+  Rating is required
+  </small>
+</label>
+<label for="positionSalary">Understands variation of pace of dink shot
+</label>
+
+<label class="d-block">
+  <input
+    type="text"
+    class="form-control"
+    formControlName="positionSalary"
+    autocomplete="current-positionSalary"
+    [placeholder]="'Enter rating 0-3 here'"
+    required
+  />
+  <small
+    [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+    class="text-danger"
+    translate
+  >
+  Rating is required
+  </small>
+</label>
+<label for="positionSalary">Able to hit a 3rd shot drop to gain advantage to the net
+</label>
+
+<label class="d-block">
+  <input
+    type="text"
+    class="form-control"
+    formControlName="positionSalary"
+    autocomplete="current-positionSalary"
+    [placeholder]="'Enter rating 0-3 here'"
+    required
+  />
+  <small
+    [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+    class="text-danger"
+    translate
+  >
+  Rating is required
+  </small>
+</label>
+<label for="positionSalary">Able to volley with medium paced shots with control
+</label>
+
+<label class="d-block">
+  <input
+    type="text"
+    class="form-control"
+    formControlName="positionSalary"
+    autocomplete="current-positionSalary"
+    [placeholder]="'Enter rating 0-3 here'"
+    required
+  />
+  <small
+    [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+    class="text-danger"
+    translate
+  >
+  Rating is required
+  </small>
+</label>
+<label for="positionSalary">Sustains a short volley session at the next with placement and control
+
+</label>
+
+<label class="d-block">
+  <input
+    type="text"
+    class="form-control"
+    formControlName="positionSalary"
+    autocomplete="current-positionSalary"
+    [placeholder]="'Enter rating 0-3 here'"
+    required
+  />
+  <small
+    [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+    class="text-danger"
+    translate
+  >
+  Rating is required
+  </small>
+</label>
+<label for="positionSalary">Moves quickly to NVZ (non-volley zone) when opportunity is there
+</label>
+
+<label class="d-block">
+  <input
+    type="text"
+    class="form-control"
+    formControlName="positionSalary"
+    autocomplete="current-positionSalary"
+    [placeholder]="'Enter rating 0-3 here'"
+    required
+  />
+  <small
+    [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+    class="text-danger"
+    translate
+  >
+  Rating is required
+  </small>
+</label>
+<label for="positionSalary">Understands proper court position
+
+</label>
+
+<label class="d-block">
+  <input
+    type="text"
+    class="form-control"
+    formControlName="positionSalary"
+    autocomplete="current-positionSalary"
+    [placeholder]="'Enter rating 0-3 here'"
+    required
+  />
+  <small
+    [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+    class="text-danger"
+    translate
+  >
+  Rating is required
+  </small>
+</label>
+<label for="positionSalary">Understands difference b/w hard game and soft game and knows when to use it
+</label>
+
+<label class="d-block">
+  <input
+    type="text"
+    class="form-control"
+    formControlName="positionSalary"
+    autocomplete="current-positionSalary"
+    [placeholder]="'Enter rating 0-3 here'"
+    required
+  />
+  <small
+    [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+    class="text-danger"
+    translate
+  >
+  Rating is required
+  </small>
+</label>
+<label for="positionSalary">Basic knowledge of stacking and knows when to use it
+
+</label>
+
+<label class="d-block">
+  <input
+    type="text"
+    class="form-control"
+    formControlName="positionSalary"
+    autocomplete="current-positionSalary"
+    [placeholder]="'Enter rating 0-3 here'"
+    required
+  />
+  <small
+    [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+    class="text-danger"
+    translate
+  >
+  Rating is required
+  </small>
+</label>
+
+<label for="positionSalary">Able to sustain short rallies
+</label>
+
+<label class="d-block">
+  <input
+    type="text"
+    class="form-control"
+    formControlName="positionSalary"
+    autocomplete="current-positionSalary"
+    [placeholder]="'Enter rating 0-3 here'"
+    required
+  />
+  <small
+    [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+    class="text-danger"
+    translate
+  >
+  Rating is required
+  </small>
+</label>
+
+
+<label for="positionSalary">Has good mobility / quickness /hand-eye coordination
+</label>
+
+<label class="d-block">
+  <input
+    type="text"
+    class="form-control"
+    formControlName="positionSalary"
+    autocomplete="current-positionSalary"
+    [placeholder]="'Enter rating 0-3 here'"
+    required
+  />
+  <small
+    [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+    class="text-danger"
+    translate
+  >
+  Rating is required
+  </small>
+</label>
+
+
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="float-left">
+          <!-- HTML markup for Create button -->
+          <!-- <button
+            (click)="onCreate()"
+            class="btn btn-primary w-20"
+            type="submit"
+            [disabled]="entryForm.invalid || !isAddNew"
+            *ngIf="this.isAddNew"
+          >
+            <span translate><i class="fas fa-plus"></i> Save</span>
+          </button> -->
+          <!-- HTML markup for Update button -->
+          <!-- <button
+            (click)="onUpdate()"
+            class="btn btn-primary w-20"
+            type="submit"
+            [disabled]="entryForm.invalid || isAddNew"
+            *ngIf="!this.isAddNew"
+          >
+            <span translate><i class="fas fa-edit"></i> Update</span>
+          </button> -->
+          <!-- HTML markup for Delete button -->
+          <!-- <button
+            (click)="onDelete()"
+            class="btn btn-danger w-20"
+            type="submit"
+            [disabled]="entryForm.invalid || isAddNew"
+            *ngIf="!this.isAddNew"
+          >
+            <span translate><i class="fas fa-trash-alt"></i> Delete</span>
+          </button> -->
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
