@@ -1,0 +1,331 @@
+<div class="container-fluid">
+  <!-- HTML form mark up -->
+  <h3 class="text-secondary">Pickleball Skill Assessment - Level 3.5</h3>
+  <form [formGroup]="entryForm" novalidate>
+
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <h4>Section 1 - General Information</h4>
+          </ng-template>
+
+        <ng-template ngbPanelContent>
+          <div class="form-group">
+            <label for="id">Name</label>
+            <label class="d-block">
+              <input type="text" class="form-control" formControlName="id" autocomplete="id" [placeholder]="'Enter player name'"
+                readonly />
+              <span hidden translate>Name</span>
+              <small [hidden]="entryForm.controls.id.valid || entryForm.controls.id.untouched" class="text-danger"
+                translate>
+                Name is required
+              </small>
+            </label>
+
+            <label for="positionDescription">Email</label>
+            <label class="d-block">
+              <input type="email" class="form-control" formControlName="positionDescription"
+                autocomplete="current-positionDescription" [placeholder]="'Enter email here'" required />
+              <span hidden translate>Email</span>
+              <small [hidden]="
+                        entryForm.controls.positionDescription.valid || entryForm.controls.positionDescription.untouched
+                      " class="text-danger" translate>
+                Email is required
+              </small>
+            </label>
+
+            <label for="positionSalary">Cell Phone</label>
+            <label class="d-block">
+              <input type="tel" class="form-control" formControlName="positionSalary"
+                autocomplete="current-positionSalary" [placeholder]="'Enter cell phone here'" required />
+              <span hidden translate>Cell Phone</span>
+              <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+                class="text-danger" translate>
+                Cell Phone is required
+              </small>
+            </label>
+
+            <label for="positionNumber">Self-Rating Level</label>
+            <label class="d-block">
+              <input type="text" class="form-control" formControlName="positionNumber" autocomplete="positionNumber"
+                [placeholder]="'Enter player self-rating level'" required />
+              <span hidden translate>Self-Rating</span>
+              <small [hidden]="entryForm.controls.positionNumber.valid || entryForm.controls.positionNumber.untouched"
+                class="text-danger" translate>
+                Self-Rating is required
+              </small>
+            </label>
+            <label for="positionTitle">Assessment Date</label>
+
+            <label class="d-block">
+              <input type="date" class="form-control" formControlName="positionTitle" autocomplete="current-positionTitle"
+                [placeholder]="'Enter assessment date'" required />
+              <span hidden translate>Position Title</span>
+              <small [hidden]="entryForm.controls.positionTitle.valid || entryForm.controls.positionTitle.untouched"
+                class="text-danger" translate>
+                Position Title is required
+              </small>
+            </label>
+
+
+            <label for="positionSalary">Games Observed</label>
+            <label class="d-block">
+              <input type="text" class="form-control" formControlName="positionSalary"
+                autocomplete="current-positionSalary" [placeholder]="'Enter number of games observed'" required />
+              <span hidden translate>#Games Observed</span>
+              <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+                class="text-danger" translate>
+                #Games Observed is required
+              </small>
+            </label>
+
+            <label for="positionSalary">Weather Conditions</label>
+
+            <label class="d-block">
+              <input type="text" class="form-control" formControlName="positionSalary"
+                autocomplete="current-positionSalary" [placeholder]="'Enter weather conditions here'" required />
+              <span hidden translate>Weather Conditions</span>
+              <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+                class="text-danger" translate>
+                Weather Conditions is required
+              </small>
+            </label>
+
+
+
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+        <h4>Section 2 - Skill Assessment</h4>
+      </ng-template>
+        <ng-template ngbPanelContent>
+          <p>This section is to be filled out by the rating team (ex. coach, experienced players).  Notice that the 3.5 skill level should also possess all 3.0 Skills</p>
+          <p>Rating scales:  0 = Not observed or not able to execute, 1 = attempted but very poorly executed/needs work,
+            2 = good basic form, but needs work, 3 = solid, consistent performance</p>
+
+          <label for="positionSalary"><b>Able to use a forehand with moderate level of shot control</b>
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
+              autocomplete="current-positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger" translate>
+              Rating is required
+            </small>
+          </label>
+
+          <label for="positionSalary"><b>Able to use a backhand with moderate level of shot control</b>
+          </label>
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
+              autocomplete="current-positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger" translate>
+              Rating is required
+            </small>
+          </label>
+
+          <label for="positionSalary">Consistently gets serve in
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
+              autocomplete="current-positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger" translate>
+              Rating is required
+            </small>
+          </label>
+          <label for="positionSalary">Consistently gets return of serve in
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
+              autocomplete="current-positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger" translate>
+              Rating is required
+            </small>
+          </label>
+          <label for="positionSalary">Able to place serves deep in the court
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
+              autocomplete="current-positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger" translate>
+              Rating is required
+            </small>
+          </label>
+          <label for="positionSalary">Able to place return of serves deep into the court
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
+              autocomplete="current-positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger" translate>
+              Rating is required
+            </small>
+          </label>
+          <label for="positionSalary">Able to dink and sustains medium length rallies
+
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
+              autocomplete="current-positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger" translate>
+              Rating is required
+            </small>
+          </label>
+          <label for="positionSalary">Able to control height/depth of dink shot
+
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
+              autocomplete="current-positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger" translate>
+              Rating is required
+            </small>
+          </label>
+          <label for="positionSalary">Understands variation of pace of dink shot
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
+              autocomplete="current-positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger" translate>
+              Rating is required
+            </small>
+          </label>
+          <label for="positionSalary">Able to hit a 3rd shot drop to gain advantage to the net
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
+              autocomplete="current-positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger" translate>
+              Rating is required
+            </small>
+          </label>
+          <label for="positionSalary">Able to volley with medium paced shots with control
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
+              autocomplete="current-positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger" translate>
+              Rating is required
+            </small>
+          </label>
+          <label for="positionSalary">Sustains a short volley session at the next with placement and control
+
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
+              autocomplete="current-positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger" translate>
+              Rating is required
+            </small>
+          </label>
+          <label for="positionSalary">Moves quickly to NVZ (non-volley zone) when opportunity is there
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
+              autocomplete="current-positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger" translate>
+              Rating is required
+            </small>
+          </label>
+          <label for="positionSalary">Understands proper court position
+
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
+              autocomplete="current-positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger" translate>
+              Rating is required
+            </small>
+          </label>
+          <label for="positionSalary">Understands difference b/w hard game and soft game and knows when to use it
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
+              autocomplete="current-positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger" translate>
+              Rating is required
+            </small>
+          </label>
+          <label for="positionSalary">Basic knowledge of stacking and knows when to use it
+
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
+              autocomplete="current-positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger" translate>
+              Rating is required
+            </small>
+          </label>
+
+          <label for="positionSalary">Able to sustain short rallies
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
+              autocomplete="current-positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger" translate>
+              Rating is required
+            </small>
+          </label>
+
+
+          <label for="positionSalary">Has good mobility / quickness /hand-eye coordination
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
+              autocomplete="current-positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+              class="text-danger" translate>
+              Rating is required
+            </small>
+          </label>
+
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+          <h4 class="text-left">Section 3 - Signatures</h4>
+          </ng-template>
+        <ng-template ngbPanelContent>
+          <p>I certify that the information skill evaluation is accurate to the best of my knowledge</p>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </form>
+</div>
+
+
+

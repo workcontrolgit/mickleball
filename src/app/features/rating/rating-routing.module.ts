@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SkillratingComponent } from './skillrating.component';
+import { RatingComponent } from './rating.component';
 import { Level35Component } from './level35/level35.component';
 
 import { marker } from '@biesbjerg/ngx-translate-extract-marker';
@@ -9,7 +9,7 @@ import { AuthGuard } from '@app/@core/auth/auth-guard.service';
 const routes: Routes = [
   {
     path: '',
-    component: SkillratingComponent,
+    component: RatingComponent,
     //canActivate: [AuthGuard],
     data: { title: marker('Skill Ratings') },
   },
@@ -25,4 +25,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class SkillratingRoutingModule { }
+export class RatingRoutingModule { }

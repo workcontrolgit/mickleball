@@ -12,7 +12,7 @@ export class Level35Component implements OnInit {
   formMode = 'New';
   sub: any;
   id: any;
-  entryForm: FormGroup;
+  entryForm: any;
   error: string | undefined;
   //position: Position;
   isAddNew: boolean = false;

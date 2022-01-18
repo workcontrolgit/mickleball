@@ -29,8 +29,8 @@ const routes: Routes = [
       loadChildren: () => import('./about/about.module').then((m) => m.AboutModule),
     },
     {
-      path: 'skillrating',
-      loadChildren: () => import('./features/skillrating/skillrating.module').then((m) => m.SkillratingModule),
+      path: 'rating',
+      loadChildren: () => import('./features/rating/rating.module').then((m) => m.RatingModule),
     },
   ]),
 
