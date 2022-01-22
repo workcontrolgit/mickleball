@@ -29,8 +29,15 @@ export class Level35Component implements OnInit {
   private createForm() {
     this.entryForm = this.formBuilder.group({
       id: [''],
-      positionNumber: ['', Validators.required],
-      positionTitle: ['', Validators.required],
+      name: ['', Validators.required],
+      email: ['', Validators.required],
+      cellPhone: ['', Validators.required],
+      selfRating: ['', Validators.required],
+      assessmentDate: ['', Validators.required],
+      gamesObserved: ['', Validators.required],
+      weatherConditions: ['', Validators.required],
+      skill1: ['', Validators.required],
+      skill2: ['', Validators.required],
       positionDescription: ['', Validators.required],
       positionSalary: ['', RxwebValidators.numeric({ allowDecimal: true, isFormat: false })],
     });
