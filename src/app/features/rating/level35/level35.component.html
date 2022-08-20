@@ -11,7 +11,7 @@
 
         <ng-template ngbPanelContent>
           <div class="form-group">
-            <label for="id">Id</label>
+            <label for="id" class="font-weight-bold">Id</label>
             <label class="d-block">
               <input type="text" class="form-control" formControlName="id" autocomplete="id" [placeholder]="'Auto Assigned'"
                readonly />
@@ -22,7 +22,7 @@
               </small>
             </label>
 
-            <label for="name">Name</label>
+            <label for="name" class="font-weight-bold">Name</label>
             <label class="d-block">
               <input type="text" class="form-control" formControlName="name" autocomplete="name" [placeholder]="'Enter player name'"
                 />
@@ -33,7 +33,7 @@
               </small>
             </label>
 
-            <label for="email">Email</label>
+            <label for="email" class="font-weight-bold">Email</label>
             <label class="d-block">
               <input type="email" class="form-control" formControlName="email"
                 autocomplete="email" [placeholder]="'Enter email here'" required />
@@ -45,7 +45,7 @@
               </small>
             </label>
 
-            <label for="cellPhone">Cell Phone</label>
+            <label for="cellPhone" class="font-weight-bold">Cell Phone</label>
             <label class="d-block">
               <input type="tel" class="form-control" formControlName="cellPhone"
                 autocomplete="cellPhone" [placeholder]="'Enter cell phone here'" required />
@@ -56,7 +56,7 @@
               </small>
             </label>
 
-            <label for="selfRating">Self-Rating</label>
+            <label for="selfRating" class="font-weight-bold">Self-Rating</label>
             <label class="d-block">
               <input type="text" class="form-control" formControlName="selfRating" autocomplete="selfRating"
                 [placeholder]="'Enter player self-rating level'" required />
@@ -66,7 +66,7 @@
                 Self-Rating level is required
               </small>
             </label>
-            <label for="assessmentDate">Assessment Date</label>
+            <label for="assessmentDate" class="font-weight-bold">Assessment Date</label>
 
             <label class="d-block">
               <input type="date" class="form-control" formControlName="assessmentDate" autocomplete="assessmentDate"
@@ -79,7 +79,7 @@
             </label>
 
 
-            <label for="gamesObserved">Games Observed</label>
+            <label for="gamesObserved" class="font-weight-bold">Games Observed</label>
             <label class="d-block">
               <input type="text" class="form-control" formControlName="gamesObserved"
                 autocomplete="gamesObserved" [placeholder]="'Enter number of games observed'" required />
@@ -90,7 +90,7 @@
               </small>
             </label>
 
-            <label for="weatherConditions">Weather Conditions</label>
+            <label for="weatherConditions" class="font-weight-bold">Weather Conditions</label>
 
             <label class="d-block">
               <input type="text" class="form-control" formControlName="weatherConditions"
@@ -116,210 +116,210 @@
           <p>Rating scales:  0 = Not observed or not able to execute, 1 = attempted but very poorly executed/needs work,
             2 = good basic form, but needs work, 3 = solid, consistent performance</p>
 
-          <label for="skill1"><b>1. Able to use a forehand with moderate level of shot control</b>
+          <label for="skill1" class="font-weight-bold">1. Able to use a forehand with moderate level of shot control
           </label>
           <label class="d-block">
             <input type="number" min="0" max="3" class="form-control" formControlName="skill1"
               autocomplete="skill1" [placeholder]="'Enter rating between 0 and 3'" required />
             <small [hidden]="entryForm.controls.skill1.valid || entryForm.controls.skill1.untouched"
               class="text-danger" translate>
-              Rating is required
+              Rating is between 0-3 and required
             </small>
           </label>
 
-          <label for="positionSalary"><b>2. Able to use a backhand with moderate level of shot control</b>
+          <label for="skill2" class="font-weight-bold">2. Able to use a backhand with moderate level of shot control
           </label>
           <label class="d-block">
-            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
-              autocomplete="positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
-            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+            <input type="number" min="0" max="3" class="form-control" formControlName="skill2"
+              autocomplete="skill2" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.skill2.valid || entryForm.controls.skill2.untouched"
               class="text-danger" translate>
-              Rating is required
+              Rating is between 0-3 and required
             </small>
           </label>
 
-          <label for="positionSalary">Consistently gets serve in
-          </label>
-
-          <label class="d-block">
-            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
-              autocomplete="positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
-            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
-              class="text-danger" translate>
-              Rating is required
-            </small>
-          </label>
-          <label for="positionSalary">Consistently gets return of serve in
+          <label for="skill3" class="font-weight-bold">3. Consistently gets serve in
           </label>
 
           <label class="d-block">
-            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
-              autocomplete="positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
-            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+            <input type="number" min="0" max="3" class="form-control" formControlName="skill3"
+              autocomplete="skill3" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.skill3.valid || entryForm.controls.skill3.untouched"
               class="text-danger" translate>
-              Rating is required
+              Rating is between 0-3 and required
             </small>
           </label>
-          <label for="positionSalary">Able to place serves deep in the court
+          <label for="skill4" class="font-weight-bold">4. Consistently gets return of serve in
           </label>
 
           <label class="d-block">
-            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
-              autocomplete="positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
-            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+            <input type="number" min="0" max="3" class="form-control" formControlName="skill4"
+              autocomplete="skill4" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.skill4.valid || entryForm.controls.skill4.untouched"
               class="text-danger" translate>
-              Rating is required
+              Rating is between 0-3 and required
             </small>
           </label>
-          <label for="positionSalary">Able to place return of serves deep into the court
+          <label for="skill5" class="font-weight-bold">5. Able to place serves deep in the court
           </label>
 
           <label class="d-block">
-            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
-              autocomplete="positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
-            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+            <input type="number" min="0" max="3" class="form-control" formControlName="skill5"
+              autocomplete="skill5" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.skill5.valid || entryForm.controls.skill5.untouched"
               class="text-danger" translate>
-              Rating is required
+              Rating is between 0-3 and required
             </small>
           </label>
-          <label for="positionSalary">Able to dink and sustains medium length rallies
-
+          <label for="skill6" class="font-weight-bold">6. Able to place return of serves deep into the court
           </label>
 
           <label class="d-block">
-            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
-              autocomplete="positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
-            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+            <input type="number" min="0" max="3" class="form-control" formControlName="skill6"
+              autocomplete="skill6" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.skill6.valid || entryForm.controls.skill6.untouched"
               class="text-danger" translate>
-              Rating is required
+              Rating is between 0-3 and required
             </small>
           </label>
-          <label for="positionSalary">Able to control height/depth of dink shot
+          <label for="skill7" class="font-weight-bold">7. Able to dink and sustains medium length rallies
 
           </label>
 
           <label class="d-block">
-            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
-              autocomplete="positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
-            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+            <input type="number" min="0" max="3" class="form-control" formControlName="skill7"
+              autocomplete="skill7" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.skill7.valid || entryForm.controls.skill7.untouched"
               class="text-danger" translate>
-              Rating is required
+              Rating is between 0-3 and required
             </small>
           </label>
-          <label for="positionSalary">Understands variation of pace of dink shot
-          </label>
-
-          <label class="d-block">
-            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
-              autocomplete="positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
-            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
-              class="text-danger" translate>
-              Rating is required
-            </small>
-          </label>
-          <label for="positionSalary">Able to hit a 3rd shot drop to gain advantage to the net
-          </label>
-
-          <label class="d-block">
-            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
-              autocomplete="positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
-            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
-              class="text-danger" translate>
-              Rating is required
-            </small>
-          </label>
-          <label for="positionSalary">Able to volley with medium paced shots with control
-          </label>
-
-          <label class="d-block">
-            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
-              autocomplete="positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
-            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
-              class="text-danger" translate>
-              Rating is required
-            </small>
-          </label>
-          <label for="positionSalary">Sustains a short volley session at the next with placement and control
+          <label for="skill8" class="font-weight-bold">8. Able to control height/depth of dink shot
 
           </label>
 
           <label class="d-block">
-            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
-              autocomplete="positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
-            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+            <input type="number" min="0" max="3" class="form-control" formControlName="skill8"
+              autocomplete="skill8" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.skill8.valid || entryForm.controls.skill8.untouched"
               class="text-danger" translate>
-              Rating is required
+              Rating is between 0-3 and required
             </small>
           </label>
-          <label for="positionSalary">Moves quickly to NVZ (non-volley zone) when opportunity is there
+          <label for="skill9" class="font-weight-bold">9. Understands variation of pace of dink shot
           </label>
 
           <label class="d-block">
-            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
-              autocomplete="positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
-            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+            <input type="number" min="0" max="3" class="form-control" formControlName="skill9"
+              autocomplete="skill9" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.skill9.valid || entryForm.controls.skill9.untouched"
               class="text-danger" translate>
-              Rating is required
+              Rating is between 0-3 and required
             </small>
           </label>
-          <label for="positionSalary">Understands proper court position
+          <label for="skill10" class="font-weight-bold">10. Able to hit a 3rd shot drop to gain advantage to the net
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="skill10"
+              autocomplete="skill10" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.skill10.valid || entryForm.controls.skill10.untouched"
+              class="text-danger" translate>
+              Rating is between 0-3 and required
+            </small>
+          </label>
+          <label for="skill11" class="font-weight-bold">11. Able to volley with medium paced shots with control
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="skill11"
+              autocomplete="skill11" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.skill11.valid || entryForm.controls.skill11.untouched"
+              class="text-danger" translate>
+              Rating is between 0-3 and required
+            </small>
+          </label>
+          <label for="skill12" class="font-weight-bold">12. Sustains a short volley session at the next with placement and control
 
           </label>
 
           <label class="d-block">
-            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
-              autocomplete="positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
-            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+            <input type="number" min="0" max="3" class="form-control" formControlName="skill12"
+              autocomplete="skill12" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.skill12.valid || entryForm.controls.skill12.untouched"
               class="text-danger" translate>
-              Rating is required
+              Rating is between 0-3 and required
             </small>
           </label>
-          <label for="positionSalary">Understands difference b/w hard game and soft game and knows when to use it
+          <label for="skill13" class="font-weight-bold">13. Moves quickly to NVZ (non-volley zone) when opportunity is there
           </label>
 
           <label class="d-block">
-            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
-              autocomplete="positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
-            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+            <input type="number" min="0" max="3" class="form-control" formControlName="skill13"
+              autocomplete="skill13" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.skill13.valid || entryForm.controls.skill13.untouched"
               class="text-danger" translate>
-              Rating is required
+              Rating is between 0-3 and required
             </small>
           </label>
-          <label for="positionSalary">Basic knowledge of stacking and knows when to use it
+          <label for="skill14" class="font-weight-bold">14. Understands proper court position
 
           </label>
 
           <label class="d-block">
-            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
-              autocomplete="positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
-            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+            <input type="number" min="0" max="3" class="form-control" formControlName="skill14"
+              autocomplete="skill14" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.skill14.valid || entryForm.controls.skill14.untouched"
               class="text-danger" translate>
-              Rating is required
+              Rating is between 0-3 and required
             </small>
           </label>
-
-          <label for="positionSalary">Able to sustain short rallies
+          <label for="skill15" class="font-weight-bold">15. Understands difference between hard game and soft game and knows when to use it
           </label>
 
           <label class="d-block">
-            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
-              autocomplete="positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
-            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+            <input type="number" min="0" max="3" class="form-control" formControlName="skill15"
+              autocomplete="skill15" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.skill15.valid || entryForm.controls.skill15.untouched"
               class="text-danger" translate>
-              Rating is required
+              Rating is between 0-3 and required
+            </small>
+          </label>
+          <label for="skill16" class="font-weight-bold">16. Basic knowledge of stacking and knows when to use it
+
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="skill16"
+              autocomplete="skill16" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.skill16.valid || entryForm.controls.skill16.untouched"
+              class="text-danger" translate>
+              Rating is between 0-3 and required
+            </small>
+          </label>
+
+          <label for="skill17" class="font-weight-bold">17. Able to sustain short rallies
+          </label>
+
+          <label class="d-block">
+            <input type="number" min="0" max="3" class="form-control" formControlName="skill17"
+              autocomplete="skill17" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.skill17.valid || entryForm.controls.skill17.untouched"
+              class="text-danger" translate>
+              Rating is between 0-3 and required
             </small>
           </label>
 
 
-          <label for="positionSalary">Has good mobility / quickness /hand-eye coordination
+          <label for="skill18" class="font-weight-bold">18. Has good mobility / quickness /hand-eye coordination
           </label>
 
           <label class="d-block">
-            <input type="number" min="0" max="3" class="form-control" formControlName="positionSalary"
-              autocomplete="positionSalary" [placeholder]="'Enter rating between 0 and 3'" required />
-            <small [hidden]="entryForm.controls.positionSalary.valid || entryForm.controls.positionSalary.untouched"
+            <input type="number" min="0" max="3" class="form-control" formControlName="skill18"
+              autocomplete="skill18" [placeholder]="'Enter rating between 0 and 3'" required />
+            <small [hidden]="entryForm.controls.skill18.valid || entryForm.controls.skill18.untouched"
               class="text-danger" translate>
-              Rating is required
+              Rating is between 0-3 and required
             </small>
           </label>
 
