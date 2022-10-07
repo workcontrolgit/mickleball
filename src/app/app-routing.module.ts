@@ -28,6 +28,10 @@ const routes: Routes = [
       path: 'about',
       loadChildren: () => import('./about/about.module').then((m) => m.AboutModule),
     },
+    {
+      path: 'rating',
+      loadChildren: () => import('./features/rating/rating.module').then((m) => m.RatingModule),
+    },
   ]),
 
   { path: 'should-login', component: ShouldLoginComponent },
