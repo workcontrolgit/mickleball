@@ -8,9 +8,8 @@ describe('Level35Component', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Level35Component ]
-    })
-    .compileComponents();
+      declarations: [Level35Component],
+    }).compileComponents();
   });
 
   beforeEach(() => {

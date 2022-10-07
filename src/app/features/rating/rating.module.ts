@@ -9,16 +9,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { Level35Component } from './level35/level35.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
-  declarations: [
-    RatingComponent, DashboardComponent, Level35Component
-  ],
-  imports: [
-    CommonModule,
-    NgbModule,
-    ReactiveFormsModule,
-    RatingRoutingModule
-  ]
+  declarations: [RatingComponent, DashboardComponent, Level35Component],
+  imports: [CommonModule, NgbModule, ReactiveFormsModule, RatingRoutingModule],
 })
-export class RatingModule { }
+export class RatingModule {}

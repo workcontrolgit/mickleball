@@ -18,11 +18,11 @@ const routes: Routes = [
     component: Level35Component,
     //canActivate: [AuthGuard],
     data: { title: marker('Skill Assessment for 3.5 Players') },
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class RatingRoutingModule { }
+export class RatingRoutingModule {}

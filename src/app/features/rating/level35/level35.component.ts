@@ -2,11 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { RxwebValidators } from '@rxweb/reactive-form-validators';
 
-
 @Component({
   selector: 'app-level35',
   templateUrl: 'level35.component.html',
-  styleUrls: ['level35.component.scss']
+  styleUrls: ['level35.component.scss'],
 })
 export class Level35Component implements OnInit {
   formMode = 'New';
@@ -16,14 +15,11 @@ export class Level35Component implements OnInit {
   error: string | undefined;
   //position: Position;
   isAddNew: boolean = false;
-  constructor(
-    private formBuilder: FormBuilder,
-  ) {
+  constructor(private formBuilder: FormBuilder) {
     this.createForm();
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   // reactive form
   private createForm() {
@@ -58,5 +54,4 @@ export class Level35Component implements OnInit {
       positionSalary: ['', RxwebValidators.numeric({ allowDecimal: true, isFormat: false })],
     });
   }
-
 }
