@@ -1,10 +1,10 @@
 {
-  "name": "CATToolkitAngular",
+  "name": "Mickelball",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "ng": "ng",
-    "build": "npm run write:env -s && ng build --prod",
+    "build": "npm run write:env -s && ng build --configuration production",
     "start": "npm run write:env -s && ng serve --proxy-config proxy.conf.js",
     "serve:sw": "npm run build -s && npx http-server ./dist -p 4200",
     "lint": "ng lint && stylelint \"src/**/*.scss\" --syntax scss && htmlhint \"src\" --config .htmlhintrc",
