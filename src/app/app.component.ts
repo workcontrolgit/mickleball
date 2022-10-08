@@ -23,6 +23,8 @@ const log = new Logger('App');
 export class AppComponent implements OnInit, OnDestroy {
   //isAuthenticated: Observable<boolean>;
 
+  filteredUrlPatterns: string | null = environment.Oidc_Issuer;
+
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
