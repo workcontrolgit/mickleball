@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
+import { FormGroup, UntypedFormBuilder, FormBuilder, Validators } from '@angular/forms';
 import { RxwebValidators } from '@rxweb/reactive-form-validators';
 
 @Component({
@@ -15,7 +15,7 @@ export class Level35Component implements OnInit {
   error: string | undefined;
   //position: Position;
   isAddNew: boolean = false;
-  constructor(private formBuilder: UntypedFormBuilder) {
+  constructor(private formBuilder: FormBuilder) {
     this.createForm();
   }
 
