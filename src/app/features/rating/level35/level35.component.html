@@ -177,35 +177,28 @@
           <h4>Section 2 - Skill Assessment</h4>
         </ng-template>
         <ng-template ngbPanelContent>
-          <p>
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
             This section is to be filled out by the rating team (ex. coach, experienced players). Notice that the 3.5
             skill level should also possess all 3.0 Skills
-          </p>
-          <p>
-            Rating scales: 0 = Not observed or not able to execute, 1 = attempted but very poorly executed/needs work, 2
-            = good basic form, but needs work, 3 = solid, consistent performance
-          </p>
+          </div>
 
           <label for="skill1" class="font-weight-bold"
             >1. Able to use a forehand with moderate level of shot control
           </label>
           <label class="d-block">
-            <input
-              type="number"
-              min="0"
-              max="3"
-              class="form-control"
-              formControlName="skill1"
-              autocomplete="skill1"
-              [placeholder]="'Enter rating between 0 and 3'"
-              required
-            />
+            <select class="form-control" formControlName="skill1" required>
+              <option value="">Select a scale</option>
+              <option value="0">0 - not observed or not able to execute</option>
+              <option value="1">1 - attempted but very poorly executed/needs work</option>
+              <option value="2">2 - good basic form, but needs work</option>
+              <option value="3">3 - solid, consistent performance</option>
+            </select>
             <small
               [hidden]="entryForm.controls.skill1.valid || entryForm.controls.skill1.untouched"
               class="text-danger"
               translate
             >
-              Rating is between 0-3 and required
+              Rating is required.
             </small>
           </label>
 
@@ -213,170 +206,146 @@
             >2. Able to use a backhand with moderate level of shot control
           </label>
           <label class="d-block">
-            <input
-              type="number"
-              min="0"
-              max="3"
-              class="form-control"
-              formControlName="skill2"
-              autocomplete="skill2"
-              [placeholder]="'Enter rating between 0 and 3'"
-              required
-            />
+            <select class="form-control" formControlName="skill2" required>
+              <option value="">Select a scale</option>
+              <option value="0">0 - not observed or not able to execute</option>
+              <option value="1">1 - attempted but very poorly executed/needs work</option>
+              <option value="2">2 - good basic form, but needs work</option>
+              <option value="3">3 - solid, consistent performance</option>
+            </select>
             <small
               [hidden]="entryForm.controls.skill2.valid || entryForm.controls.skill2.untouched"
               class="text-danger"
               translate
             >
-              Rating is between 0-3 and required
+              Rating is required.
             </small>
           </label>
 
           <label for="skill3" class="font-weight-bold">3. Consistently gets serve in </label>
 
           <label class="d-block">
-            <input
-              type="number"
-              min="0"
-              max="3"
-              class="form-control"
-              formControlName="skill3"
-              autocomplete="skill3"
-              [placeholder]="'Enter rating between 0 and 3'"
-              required
-            />
+            <select class="form-control" formControlName="skill3" required>
+              <option value="">Select a scale</option>
+              <option value="0">0 - not observed or not able to execute</option>
+              <option value="1">1 - attempted but very poorly executed/needs work</option>
+              <option value="2">2 - good basic form, but needs work</option>
+              <option value="3">3 - solid, consistent performance</option>
+            </select>
             <small
               [hidden]="entryForm.controls.skill3.valid || entryForm.controls.skill3.untouched"
               class="text-danger"
               translate
             >
-              Rating is between 0-3 and required
+              Rating is required.
             </small>
           </label>
           <label for="skill4" class="font-weight-bold">4. Consistently gets return of serve in </label>
 
           <label class="d-block">
-            <input
-              type="number"
-              min="0"
-              max="3"
-              class="form-control"
-              formControlName="skill4"
-              autocomplete="skill4"
-              [placeholder]="'Enter rating between 0 and 3'"
-              required
-            />
+            <select class="form-control" formControlName="skill4" required>
+              <option value="">Select a scale</option>
+              <option value="0">0 - not observed or not able to execute</option>
+              <option value="1">1 - attempted but very poorly executed/needs work</option>
+              <option value="2">2 - good basic form, but needs work</option>
+              <option value="3">3 - solid, consistent performance</option>
+            </select>
             <small
               [hidden]="entryForm.controls.skill4.valid || entryForm.controls.skill4.untouched"
               class="text-danger"
               translate
             >
-              Rating is between 0-3 and required
+              Rating is required.
             </small>
           </label>
           <label for="skill5" class="font-weight-bold">5. Able to place serves deep in the court </label>
 
           <label class="d-block">
-            <input
-              type="number"
-              min="0"
-              max="3"
-              class="form-control"
-              formControlName="skill5"
-              autocomplete="skill5"
-              [placeholder]="'Enter rating between 0 and 3'"
-              required
-            />
+            <select class="form-control" formControlName="skill5" required>
+              <option value="">Select a scale</option>
+              <option value="0">0 - not observed or not able to execute</option>
+              <option value="1">1 - attempted but very poorly executed/needs work</option>
+              <option value="2">2 - good basic form, but needs work</option>
+              <option value="3">3 - solid, consistent performance</option>
+            </select>
             <small
               [hidden]="entryForm.controls.skill5.valid || entryForm.controls.skill5.untouched"
               class="text-danger"
               translate
             >
-              Rating is between 0-3 and required
+              Rating is required.
             </small>
           </label>
           <label for="skill6" class="font-weight-bold">6. Able to place return of serves deep into the court </label>
 
           <label class="d-block">
-            <input
-              type="number"
-              min="0"
-              max="3"
-              class="form-control"
-              formControlName="skill6"
-              autocomplete="skill6"
-              [placeholder]="'Enter rating between 0 and 3'"
-              required
-            />
+            <select class="form-control" formControlName="skill6" required>
+              <option value="">Select a scale</option>
+              <option value="0">0 - not observed or not able to execute</option>
+              <option value="1">1 - attempted but very poorly executed/needs work</option>
+              <option value="2">2 - good basic form, but needs work</option>
+              <option value="3">3 - solid, consistent performance</option>
+            </select>
             <small
               [hidden]="entryForm.controls.skill6.valid || entryForm.controls.skill6.untouched"
               class="text-danger"
               translate
             >
-              Rating is between 0-3 and required
+              Rating is required.
             </small>
           </label>
           <label for="skill7" class="font-weight-bold">7. Able to dink and sustains medium length rallies </label>
 
           <label class="d-block">
-            <input
-              type="number"
-              min="0"
-              max="3"
-              class="form-control"
-              formControlName="skill7"
-              autocomplete="skill7"
-              [placeholder]="'Enter rating between 0 and 3'"
-              required
-            />
+            <select class="form-control" formControlName="skill7" required>
+              <option value="">Select a scale</option>
+              <option value="0">0 - not observed or not able to execute</option>
+              <option value="1">1 - attempted but very poorly executed/needs work</option>
+              <option value="2">2 - good basic form, but needs work</option>
+              <option value="3">3 - solid, consistent performance</option>
+            </select>
             <small
               [hidden]="entryForm.controls.skill7.valid || entryForm.controls.skill7.untouched"
               class="text-danger"
               translate
             >
-              Rating is between 0-3 and required
+              Rating is required.
             </small>
           </label>
           <label for="skill8" class="font-weight-bold">8. Able to control height/depth of dink shot </label>
 
           <label class="d-block">
-            <input
-              type="number"
-              min="0"
-              max="3"
-              class="form-control"
-              formControlName="skill8"
-              autocomplete="skill8"
-              [placeholder]="'Enter rating between 0 and 3'"
-              required
-            />
+            <select class="form-control" formControlName="skill8" required>
+              <option value="">Select a scale</option>
+              <option value="0">0 - not observed or not able to execute</option>
+              <option value="1">1 - attempted but very poorly executed/needs work</option>
+              <option value="2">2 - good basic form, but needs work</option>
+              <option value="3">3 - solid, consistent performance</option>
+            </select>
             <small
               [hidden]="entryForm.controls.skill8.valid || entryForm.controls.skill8.untouched"
               class="text-danger"
               translate
             >
-              Rating is between 0-3 and required
+              Rating is required.
             </small>
           </label>
           <label for="skill9" class="font-weight-bold">9. Understands variation of pace of dink shot </label>
 
           <label class="d-block">
-            <input
-              type="number"
-              min="0"
-              max="3"
-              class="form-control"
-              formControlName="skill9"
-              autocomplete="skill9"
-              [placeholder]="'Enter rating between 0 and 3'"
-              required
-            />
+            <select class="form-control" formControlName="skill9" required>
+              <option value="">Select a scale</option>
+              <option value="0">0 - not observed or not able to execute</option>
+              <option value="1">1 - attempted but very poorly executed/needs work</option>
+              <option value="2">2 - good basic form, but needs work</option>
+              <option value="3">3 - solid, consistent performance</option>
+            </select>
             <small
               [hidden]="entryForm.controls.skill9.valid || entryForm.controls.skill9.untouched"
               class="text-danger"
               translate
             >
-              Rating is between 0-3 and required
+              Rating is required.
             </small>
           </label>
           <label for="skill10" class="font-weight-bold"
@@ -384,43 +353,37 @@
           </label>
 
           <label class="d-block">
-            <input
-              type="number"
-              min="0"
-              max="3"
-              class="form-control"
-              formControlName="skill10"
-              autocomplete="skill10"
-              [placeholder]="'Enter rating between 0 and 3'"
-              required
-            />
+            <select class="form-control" formControlName="skill10" required>
+              <option value="">Select a scale</option>
+              <option value="0">0 - not observed or not able to execute</option>
+              <option value="1">1 - attempted but very poorly executed/needs work</option>
+              <option value="2">2 - good basic form, but needs work</option>
+              <option value="3">3 - solid, consistent performance</option>
+            </select>
             <small
               [hidden]="entryForm.controls.skill10.valid || entryForm.controls.skill10.untouched"
               class="text-danger"
               translate
             >
-              Rating is between 0-3 and required
+              Rating is required.
             </small>
           </label>
           <label for="skill11" class="font-weight-bold">11. Able to volley with medium paced shots with control </label>
 
           <label class="d-block">
-            <input
-              type="number"
-              min="0"
-              max="3"
-              class="form-control"
-              formControlName="skill11"
-              autocomplete="skill11"
-              [placeholder]="'Enter rating between 0 and 3'"
-              required
-            />
+            <select class="form-control" formControlName="skill11" required>
+              <option value="">Select a scale</option>
+              <option value="0">0 - not observed or not able to execute</option>
+              <option value="1">1 - attempted but very poorly executed/needs work</option>
+              <option value="2">2 - good basic form, but needs work</option>
+              <option value="3">3 - solid, consistent performance</option>
+            </select>
             <small
               [hidden]="entryForm.controls.skill11.valid || entryForm.controls.skill11.untouched"
               class="text-danger"
               translate
             >
-              Rating is between 0-3 and required
+              Rating is required.
             </small>
           </label>
           <label for="skill12" class="font-weight-bold"
@@ -428,22 +391,19 @@
           </label>
 
           <label class="d-block">
-            <input
-              type="number"
-              min="0"
-              max="3"
-              class="form-control"
-              formControlName="skill12"
-              autocomplete="skill12"
-              [placeholder]="'Enter rating between 0 and 3'"
-              required
-            />
+            <select class="form-control" formControlName="skill12" required>
+              <option value="">Select a scale</option>
+              <option value="0">0 - not observed or not able to execute</option>
+              <option value="1">1 - attempted but very poorly executed/needs work</option>
+              <option value="2">2 - good basic form, but needs work</option>
+              <option value="3">3 - solid, consistent performance</option>
+            </select>
             <small
               [hidden]="entryForm.controls.skill12.valid || entryForm.controls.skill12.untouched"
               class="text-danger"
               translate
             >
-              Rating is between 0-3 and required
+              Rating is required.
             </small>
           </label>
           <label for="skill13" class="font-weight-bold"
@@ -451,43 +411,37 @@
           </label>
 
           <label class="d-block">
-            <input
-              type="number"
-              min="0"
-              max="3"
-              class="form-control"
-              formControlName="skill13"
-              autocomplete="skill13"
-              [placeholder]="'Enter rating between 0 and 3'"
-              required
-            />
+            <select class="form-control" formControlName="skill13" required>
+              <option value="">Select a scale</option>
+              <option value="0">0 - not observed or not able to execute</option>
+              <option value="1">1 - attempted but very poorly executed/needs work</option>
+              <option value="2">2 - good basic form, but needs work</option>
+              <option value="3">3 - solid, consistent performance</option>
+            </select>
             <small
               [hidden]="entryForm.controls.skill13.valid || entryForm.controls.skill13.untouched"
               class="text-danger"
               translate
             >
-              Rating is between 0-3 and required
+              Rating is required.
             </small>
           </label>
           <label for="skill14" class="font-weight-bold">14. Understands proper court position </label>
 
           <label class="d-block">
-            <input
-              type="number"
-              min="0"
-              max="3"
-              class="form-control"
-              formControlName="skill14"
-              autocomplete="skill14"
-              [placeholder]="'Enter rating between 0 and 3'"
-              required
-            />
+            <select class="form-control" formControlName="skill14" required>
+              <option value="">Select a scale</option>
+              <option value="0">0 - not observed or not able to execute</option>
+              <option value="1">1 - attempted but very poorly executed/needs work</option>
+              <option value="2">2 - good basic form, but needs work</option>
+              <option value="3">3 - solid, consistent performance</option>
+            </select>
             <small
               [hidden]="entryForm.controls.skill14.valid || entryForm.controls.skill14.untouched"
               class="text-danger"
               translate
             >
-              Rating is between 0-3 and required
+              Rating is required.
             </small>
           </label>
           <label for="skill15" class="font-weight-bold"
@@ -495,22 +449,19 @@
           </label>
 
           <label class="d-block">
-            <input
-              type="number"
-              min="0"
-              max="3"
-              class="form-control"
-              formControlName="skill15"
-              autocomplete="skill15"
-              [placeholder]="'Enter rating between 0 and 3'"
-              required
-            />
+            <select class="form-control" formControlName="skill15" required>
+              <option value="">Select a scale</option>
+              <option value="0">0 - not observed or not able to execute</option>
+              <option value="1">1 - attempted but very poorly executed/needs work</option>
+              <option value="2">2 - good basic form, but needs work</option>
+              <option value="3">3 - solid, consistent performance</option>
+            </select>
             <small
               [hidden]="entryForm.controls.skill15.valid || entryForm.controls.skill15.untouched"
               class="text-danger"
               translate
             >
-              Rating is between 0-3 and required
+              Rating is required.
             </small>
           </label>
           <label for="skill16" class="font-weight-bold"
@@ -518,44 +469,38 @@
           </label>
 
           <label class="d-block">
-            <input
-              type="number"
-              min="0"
-              max="3"
-              class="form-control"
-              formControlName="skill16"
-              autocomplete="skill16"
-              [placeholder]="'Enter rating between 0 and 3'"
-              required
-            />
+            <select class="form-control" formControlName="skill16" required>
+              <option value="">Select a scale</option>
+              <option value="0">0 - not observed or not able to execute</option>
+              <option value="1">1 - attempted but very poorly executed/needs work</option>
+              <option value="2">2 - good basic form, but needs work</option>
+              <option value="3">3 - solid, consistent performance</option>
+            </select>
             <small
               [hidden]="entryForm.controls.skill16.valid || entryForm.controls.skill16.untouched"
               class="text-danger"
               translate
             >
-              Rating is between 0-3 and required
+              Rating is required.
             </small>
           </label>
 
           <label for="skill17" class="font-weight-bold">17. Able to sustain short rallies </label>
 
           <label class="d-block">
-            <input
-              type="number"
-              min="0"
-              max="3"
-              class="form-control"
-              formControlName="skill17"
-              autocomplete="skill17"
-              [placeholder]="'Enter rating between 0 and 3'"
-              required
-            />
+            <select class="form-control" formControlName="skill17" required>
+              <option value="">Select a scale</option>
+              <option value="0">0 - not observed or not able to execute</option>
+              <option value="1">1 - attempted but very poorly executed/needs work</option>
+              <option value="2">2 - good basic form, but needs work</option>
+              <option value="3">3 - solid, consistent performance</option>
+            </select>
             <small
               [hidden]="entryForm.controls.skill17.valid || entryForm.controls.skill17.untouched"
               class="text-danger"
               translate
             >
-              Rating is between 0-3 and required
+              Rating is required.
             </small>
           </label>
 
@@ -564,22 +509,19 @@
           </label>
 
           <label class="d-block">
-            <input
-              type="number"
-              min="0"
-              max="3"
-              class="form-control"
-              formControlName="skill18"
-              autocomplete="skill18"
-              [placeholder]="'Enter rating between 0 and 3'"
-              required
-            />
+            <select class="form-control" formControlName="skill18" required>
+              <option value="">Select a scale</option>
+              <option value="0">0 - not observed or not able to execute</option>
+              <option value="1">1 - attempted but very poorly executed/needs work</option>
+              <option value="2">2 - good basic form, but needs work</option>
+              <option value="3">3 - solid, consistent performance</option>
+            </select>
             <small
               [hidden]="entryForm.controls.skill18.valid || entryForm.controls.skill18.untouched"
               class="text-danger"
               translate
             >
-              Rating is between 0-3 and required
+              Rating is required.
             </small>
           </label>
         </ng-template>
