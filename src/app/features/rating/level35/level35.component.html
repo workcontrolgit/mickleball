@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <!-- HTML form mark up -->
   <h3 class="text-secondary">Pickleball Skill Assessment - Level 3.5</h3>
-  <form [formGroup]="entryForm" novalidate>
+  <form [formGroup]="entryForm" novalidate (submit)="onSubmit()">
     <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
       <ngb-panel>
         <ng-template ngbPanelTitle>
@@ -532,6 +532,7 @@
         </ng-template>
         <ng-template ngbPanelContent>
           <p>I certify that the information skill evaluation is accurate to the best of my knowledge</p>
+          <button type="submit" class="btn btn-primary">Save</button>
         </ng-template>
       </ngb-panel>
     </ngb-accordion>

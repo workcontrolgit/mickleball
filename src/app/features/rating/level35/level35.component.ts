@@ -54,4 +54,8 @@ export class Level35Component implements OnInit {
       positionSalary: ['', RxwebValidators.numeric({ allowDecimal: true, isFormat: false })],
     });
   }
+
+  onSubmit(): void {
+    console.log(this.entryForm.getRawValue());
+  }
 }

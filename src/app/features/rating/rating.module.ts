@@ -7,10 +7,20 @@ import { RatingRoutingModule } from './rating-routing.module';
 import { RatingComponent } from './rating.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Level35Component } from './level35/level35.component';
+import { Level40Component } from './level40/level40.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DynamicFormInputComponent } from './dynamic-form-input/dynamic-form-input.component';
 
 @NgModule({
-  declarations: [RatingComponent, DashboardComponent, Level35Component],
+  declarations: [
+    RatingComponent,
+    DashboardComponent,
+    Level35Component,
+    Level40Component,
+    DynamicFormComponent,
+    DynamicFormInputComponent,
+  ],
   imports: [CommonModule, NgbModule, ReactiveFormsModule, RatingRoutingModule],
 })
 export class RatingModule {}

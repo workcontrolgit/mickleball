@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RatingComponent } from './rating.component';
 import { Level35Component } from './level35/level35.component';
+import { Level40Component } from './level40/level40.component';
 
 import { marker } from '@biesbjerg/ngx-translate-extract-marker';
 import { AuthGuard } from '@app/@core/auth/auth-guard.service';
@@ -18,6 +19,12 @@ const routes: Routes = [
     component: Level35Component,
     //canActivate: [AuthGuard],
     data: { title: marker('Skill Assessment for 3.5 Players') },
+  },
+  {
+    path: 'level40',
+    component: Level40Component,
+    //canActivate: [AuthGuard],
+    data: { title: marker('Skill Assessment for 4.0 Players') },
   },
 ];
 
