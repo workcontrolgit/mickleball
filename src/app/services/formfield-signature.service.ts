@@ -21,7 +21,8 @@ export class FormfieldSignatureService {
       new FormField<string>({
         controlType: 'checkbox',
         key: 'agree',
-        label: 'I certify that the above facts are true to the best of my knowledge and belief.',
+        label:
+          'I hereby declare that the information provided is true and correct to the best of my knowledge and belief.',
         type: 'checkbox',
         required: true,
         order: 2,

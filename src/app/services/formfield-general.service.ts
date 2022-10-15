@@ -29,14 +29,12 @@ export class FormfieldGeneralService {
       }),
 
       new FormField<string>({
-        controlType: 'radio',
-        key: 'sex',
-        label: 'Sex',
-        type: 'radio',
-        options: [
-          { key: 'male', value: 'Male' },
-          { key: 'female', value: 'Female' },
-        ],
+        controlType: 'textbox',
+        key: 'assessmentDate',
+        label: 'Assessment Date',
+        type: 'date',
+        required: true,
+        validator: 'email',
         order: 3,
       }),
     ];
