@@ -1,0 +1,10 @@
+<div class="container-fluid">
+  <!-- HTML form mark up -->
+  <h3 class="text-secondary">Pickleball Skill Assessment - Level 4.0</h3>
+
+  <app-dynamic-form
+    [formGeneralFields]="formGeneralFields | async"
+    [formSkillAssessmentFields]="formSkillAssessmentFields | async"
+    [formSignatureFields]="formSignatureFields | async"
+  ></app-dynamic-form>
+</div>
