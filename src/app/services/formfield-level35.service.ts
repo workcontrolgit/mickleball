@@ -6,7 +6,7 @@ import { Constants } from '@app/config/constants';
 @Injectable({
   providedIn: 'root',
 })
-export class FormfieldLevel40Service {
+export class FormfieldLevel35Service {
   constructor(private constants: Constants) {}
 
   getFormFields() {
@@ -16,7 +16,7 @@ export class FormfieldLevel40Service {
       new FormField<string>({
         controlType: 'dropdown',
         key: 'skill40-1',
-        label: '1. Consistently hits forehand with depth and control',
+        label: '1. Able to use a forehand with moderate level of shot control',
         options: ratings,
         required: true,
         order: 1,
@@ -25,7 +25,7 @@ export class FormfieldLevel40Service {
       new FormField<string>({
         controlType: 'dropdown',
         key: 'skill40-2',
-        label: '2. Consistently hits backhand with depth and control',
+        label: '2. Able to use a backhand with moderate level of shot control',
         options: ratings,
         required: true,
         order: 2,
@@ -34,7 +34,7 @@ export class FormfieldLevel40Service {
       new FormField<string>({
         controlType: 'dropdown',
         key: 'skill40-3',
-        label: '3. Consistently gets serve in with varying depth and speed',
+        label: '3. Consistently gets serve in',
         options: ratings,
         required: true,
         order: 3,
@@ -43,7 +43,7 @@ export class FormfieldLevel40Service {
       new FormField<string>({
         controlType: 'dropdown',
         key: 'skill40-4',
-        label: '4. Consistently gets return of serve in with varying depth and speed',
+        label: '4. Consistently gets return of serve in',
         options: ratings,
         required: true,
         order: 4,
@@ -52,7 +52,7 @@ export class FormfieldLevel40Service {
       new FormField<string>({
         controlType: 'dropdown',
         key: 'skill40-5',
-        label: '5. Consistent and dependable overheads (directional control, depth and placement)',
+        label: '5. Able to place serves deep in the court',
         options: ratings,
         required: true,
         order: 5,
@@ -61,7 +61,7 @@ export class FormfieldLevel40Service {
       new FormField<string>({
         controlType: 'dropdown',
         key: 'skill40-6',
-        label: '6. Accurate in placing lobs',
+        label: '6. Able to place return of serves deep into the court',
         options: ratings,
         required: true,
         order: 6,
@@ -70,7 +70,7 @@ export class FormfieldLevel40Service {
       new FormField<string>({
         controlType: 'dropdown',
         key: 'skill40-7',
-        label: '7. Able to sustain dink rally with control, height and depth of shot',
+        label: '7. Able to dink and sustains medium length rallies',
         options: ratings,
         required: true,
         order: 7,
@@ -78,7 +78,7 @@ export class FormfieldLevel40Service {
       new FormField<string>({
         controlType: 'dropdown',
         key: 'skill40-8',
-        label: '8. Understands which balls are attackable and those that are not in a dink rally',
+        label: '8. Able to control height/depth of dink shot',
         options: ratings,
         required: true,
         order: 8,
@@ -87,7 +87,7 @@ export class FormfieldLevel40Service {
       new FormField<string>({
         controlType: 'dropdown',
         key: 'skill40-9',
-        label: '9. Sustains a dink exchange with patience at the net to elicit a “put away” shot',
+        label: '9. Understands variation of pace of dink shot',
         options: ratings,
         required: true,
         order: 9,
@@ -96,7 +96,7 @@ export class FormfieldLevel40Service {
       new FormField<string>({
         controlType: 'dropdown',
         key: 'skill40-10',
-        label: '10. Consistently executes 3rd shot drop from the baseline to approach the net',
+        label: '10. Able to hit a 3rd shot drop to gain advantage to the net',
         options: ratings,
         required: true,
         order: 10,
@@ -105,7 +105,7 @@ export class FormfieldLevel40Service {
       new FormField<string>({
         controlType: 'dropdown',
         key: 'skill40-11',
-        label: '11. Able to change soft shots to power shots to create an advantage',
+        label: '11. Able to volley with medium paced shots with control',
         options: ratings,
         required: true,
         order: 11,
@@ -114,7 +114,7 @@ export class FormfieldLevel40Service {
       new FormField<string>({
         controlType: 'dropdown',
         key: 'skill40-11',
-        label: '12. Able to volley a variety of shots at varying speeds',
+        label: '12. Sustains a short volley session at the next with placement and control',
         options: ratings,
         required: true,
         order: 12,
@@ -122,7 +122,7 @@ export class FormfieldLevel40Service {
       new FormField<string>({
         controlType: 'dropdown',
         key: 'skill40-11',
-        label: '13. Able to block and return fast, hard volleys',
+        label: '13. Moves quickly to NVZ (non-volley zone) when opportunity is there',
         options: ratings,
         required: true,
         order: 13,
@@ -130,7 +130,7 @@ export class FormfieldLevel40Service {
       new FormField<string>({
         controlType: 'dropdown',
         key: 'skill40-11',
-        label: '14. Able to control NVZ (non-volley zone) keeping their opponents back',
+        label: '14. Understands proper court position',
         options: ratings,
         required: true,
         order: 14,
@@ -138,7 +138,7 @@ export class FormfieldLevel40Service {
       new FormField<string>({
         controlType: 'dropdown',
         key: 'skill40-11',
-        label: '15. Aware of partners position on the court and moves as a team',
+        label: '15. Understands difference b/w hard game and soft game and knows when to use it',
         options: ratings,
         required: true,
         order: 15,
@@ -146,7 +146,7 @@ export class FormfieldLevel40Service {
       new FormField<string>({
         controlType: 'dropdown',
         key: 'skill40-11',
-        label: '16. Solid understanding of stacking and when and how it can be used effectively',
+        label: '16. Basic knowledge of stacking and knows when to use it',
         options: ratings,
         required: true,
         order: 16,
@@ -154,7 +154,7 @@ export class FormfieldLevel40Service {
       new FormField<string>({
         controlType: 'dropdown',
         key: 'skill40-11',
-        label: '17. Demonstrates ability to change position in an offensive manner (switching)',
+        label: '17. Able to sustain short rallies',
         options: ratings,
         required: true,
         order: 17,
@@ -162,42 +162,10 @@ export class FormfieldLevel40Service {
       new FormField<string>({
         controlType: 'dropdown',
         key: 'skill40-11',
-        label: '18. Demonstrates a broad knowledge of the rules of the game',
+        label: '18. Has good mobility, quickness, and hand-eye coordination',
         options: ratings,
         required: true,
         order: 18,
-      }),
-      new FormField<string>({
-        controlType: 'dropdown',
-        key: 'skill40-11',
-        label: '19. Has a moderate number of unforced errors per game',
-        options: ratings,
-        required: true,
-        order: 19,
-      }),
-      new FormField<string>({
-        controlType: 'dropdown',
-        key: 'skill40-11',
-        label: '20. Can identify opponents’ weaknesses and formulate plan to attack weaknesses',
-        options: ratings,
-        required: true,
-        order: 20,
-      }),
-      new FormField<string>({
-        controlType: 'dropdown',
-        key: 'skill40-11',
-        label: '21. Plays competitively in tournaments',
-        options: ratings,
-        required: true,
-        order: 21,
-      }),
-      new FormField<string>({
-        controlType: 'dropdown',
-        key: 'skill40-11',
-        label: '22. Has good mobility / quickness / hand-eye coordination',
-        options: ratings,
-        required: true,
-        order: 22,
       }),
     ];
 

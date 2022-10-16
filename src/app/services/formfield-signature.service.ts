@@ -13,7 +13,7 @@ export class FormfieldSignatureService {
       new FormField<string>({
         controlType: 'textarea',
         key: 'message',
-        label: 'Additional Information (link to match on Youtube, recent tournaments, etc.',
+        label: 'Comments/Notes',
         type: 'textarea',
         order: 1,
       }),

@@ -6,4 +6,10 @@ import { environment } from '@env/environment';
 export class Constants {
   public readonly Api_Endpoint: string = environment.Api_Endpoint;
   public readonly Api_Mock_Endpoint: string = environment.Api_Mock_Endpoint;
+  public readonly Ratings: { key: string; value: string }[] = [
+    { key: '0', value: '0 - Not observed or not able to execute' },
+    { key: '1', value: '1 - Attempted but very poorly executed/needs work' },
+    { key: '2', value: '2 - Good basic form, but needs work' },
+    { key: '3', value: '3 - Solid, consistent performance' },
+  ];
 }

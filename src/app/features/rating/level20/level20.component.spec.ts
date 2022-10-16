@@ -3,20 +3,20 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { Level35Component } from './level35.component';
+import { Level20Component } from './level20.component';
 
-describe('Level35Component', () => {
-  let component: Level35Component;
-  let fixture: ComponentFixture<Level35Component>;
+describe('Level20Component', () => {
+  let component: Level20Component;
+  let fixture: ComponentFixture<Level20Component>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [Level35Component],
+      declarations: [Level20Component],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Level35Component);
+    fixture = TestBed.createComponent(Level20Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
