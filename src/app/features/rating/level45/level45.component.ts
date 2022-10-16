@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormField } from '../../../@shared/models/form-field';
 import { FormfieldGeneralService } from '../../../services/formfield-general.service';
-import { FormfieldLevel35Service } from '../../../services/formfield-level35.service';
+import { FormfieldLevel45Service } from '../../../services/formfield-level45.service';
 import { FormfieldSignatureService } from '../../../services/formfield-signature.service';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-level35',
-  templateUrl: './level35.component.html',
-  styleUrls: ['./level35.component.css'],
+  selector: 'app-level45',
+  templateUrl: './level45.component.html',
+  styleUrls: ['./level45.component.css'],
 })
-export class Level35Component implements OnInit {
+export class Level45Component implements OnInit {
   formGeneralFields: Observable<FormField<any>[]>;
   formSignatureFields: Observable<FormField<any>[]>;
   formSkillAssessmentFields: Observable<FormField<any>[]>;
@@ -18,7 +18,7 @@ export class Level35Component implements OnInit {
   constructor(
     serviceGeneral: FormfieldGeneralService,
     serviceSignature: FormfieldSignatureService,
-    serviceSkillAssessment: FormfieldLevel35Service
+    serviceSkillAssessment: FormfieldLevel45Service
   ) {
     this.formGeneralFields = serviceGeneral.getFormFields();
     this.formSignatureFields = serviceSignature.getFormFields();

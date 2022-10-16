@@ -1,50 +1,44 @@
-<div>
-  <form (ngSubmit)="onSubmit()" [formGroup]="form">
-    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-      <ngb-panel>
-        <ng-template ngbPanelTitle>
-          <h4>Section 1 - General Information</h4>
-        </ng-template>
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+    <ngb-panel>
+      <ng-template ngbPanelTitle>
+        <h5>Section 1 - General Information</h5>
+      </ng-template>
 
-        <ng-template ngbPanelContent>
-          <div *ngFor="let formField of formGeneralFields" class="form-group">
-            <app-dynamic-form-input [input]="formField" [form]="form"></app-dynamic-form-input>
-          </div>
-        </ng-template>
-      </ngb-panel>
+      <ng-template ngbPanelContent>
+        <div *ngFor="let formField of formGeneralFields" class="form-group">
+          <app-dynamic-form-input [input]="formField" [form]="form"></app-dynamic-form-input>
+        </div>
+      </ng-template>
+    </ngb-panel>
 
-      <ngb-panel>
-        <ng-template ngbPanelTitle>
-          <h4>Section 2 - Skill Assessment</h4>
-        </ng-template>
+    <ngb-panel>
+      <ng-template ngbPanelTitle>
+        <h5>Section 2 - Skill Rating</h5>
+      </ng-template>
 
-        <ng-template ngbPanelContent>
-          <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            This section is to be filled out by the rating team (ex. coach, experienced players). Notice that the 3.5
-            skill level should also possess all 3.0 Skills
-          </div>
-          <div *ngFor="let formField of formSkillAssessmentFields" class="form-group">
-            <app-dynamic-form-input [input]="formField" [form]="form"></app-dynamic-form-input>
-          </div>
-        </ng-template>
-      </ngb-panel>
+      <ng-template ngbPanelContent>
+        <div *ngFor="let formField of formSkillAssessmentFields" class="form-group">
+          <app-dynamic-form-input [input]="formField" [form]="form"></app-dynamic-form-input>
+        </div>
+      </ng-template>
+    </ngb-panel>
 
-      <ngb-panel>
-        <ng-template ngbPanelTitle>
-          <h4 class="text-left">Section 3 - Signatures</h4>
-        </ng-template>
-        <ng-template ngbPanelContent>
-          <div *ngFor="let formField of formSignatureFields" class="form-group">
-            <app-dynamic-form-input [input]="formField" [form]="form"></app-dynamic-form-input>
-          </div>
+    <ngb-panel>
+      <ng-template ngbPanelTitle>
+        <h5 class="text-left">Section 3 - Summary</h5>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <div *ngFor="let formField of formSignatureFields" class="form-group">
+          <app-dynamic-form-input [input]="formField" [form]="form"></app-dynamic-form-input>
+        </div>
 
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save</button>
-          </div>
-        </ng-template>
-      </ngb-panel>
-    </ngb-accordion>
-  </form>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save</button>
+        </div>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+</form>
 
-  <div *ngIf="payLoad" class="form-group"><strong>Here's the payload</strong><br />{{ payLoad }}</div>
-</div>
+<div *ngIf="payLoad" class="form-group"><strong>Here's the payload</strong><br />{{ payLoad }}</div>
