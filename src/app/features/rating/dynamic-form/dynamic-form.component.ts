@@ -18,7 +18,8 @@ export class DynamicFormComponent implements OnInit {
   constructor(private formfieldService: FormfieldControlService) {}
 
   ngOnInit(): void {
-    var formFields = this.formSkillAssessmentFields.concat(this.formGeneralFields);
+    var formFields = this.formSkillAssessmentFields.concat(this.formGeneralFields).concat(this.formSignatureFields);
+    //formFields = this.formSkillAssessmentFields.concat(this.formGeneralFields);
     // this.form = this.formfieldService.toFormGroup(this.formSkillAssessmentFields);
     // this.form = this.formfieldService.toFormGroup(this.formGeneralFields);
     this.form = this.formfieldService.toFormGroup(formFields);
