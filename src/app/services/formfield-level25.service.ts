@@ -113,7 +113,7 @@ export class FormfieldLevel25Service {
       new FormField<string>({
         controlType: 'dropdown',
         key: 'skill25-12',
-        label: '12. Has good hand-eye coordination *',
+        label: '12. Has good hand-eye coordination',
         options: ratings,
         required: true,
         order: 12,

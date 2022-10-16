@@ -15,7 +15,7 @@ export class FormfieldLevel35Service {
     const inputs: FormField<string>[] = [
       new FormField<string>({
         controlType: 'dropdown',
-        key: 'skill40-1',
+        key: 'skill35-1',
         label: '1. Able to use a forehand with moderate level of shot control',
         options: ratings,
         required: true,
@@ -24,7 +24,7 @@ export class FormfieldLevel35Service {
 
       new FormField<string>({
         controlType: 'dropdown',
-        key: 'skill40-2',
+        key: 'skill35-2',
         label: '2. Able to use a backhand with moderate level of shot control',
         options: ratings,
         required: true,
@@ -33,7 +33,7 @@ export class FormfieldLevel35Service {
 
       new FormField<string>({
         controlType: 'dropdown',
-        key: 'skill40-3',
+        key: 'skill35-3',
         label: '3. Consistently gets serve in',
         options: ratings,
         required: true,
@@ -42,7 +42,7 @@ export class FormfieldLevel35Service {
 
       new FormField<string>({
         controlType: 'dropdown',
-        key: 'skill40-4',
+        key: 'skill35-4',
         label: '4. Consistently gets return of serve in',
         options: ratings,
         required: true,
@@ -51,7 +51,7 @@ export class FormfieldLevel35Service {
 
       new FormField<string>({
         controlType: 'dropdown',
-        key: 'skill40-5',
+        key: 'skill35-5',
         label: '5. Able to place serves deep in the court',
         options: ratings,
         required: true,
@@ -60,7 +60,7 @@ export class FormfieldLevel35Service {
 
       new FormField<string>({
         controlType: 'dropdown',
-        key: 'skill40-6',
+        key: 'skill35-6',
         label: '6. Able to place return of serves deep into the court',
         options: ratings,
         required: true,
@@ -69,7 +69,7 @@ export class FormfieldLevel35Service {
 
       new FormField<string>({
         controlType: 'dropdown',
-        key: 'skill40-7',
+        key: 'skill35-7',
         label: '7. Able to dink and sustains medium length rallies',
         options: ratings,
         required: true,
@@ -77,7 +77,7 @@ export class FormfieldLevel35Service {
       }),
       new FormField<string>({
         controlType: 'dropdown',
-        key: 'skill40-8',
+        key: 'skill35-8',
         label: '8. Able to control height/depth of dink shot',
         options: ratings,
         required: true,
@@ -86,7 +86,7 @@ export class FormfieldLevel35Service {
 
       new FormField<string>({
         controlType: 'dropdown',
-        key: 'skill40-9',
+        key: 'skill35-9',
         label: '9. Understands variation of pace of dink shot',
         options: ratings,
         required: true,
@@ -95,7 +95,7 @@ export class FormfieldLevel35Service {
 
       new FormField<string>({
         controlType: 'dropdown',
-        key: 'skill40-10',
+        key: 'skill35-10',
         label: '10. Able to hit a 3rd shot drop to gain advantage to the net',
         options: ratings,
         required: true,
@@ -104,7 +104,7 @@ export class FormfieldLevel35Service {
 
       new FormField<string>({
         controlType: 'dropdown',
-        key: 'skill40-11',
+        key: 'skill35-11',
         label: '11. Able to volley with medium paced shots with control',
         options: ratings,
         required: true,
@@ -113,7 +113,7 @@ export class FormfieldLevel35Service {
 
       new FormField<string>({
         controlType: 'dropdown',
-        key: 'skill40-11',
+        key: 'skill35-11',
         label: '12. Sustains a short volley session at the next with placement and control',
         options: ratings,
         required: true,
@@ -121,7 +121,7 @@ export class FormfieldLevel35Service {
       }),
       new FormField<string>({
         controlType: 'dropdown',
-        key: 'skill40-11',
+        key: 'skill35-11',
         label: '13. Moves quickly to NVZ (non-volley zone) when opportunity is there',
         options: ratings,
         required: true,
@@ -129,7 +129,7 @@ export class FormfieldLevel35Service {
       }),
       new FormField<string>({
         controlType: 'dropdown',
-        key: 'skill40-11',
+        key: 'skill35-11',
         label: '14. Understands proper court position',
         options: ratings,
         required: true,
@@ -137,7 +137,7 @@ export class FormfieldLevel35Service {
       }),
       new FormField<string>({
         controlType: 'dropdown',
-        key: 'skill40-11',
+        key: 'skill35-11',
         label: '15. Understands difference b/w hard game and soft game and knows when to use it',
         options: ratings,
         required: true,
@@ -145,7 +145,7 @@ export class FormfieldLevel35Service {
       }),
       new FormField<string>({
         controlType: 'dropdown',
-        key: 'skill40-11',
+        key: 'skill35-11',
         label: '16. Basic knowledge of stacking and knows when to use it',
         options: ratings,
         required: true,
@@ -153,7 +153,7 @@ export class FormfieldLevel35Service {
       }),
       new FormField<string>({
         controlType: 'dropdown',
-        key: 'skill40-11',
+        key: 'skill35-11',
         label: '17. Able to sustain short rallies',
         options: ratings,
         required: true,
@@ -161,7 +161,7 @@ export class FormfieldLevel35Service {
       }),
       new FormField<string>({
         controlType: 'dropdown',
-        key: 'skill40-11',
+        key: 'skill35-11',
         label: '18. Has good mobility, quickness, and hand-eye coordination',
         options: ratings,
         required: true,
