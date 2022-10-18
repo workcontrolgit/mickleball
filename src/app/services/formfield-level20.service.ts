@@ -2,11 +2,13 @@ import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { FormField } from '@shared/models/form-field';
 import { Constants } from '@app/config/constants';
+import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FormfieldLevel20Service {
+  fields: FormlyFieldConfig[];
   constructor(private constants: Constants) {}
 
   getFormFields() {
@@ -103,5 +105,74 @@ export class FormfieldLevel20Service {
     ];
 
     return of(inputs.sort((a, b) => a.order - b.order));
+  }
+
+  getFields() {
+    var skillRatings = this.constants.SkillRatings;
+    this.fields = [
+      {
+        key: 'marvel1',
+        type: 'select',
+        props: {
+          label: 'Normal Select',
+          options: [
+            { label: 'Iron Man', value: 'iron_man' },
+            { label: 'Captain America', value: 'captain_america' },
+            { label: 'Black Widow', value: 'black_widow' },
+            { label: 'Hulk', value: 'hulk' },
+            { label: 'Captain Marvel', value: 'captain_marvel' },
+          ],
+        },
+      },
+      {
+        key: 'name',
+        type: 'input',
+        templateOptions: {
+          label: 'Name',
+          placeholder: 'Enter name',
+          required: true,
+        },
+      },
+      {
+        key: 'email',
+        type: 'input',
+        hideExpression: '!model.name',
+        templateOptions: {
+          type: 'email',
+          label: 'Email',
+          placeholder: 'Enter email',
+          minLength: 3,
+        },
+      },
+      {
+        key: 'amount',
+        type: 'input',
+        templateOptions: {
+          type: 'number',
+          label: 'Amount',
+          placeholder: 'Enter amount',
+          min: 1,
+          max: 15,
+        },
+      },
+      {
+        key: 'ip',
+        type: 'input',
+        templateOptions: {
+          label: 'IP Address (using custom validation declared in ngModule)',
+          required: true,
+        },
+      },
+      {
+        key: 'terms',
+        type: 'checkbox',
+        templateOptions: {
+          label: 'Accept terms',
+          description: 'Please accept our terms',
+          required: true,
+        },
+      },
+    ];
+    return this.fields;
   }
 }

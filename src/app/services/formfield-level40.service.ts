@@ -194,7 +194,7 @@ export class FormfieldLevel40Service {
       new FormField<string>({
         controlType: 'dropdown',
         key: 'skill40-11',
-        label: '22. Has good mobility / quickness / hand-eye coordination',
+        label: '22. Has good mobility, quickness, and hand-eye coordination',
         options: ratings,
         required: true,
         order: 22,

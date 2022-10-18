@@ -11,4 +11,9 @@
     [formSkillAssessmentFields]="formSkillAssessmentFields | async"
     [formSignatureFields]="formSignatureFields | async"
   ></app-dynamic-form>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+    <button type="submit" class="btn btn-primary submit-button" [disabled]="!form.valid">Submit</button>
+  </form>
 </div>
