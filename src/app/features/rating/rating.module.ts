@@ -14,10 +14,21 @@ import { Level40Component } from './level40/level40.component';
 import { Level45Component } from './level45/level45.component';
 import { Level50Component } from './level50/level50.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, ValidationErrors, FormControl } from '@angular/forms';
 import { DynamicFormInputComponent } from './dynamic-form-input/dynamic-form-input.component';
-import { FormlyModule } from '@ngx-formly/core';
+import { FormlyModule, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+
+export function EmailValidator(control: FormControl | any): ValidationErrors | null {
+  return /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(
+    control.value
+  )
+    ? null
+    : { email: true };
+}
+export function EmailValidatorMessage(err: any, field: FormlyFieldConfig) {
+  return `"${field?.formControl?.value}" is not a valid email address`;
+}
 
 @NgModule({
   declarations: [
@@ -37,7 +48,13 @@ import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
     CommonModule,
     NgbModule,
     ReactiveFormsModule,
-    FormlyModule.forRoot(),
+    FormlyModule.forRoot({
+      validationMessages: [
+        { name: 'required', message: 'This field is required' },
+        { name: 'email', message: EmailValidatorMessage },
+      ],
+      validators: [{ name: 'email', validation: EmailValidator }],
+    }),
     FormlyBootstrapModule, // must be imported as the last module as it contains the fallback route
     RatingRoutingModule,
   ],
