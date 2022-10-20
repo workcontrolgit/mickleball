@@ -84,7 +84,7 @@ export class FormfieldControlService {
       type: 'textarea',
       props: {
         label: 'Comments',
-        placeholder: 'Share your Pickleball experiences here',
+        placeholder: 'Enter any notes about the assessment here',
         rows: 5,
       },
     },

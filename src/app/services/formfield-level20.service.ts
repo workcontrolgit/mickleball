@@ -4,13 +4,6 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 import { ValidationErrors, FormControl } from '@angular/forms';
 import { FormfieldControlService } from '@app/services/formfield-control.service';
 
-export function EmailValidator(control: FormControl | any): ValidationErrors | null {
-  return /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(
-    control.value
-  )
-    ? null
-    : { email: true };
-}
 @Injectable({
   providedIn: 'root',
 })

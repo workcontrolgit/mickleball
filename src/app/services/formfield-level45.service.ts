@@ -1,185 +1,226 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
-import { FormField } from '../@shared/models/form-field';
-import { Constants } from '@app/config/constants';
+import { FormlyFieldConfig } from '@ngx-formly/core';
+import { FormfieldControlService } from '@app/services/formfield-control.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FormfieldLevel45Service {
-  constructor(private constants: Constants) {}
+  generalFields: FormlyFieldConfig[];
+  ratingFields: FormlyFieldConfig[];
+  summaryFields: FormlyFieldConfig[];
+  fields: FormlyFieldConfig[];
+  constructor(private formfieldControlService: FormfieldControlService) {}
 
   getFormFields() {
-    var ratings = this.constants.Ratings;
+    var skillRatings = this.formfieldControlService.SkillRatings;
 
-    const inputs: FormField<string>[] = [
-      new FormField<string>({
-        controlType: 'dropdown',
+    this.generalFields = this.formfieldControlService.GeneralFields;
+
+    this.summaryFields = this.formfieldControlService.SummaryFields;
+
+    this.ratingFields = [
+      {
+        className: 'section-label',
+        template:
+          '<div class="alert alert-success"><h4>Section 2 - Skill Rating</h4><strong>4.5 Skill Level should ALSO possess all 4.0 Skills</strong></div>',
+      },
+      {
         key: 'skill45-1',
-        label: '1. Consistently controls and places serves and return of serves',
-        options: ratings,
-        required: true,
-        order: 1,
-      }),
-
-      new FormField<string>({
-        controlType: 'dropdown',
+        type: 'select',
+        props: {
+          label: '1. Consistently controls and places serves and return of serves',
+          options: skillRatings,
+          required: true,
+          placeholder: 'Select from list',
+        },
+      },
+      {
         key: 'skill45-2',
-        label: '2. Serves with power accuracy and depth and can vary speed and spin of serve',
-        options: ratings,
-        required: true,
-        order: 2,
-      }),
-
-      new FormField<string>({
-        controlType: 'dropdown',
+        type: 'select',
+        props: {
+          label: '2. Serves with power accuracy and depth and can vary speed and spin of serve',
+          options: skillRatings,
+          required: true,
+          placeholder: 'Select from list',
+        },
+      },
+      {
         key: 'skill45-3',
-        label:
-          '3. Consistent and dependable forehand groundstroke using pace and depth to generate opponent’s error to set up next shot',
-        options: ratings,
-        required: true,
-        order: 3,
-      }),
-
-      new FormField<string>({
-        controlType: 'dropdown',
+        type: 'select',
+        props: {
+          label:
+            '3. Consistent and dependable forehand groundstroke using pace and depth to generate opponent’s error to set up next shot',
+          options: skillRatings,
+          required: true,
+          placeholder: 'Select from list',
+        },
+      },
+      {
         key: 'skill45-4',
-        label: '4. Can effectively/consistently direct the ball with the backhand, varying depth and pace',
-        options: ratings,
-        required: true,
-        order: 4,
-      }),
-
-      new FormField<string>({
-        controlType: 'dropdown',
+        type: 'select',
+        props: {
+          label: '4. Can effectively/consistently direct the ball with the backhand, varying depth and pace',
+          options: skillRatings,
+          required: true,
+          placeholder: 'Select from list',
+        },
+      },
+      {
         key: 'skill45-5',
-        label:
-          '5. Ability to place dink with high success at changing shot types while playing both consistently and with offensive intent',
-        options: ratings,
-        required: true,
-        order: 5,
-      }),
-
-      new FormField<string>({
-        controlType: 'dropdown',
+        type: 'select',
+        props: {
+          label:
+            '5. Ability to place dink with high success at changing shot types while playing both consistently and with offensive intent',
+          options: skillRatings,
+          required: true,
+          placeholder: 'Select from list',
+        },
+      },
+      {
         key: 'skill45-6',
-        label: '6. Recognizes and attempts to hit attackable dinks',
-        options: ratings,
-        required: true,
-        order: 6,
-      }),
-
-      new FormField<string>({
-        controlType: 'dropdown',
+        type: 'select',
+        props: {
+          label: '6. Recognizes and attempts to hit attackable dinks',
+          options: skillRatings,
+          required: true,
+          placeholder: 'Select from list',
+        },
+      },
+      {
         key: 'skill45-7',
-        label: '7. Consistently executes effective 3rd shot strategies that are not easily returned',
-        options: ratings,
-        required: true,
-        order: 7,
-      }),
-      new FormField<string>({
-        controlType: 'dropdown',
+        type: 'select',
+        props: {
+          label: '7. Consistently executes effective 3rd shot strategies that are not easily returned',
+          options: skillRatings,
+          required: true,
+          placeholder: 'Select from list',
+        },
+      },
+      {
         key: 'skill45-8',
-        label: '8. Able to intentionally and consistently place the 3rd shot drop',
-        options: ratings,
-        required: true,
-        order: 8,
-      }),
-
-      new FormField<string>({
-        controlType: 'dropdown',
+        type: 'select',
+        props: {
+          label: '8. Able to intentionally and consistently place the 3rd shot drop',
+          options: skillRatings,
+          required: true,
+          placeholder: 'Select from list',
+        },
+      },
+      {
         key: 'skill45-9',
-        label: '9. Able to block hard volleys directed at them and consistently drop them in NVZ',
-        options: ratings,
-        required: true,
-        order: 9,
-      }),
-
-      new FormField<string>({
-        controlType: 'dropdown',
+        type: 'select',
+        props: {
+          label: '9. Able to block hard volleys directed at them and consistently drop them in NVZ',
+          options: skillRatings,
+          required: true,
+          placeholder: 'Select from list',
+        },
+      },
+      {
         key: 'skill45-10',
-        label: '10. Comfortable hitting swinging volleys and hits overhead shots consistently as putaways',
-        options: ratings,
-        required: true,
-        order: 10,
-      }),
-
-      new FormField<string>({
-        controlType: 'dropdown',
+        type: 'select',
+        props: {
+          label: '10. Comfortable hitting swinging volleys and hits overhead shots consistently as putaways',
+          options: skillRatings,
+          required: true,
+          placeholder: 'Select from list',
+        },
+      },
+      {
         key: 'skill45-11',
-        label: '11. Poaches effectively',
-        options: ratings,
-        required: true,
-        order: 11,
-      }),
-
-      new FormField<string>({
-        controlType: 'dropdown',
-        key: 'skill45-11',
-        label: '12. Has effective lobs and creates coverage gaps and hits to these gaps consistently',
-        options: ratings,
-        required: true,
-        order: 12,
-      }),
-      new FormField<string>({
-        controlType: 'dropdown',
-        key: 'skill45-11',
-        label: '13. Has good footwork and moves laterally, forward and backward well',
-        options: ratings,
-        required: true,
-        order: 13,
-      }),
-      new FormField<string>({
-        controlType: 'dropdown',
-        key: 'skill45-11',
-        label: '14. Very comfortable playing at the NVZ',
-        options: ratings,
-        required: true,
-        order: 14,
-      }),
-      new FormField<string>({
-        controlType: 'dropdown',
-        key: 'skill45-11',
-        label: '15. Communicates and moves well with partner – easily “stacks” court positions',
-        options: ratings,
-        required: true,
-        order: 15,
-      }),
-      new FormField<string>({
-        controlType: 'dropdown',
-        key: 'skill45-11',
-        label:
-          '16. Understands strategy and can adjusts style of play and game plan according to the opponent’s strengths and weaknesses and court position',
-        options: ratings,
-        required: true,
-        order: 16,
-      }),
-      new FormField<string>({
-        controlType: 'dropdown',
-        key: 'skill45-11',
-        label: '17. Limited number of unforced errors',
-        options: ratings,
-        required: true,
-        order: 17,
-      }),
-      new FormField<string>({
-        controlType: 'dropdown',
-        key: 'skill45-11',
-        label: '18. Has good mobility and quickness',
-        options: ratings,
-        required: true,
-        order: 18,
-      }),
-      new FormField<string>({
-        controlType: 'dropdown',
-        key: 'skill45-11',
-        label: '19. Has good hand-eye coordination',
-        options: ratings,
-        required: true,
-        order: 19,
-      }),
+        type: 'select',
+        props: {
+          label: '11. Poaches effectively',
+          options: skillRatings,
+          required: true,
+          placeholder: 'Select from list',
+        },
+      },
+      {
+        key: 'skill45-12',
+        type: 'select',
+        props: {
+          label: '12. Has effective lobs and creates coverage gaps and hits to these gaps consistently',
+          options: skillRatings,
+          required: true,
+          placeholder: 'Select from list',
+        },
+      },
+      {
+        key: 'skill45-13',
+        type: 'select',
+        props: {
+          label: '13. Has good footwork and moves laterally, forward and backward well',
+          options: skillRatings,
+          required: true,
+          placeholder: 'Select from list',
+        },
+      },
+      {
+        key: 'skill45-14',
+        type: 'select',
+        props: {
+          label: '14. Very comfortable playing at the NVZ',
+          options: skillRatings,
+          required: true,
+          placeholder: 'Select from list',
+        },
+      },
+      {
+        key: 'skill45-15',
+        type: 'select',
+        props: {
+          label: '15. Communicates and moves well with partner – easily “stacks” court positions',
+          options: skillRatings,
+          required: true,
+          placeholder: 'Select from list',
+        },
+      },
+      {
+        key: 'skill45-16',
+        type: 'select',
+        props: {
+          label:
+            '16. Understands strategy and can adjusts style of play and game plan according to the opponent’s strengths and weaknesses and court position',
+          options: skillRatings,
+          required: true,
+          placeholder: 'Select from list',
+        },
+      },
+      {
+        key: 'skill45-17',
+        type: 'select',
+        props: {
+          label: '17. Limited number of unforced errors',
+          options: skillRatings,
+          required: true,
+          placeholder: 'Select from list',
+        },
+      },
+      {
+        key: 'skill45-18',
+        type: 'select',
+        props: {
+          label: '18. Has good mobility and quickness',
+          options: skillRatings,
+          required: true,
+          placeholder: 'Select from list',
+        },
+      },
+      {
+        key: 'skill45-19',
+        type: 'select',
+        props: {
+          label: '19. Has good hand-eye coordination',
+          options: skillRatings,
+          required: true,
+          placeholder: 'Select from list',
+        },
+      },
     ];
+    this.fields = this.generalFields.concat(this.ratingFields).concat(this.summaryFields);
 
-    return of(inputs.sort((a, b) => a.order - b.order));
+    return this.fields;
   }
 }
