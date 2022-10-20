@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormField } from '../../../@shared/models/form-field';
-import { FormfieldGeneralService } from '../../../services/formfield-general.service';
 import { FormfieldLevel30Service } from '../../../services/formfield-level30.service';
-import { FormfieldSignatureService } from '../../../services/formfield-signature.service';
-import { Observable } from 'rxjs';
+
+import { FormGroup } from '@angular/forms';
+import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 
 @Component({
   selector: 'app-level30',
@@ -11,19 +10,19 @@ import { Observable } from 'rxjs';
   styleUrls: ['./level30.component.css'],
 })
 export class Level30Component implements OnInit {
-  formGeneralFields: Observable<FormField<any>[]>;
-  formSignatureFields: Observable<FormField<any>[]>;
-  formSkillAssessmentFields: Observable<FormField<any>[]>;
+  // ngx formly
+  form = new FormGroup({});
+  model = {};
+  options: FormlyFormOptions = {};
+  fields: FormlyFieldConfig[];
 
-  constructor(
-    serviceGeneral: FormfieldGeneralService,
-    serviceSignature: FormfieldSignatureService,
-    serviceSkillAssessment: FormfieldLevel30Service
-  ) {
-    this.formGeneralFields = serviceGeneral.getFormFields();
-    this.formSignatureFields = serviceSignature.getFormFields();
-    this.formSkillAssessmentFields = serviceSkillAssessment.getFormFields();
+  constructor(serviceFormFields: FormfieldLevel30Service) {
+    this.fields = serviceFormFields.getFormFields();
   }
 
   ngOnInit() {}
+
+  submit() {
+    alert(JSON.stringify(this.model));
+  }
 }

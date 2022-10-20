@@ -23,13 +23,13 @@ const routes: Routes = [
     path: 'level20',
     component: Level20Component,
     //canActivate: [AuthGuard],
-    data: { title: marker('Skill Assessment for 3.0 Players') },
+    data: { title: marker('Skill Assessment for 2.0 Players') },
   },
   {
     path: 'level25',
     component: Level25Component,
     //canActivate: [AuthGuard],
-    data: { title: marker('Skill Assessment for 3.0 Players') },
+    data: { title: marker('Skill Assessment for 2.5 Players') },
   },
   {
     path: 'level30',
