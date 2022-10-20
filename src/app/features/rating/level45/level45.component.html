@@ -2,15 +2,10 @@
   <!-- HTML form mark up -->
   <h3 class="text-secondary">Level 4.5 Skill Assessment</h3>
 
-  <h6>Instructions</h6>
-  <ul>
-    <li>Expand and complete Section 1, 2 and 3.</li>
-    <li>4.5 Skill Level should ALSO possess all 4.0 Skills.</li>
-  </ul>
+  <p>* fields are required.</p>
 
-  <app-dynamic-form
-    [formGeneralFields]="formGeneralFields | async"
-    [formSkillAssessmentFields]="formSkillAssessmentFields | async"
-    [formSignatureFields]="formSignatureFields | async"
-  ></app-dynamic-form>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+    <button type="submit" class="btn btn-primary submit-button" [disabled]="!form.valid">Save</button>
+  </form>
 </div>

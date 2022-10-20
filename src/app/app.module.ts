@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranslateModule } from '@ngx-translate/core';
@@ -17,12 +17,20 @@ import { FallbackComponent } from './fallback.component';
 import { ShouldLoginComponent } from './should-login.component';
 
 import { NgHttpLoaderModule } from 'ng-http-loader';
+
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+
 @NgModule({
   imports: [
     BrowserModule,
     ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production }),
     FormsModule,
+    FormlyBootstrapModule,
     HttpClientModule,
+    FormlyModule.forRoot({
+      validationMessages: [{ name: 'required', message: 'This field is required' }],
+    }),
     TranslateModule.forRoot(),
     NgHttpLoaderModule.forRoot(),
     NgbModule,
@@ -30,7 +38,8 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
     SharedModule,
     ShellModule,
     HomeModule,
-    AppRoutingModule, // must be imported as the last module as it contains the fallback route
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   declarations: [AppComponent, FallbackComponent, ShouldLoginComponent],
   providers: [],
