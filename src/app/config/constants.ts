@@ -12,10 +12,4 @@ export class Constants {
     { key: '2', value: 'Good basic form, but needs work' },
     { key: '3', value: 'Solid, consistent performance' },
   ];
-  public readonly SkillRatings: { label: string; value: string }[] = [
-    { value: '0', label: 'Not observed or not able to execute' },
-    { value: '1', label: 'Attempted but very poorly executed/needs work' },
-    { value: '2', label: 'Good basic form, but needs work' },
-    { value: '3', label: 'Solid, consistent performance' },
-  ];
 }
