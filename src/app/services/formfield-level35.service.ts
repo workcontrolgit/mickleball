@@ -11,14 +11,19 @@ export class FormfieldLevel35Service {
   ratingFields: FormlyFieldConfig[];
   summaryFields: FormlyFieldConfig[];
   fields: FormlyFieldConfig[];
+  selectRatingPlaceholder: string;
+  skillRatings: { label: string; value: string }[];
+
   constructor(private constants: Constants, private formfieldControlService: FormfieldControlService) {}
 
   getFormFields() {
-    var skillRatings = this.formfieldControlService.SkillRatings;
+    this.skillRatings = this.formfieldControlService.SkillRatings;
 
     this.generalFields = this.formfieldControlService.GeneralFields;
 
     this.summaryFields = this.formfieldControlService.SummaryFields;
+
+    this.selectRatingPlaceholder = this.formfieldControlService.SelectRatingPlaceholder;
 
     this.ratingFields = [
       {
@@ -31,7 +36,7 @@ export class FormfieldLevel35Service {
         type: 'select',
         props: {
           label: '1. Able to use a forehand with moderate level of shot control',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -41,7 +46,7 @@ export class FormfieldLevel35Service {
         type: 'select',
         props: {
           label: '2. Able to use a backhand with moderate level of shot control',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -51,7 +56,7 @@ export class FormfieldLevel35Service {
         type: 'select',
         props: {
           label: '3. Consistently gets serve in',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -61,7 +66,7 @@ export class FormfieldLevel35Service {
         type: 'select',
         props: {
           label: '4. Consistently gets return of serve in',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -71,7 +76,7 @@ export class FormfieldLevel35Service {
         type: 'select',
         props: {
           label: '5. Able to place serves deep in the court',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -81,7 +86,7 @@ export class FormfieldLevel35Service {
         type: 'select',
         props: {
           label: '6. Able to place return of serves deep into the court',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -91,7 +96,7 @@ export class FormfieldLevel35Service {
         type: 'select',
         props: {
           label: '7. Able to dink and sustains medium length rallies',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -101,7 +106,7 @@ export class FormfieldLevel35Service {
         type: 'select',
         props: {
           label: '8. Able to control height/depth of dink shot',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -111,7 +116,7 @@ export class FormfieldLevel35Service {
         type: 'select',
         props: {
           label: '9. Understands variation of pace of dink shot',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -121,7 +126,7 @@ export class FormfieldLevel35Service {
         type: 'select',
         props: {
           label: '10. Able to hit a 3rd shot drop to gain advantage to the net',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -131,7 +136,7 @@ export class FormfieldLevel35Service {
         type: 'select',
         props: {
           label: '11. Able to volley with medium paced shots with control',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -141,7 +146,7 @@ export class FormfieldLevel35Service {
         type: 'select',
         props: {
           label: '12. Sustains a short volley session at the next with placement and control',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -151,7 +156,7 @@ export class FormfieldLevel35Service {
         type: 'select',
         props: {
           label: '13. Moves quickly to NVZ (non-volley zone) when opportunity is there',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -161,7 +166,7 @@ export class FormfieldLevel35Service {
         type: 'select',
         props: {
           label: '14. Understands proper court position',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -171,7 +176,7 @@ export class FormfieldLevel35Service {
         type: 'select',
         props: {
           label: '15. Understands difference b/w hard game and soft game and knows when to use it',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -181,7 +186,7 @@ export class FormfieldLevel35Service {
         type: 'select',
         props: {
           label: '16. Basic knowledge of stacking and knows when to use it',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -191,7 +196,7 @@ export class FormfieldLevel35Service {
         type: 'select',
         props: {
           label: '17. Able to sustain short rallies',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -201,7 +206,7 @@ export class FormfieldLevel35Service {
         type: 'select',
         props: {
           label: '18. Has good mobility, quickness, and hand-eye coordination',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },

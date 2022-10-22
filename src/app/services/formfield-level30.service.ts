@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Constants } from '@app/config/constants';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 import { FormfieldControlService } from '@app/services/formfield-control.service';
 
@@ -11,14 +10,19 @@ export class FormfieldLevel30Service {
   ratingFields: FormlyFieldConfig[];
   summaryFields: FormlyFieldConfig[];
   fields: FormlyFieldConfig[];
-  constructor(private constants: Constants, private formfieldControlService: FormfieldControlService) {}
+  selectRatingPlaceholder: string;
+  skillRatings: { label: string; value: string }[];
+
+  constructor(private formfieldControlService: FormfieldControlService) {}
 
   getFormFields() {
-    var skillRatings = this.formfieldControlService.SkillRatings;
+    this.skillRatings = this.formfieldControlService.SkillRatings;
 
     this.generalFields = this.formfieldControlService.GeneralFields;
 
     this.summaryFields = this.formfieldControlService.SummaryFields;
+
+    this.selectRatingPlaceholder = this.formfieldControlService.SelectRatingPlaceholder;
 
     this.ratingFields = [
       {
@@ -31,9 +35,9 @@ export class FormfieldLevel30Service {
         type: 'select',
         props: {
           label: '1. Able to hit a medium paced forehand with direction and consistency',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -41,9 +45,9 @@ export class FormfieldLevel30Service {
         type: 'select',
         props: {
           label: '2. Able to hit a medium paced backhand with direction and consistency',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -51,9 +55,9 @@ export class FormfieldLevel30Service {
         type: 'select',
         props: {
           label: '3. Able to hit a medium paced serve with depth, direction and consistency',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -61,9 +65,9 @@ export class FormfieldLevel30Service {
         type: 'select',
         props: {
           label: '4. Able to consistently sustain a dink rally with control',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -71,9 +75,9 @@ export class FormfieldLevel30Service {
         type: 'select',
         props: {
           label: '5. Able to hit a medium paced 3rd shot with direction',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -81,9 +85,9 @@ export class FormfieldLevel30Service {
         type: 'select',
         props: {
           label: '6. Able to hit a medium paced volley with direction and consistency',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -91,9 +95,9 @@ export class FormfieldLevel30Service {
         type: 'select',
         props: {
           label: '7. Understands the fundamentals of the game',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -101,9 +105,9 @@ export class FormfieldLevel30Service {
         type: 'select',
         props: {
           label: '8. Understands proper court positioning',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -111,9 +115,9 @@ export class FormfieldLevel30Service {
         type: 'select',
         props: {
           label: '9. Understands rules and can keep score',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -121,9 +125,9 @@ export class FormfieldLevel30Service {
         type: 'select',
         props: {
           label: '10. Has good mobility, quickness, and hand-eye coordination',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -131,9 +135,9 @@ export class FormfieldLevel30Service {
         type: 'select',
         props: {
           label: '11. Has started playing in tournaments',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
     ];

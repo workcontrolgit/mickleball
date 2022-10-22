@@ -10,14 +10,19 @@ export class FormfieldLevel40Service {
   ratingFields: FormlyFieldConfig[];
   summaryFields: FormlyFieldConfig[];
   fields: FormlyFieldConfig[];
+  selectRatingPlaceholder: string;
+  skillRatings: { label: string; value: string }[];
+
   constructor(private formfieldControlService: FormfieldControlService) {}
 
   getFormFields() {
-    var skillRatings = this.formfieldControlService.SkillRatings;
+    this.skillRatings = this.formfieldControlService.SkillRatings;
 
     this.generalFields = this.formfieldControlService.GeneralFields;
 
     this.summaryFields = this.formfieldControlService.SummaryFields;
+
+    this.selectRatingPlaceholder = this.formfieldControlService.SelectRatingPlaceholder;
 
     this.ratingFields = [
       {
@@ -30,9 +35,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '1. Consistently hits forehand with depth and control',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -40,9 +45,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '2. Consistently hits backhand with depth and control',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -50,9 +55,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '3. Consistently gets serve in with varying depth and speed',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -60,9 +65,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '4. Consistently gets return of serve in with varying depth and speed',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -70,9 +75,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '5. Consistent and dependable overheads (directional control, depth and placement)',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -80,9 +85,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '6. Accurate in placing lobs',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -90,9 +95,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '7. Able to sustain dink rally with control, height and depth of shot',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -100,9 +105,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '8. Understands which balls are attackable and those that are not in a dink rally',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -110,9 +115,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '9. Sustains a dink exchange with patience at the net to elicit a “put away” shot',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -120,9 +125,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '10. Consistently executes 3rd shot drop from the baseline to approach the net',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -130,9 +135,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '11. Able to change soft shots to power shots to create an advantage',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -140,9 +145,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '12. Able to volley a variety of shots at varying speeds',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -150,9 +155,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '13. Able to block and return fast, hard volleys',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -160,9 +165,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '14. Able to control NVZ (non-volley zone) keeping their opponents back',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -170,9 +175,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '15. Aware of partners position on the court and moves as a team',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -180,9 +185,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '16. Solid understanding of stacking and when and how it can be used effectively',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -190,9 +195,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '17. Demonstrates ability to change position in an offensive manner (switching)',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -200,9 +205,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '18. Demonstrates a broad knowledge of the rules of the game',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -210,9 +215,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '19. Has a moderate number of unforced errors per game',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -220,9 +225,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '20. Can identify opponents’ weaknesses and formulate plan to attack weaknesses',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -230,9 +235,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '21. Plays competitively in tournaments',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -240,9 +245,9 @@ export class FormfieldLevel40Service {
         type: 'select',
         props: {
           label: '22. Has good mobility, quickness, and hand-eye coordination',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
     ];

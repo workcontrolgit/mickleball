@@ -10,14 +10,19 @@ export class FormfieldLevel45Service {
   ratingFields: FormlyFieldConfig[];
   summaryFields: FormlyFieldConfig[];
   fields: FormlyFieldConfig[];
+  selectRatingPlaceholder: string;
+  skillRatings: { label: string; value: string }[];
+
   constructor(private formfieldControlService: FormfieldControlService) {}
 
   getFormFields() {
-    var skillRatings = this.formfieldControlService.SkillRatings;
+    this.skillRatings = this.formfieldControlService.SkillRatings;
 
     this.generalFields = this.formfieldControlService.GeneralFields;
 
     this.summaryFields = this.formfieldControlService.SummaryFields;
+
+    this.selectRatingPlaceholder = this.formfieldControlService.SelectRatingPlaceholder;
 
     this.ratingFields = [
       {
@@ -30,7 +35,7 @@ export class FormfieldLevel45Service {
         type: 'select',
         props: {
           label: '1. Consistently controls and places serves and return of serves',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -40,7 +45,7 @@ export class FormfieldLevel45Service {
         type: 'select',
         props: {
           label: '2. Serves with power accuracy and depth and can vary speed and spin of serve',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -51,7 +56,7 @@ export class FormfieldLevel45Service {
         props: {
           label:
             '3. Consistent and dependable forehand groundstroke using pace and depth to generate opponent’s error to set up next shot',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -61,7 +66,7 @@ export class FormfieldLevel45Service {
         type: 'select',
         props: {
           label: '4. Can effectively/consistently direct the ball with the backhand, varying depth and pace',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -72,7 +77,7 @@ export class FormfieldLevel45Service {
         props: {
           label:
             '5. Ability to place dink with high success at changing shot types while playing both consistently and with offensive intent',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -82,7 +87,7 @@ export class FormfieldLevel45Service {
         type: 'select',
         props: {
           label: '6. Recognizes and attempts to hit attackable dinks',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -92,7 +97,7 @@ export class FormfieldLevel45Service {
         type: 'select',
         props: {
           label: '7. Consistently executes effective 3rd shot strategies that are not easily returned',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -102,7 +107,7 @@ export class FormfieldLevel45Service {
         type: 'select',
         props: {
           label: '8. Able to intentionally and consistently place the 3rd shot drop',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -112,7 +117,7 @@ export class FormfieldLevel45Service {
         type: 'select',
         props: {
           label: '9. Able to block hard volleys directed at them and consistently drop them in NVZ',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -122,7 +127,7 @@ export class FormfieldLevel45Service {
         type: 'select',
         props: {
           label: '10. Comfortable hitting swinging volleys and hits overhead shots consistently as putaways',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -132,7 +137,7 @@ export class FormfieldLevel45Service {
         type: 'select',
         props: {
           label: '11. Poaches effectively',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -142,7 +147,7 @@ export class FormfieldLevel45Service {
         type: 'select',
         props: {
           label: '12. Has effective lobs and creates coverage gaps and hits to these gaps consistently',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -152,7 +157,7 @@ export class FormfieldLevel45Service {
         type: 'select',
         props: {
           label: '13. Has good footwork and moves laterally, forward and backward well',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -162,7 +167,7 @@ export class FormfieldLevel45Service {
         type: 'select',
         props: {
           label: '14. Very comfortable playing at the NVZ',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -172,7 +177,7 @@ export class FormfieldLevel45Service {
         type: 'select',
         props: {
           label: '15. Communicates and moves well with partner – easily “stacks” court positions',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -183,7 +188,7 @@ export class FormfieldLevel45Service {
         props: {
           label:
             '16. Understands strategy and can adjusts style of play and game plan according to the opponent’s strengths and weaknesses and court position',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -193,7 +198,7 @@ export class FormfieldLevel45Service {
         type: 'select',
         props: {
           label: '17. Limited number of unforced errors',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -203,7 +208,7 @@ export class FormfieldLevel45Service {
         type: 'select',
         props: {
           label: '18. Has good mobility and quickness',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
@@ -213,7 +218,7 @@ export class FormfieldLevel45Service {
         type: 'select',
         props: {
           label: '19. Has good hand-eye coordination',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
           placeholder: 'Select from list',
         },
