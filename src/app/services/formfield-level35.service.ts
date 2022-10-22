@@ -38,7 +38,7 @@ export class FormfieldLevel35Service {
           label: '1. Able to use a forehand with moderate level of shot control',
           options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -48,7 +48,7 @@ export class FormfieldLevel35Service {
           label: '2. Able to use a backhand with moderate level of shot control',
           options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -58,7 +58,7 @@ export class FormfieldLevel35Service {
           label: '3. Consistently gets serve in',
           options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -68,7 +68,7 @@ export class FormfieldLevel35Service {
           label: '4. Consistently gets return of serve in',
           options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -78,7 +78,7 @@ export class FormfieldLevel35Service {
           label: '5. Able to place serves deep in the court',
           options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -88,7 +88,7 @@ export class FormfieldLevel35Service {
           label: '6. Able to place return of serves deep into the court',
           options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -98,7 +98,7 @@ export class FormfieldLevel35Service {
           label: '7. Able to dink and sustains medium length rallies',
           options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -108,7 +108,7 @@ export class FormfieldLevel35Service {
           label: '8. Able to control height/depth of dink shot',
           options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -118,7 +118,7 @@ export class FormfieldLevel35Service {
           label: '9. Understands variation of pace of dink shot',
           options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -128,7 +128,7 @@ export class FormfieldLevel35Service {
           label: '10. Able to hit a 3rd shot drop to gain advantage to the net',
           options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -138,7 +138,7 @@ export class FormfieldLevel35Service {
           label: '11. Able to volley with medium paced shots with control',
           options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -148,7 +148,7 @@ export class FormfieldLevel35Service {
           label: '12. Sustains a short volley session at the next with placement and control',
           options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -158,7 +158,7 @@ export class FormfieldLevel35Service {
           label: '13. Moves quickly to NVZ (non-volley zone) when opportunity is there',
           options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -168,7 +168,7 @@ export class FormfieldLevel35Service {
           label: '14. Understands proper court position',
           options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -178,7 +178,7 @@ export class FormfieldLevel35Service {
           label: '15. Understands difference b/w hard game and soft game and knows when to use it',
           options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -188,7 +188,7 @@ export class FormfieldLevel35Service {
           label: '16. Basic knowledge of stacking and knows when to use it',
           options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -198,7 +198,7 @@ export class FormfieldLevel35Service {
           label: '17. Able to sustain short rallies',
           options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -208,7 +208,7 @@ export class FormfieldLevel35Service {
           label: '18. Has good mobility, quickness, and hand-eye coordination',
           options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
     ];
