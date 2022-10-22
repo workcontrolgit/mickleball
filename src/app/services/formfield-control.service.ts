@@ -28,11 +28,13 @@ export class FormfieldControlService {
     return new FormGroup(group);
   }
 
+  public readonly SelectRatingPlaceholder: string = 'Select a grade';
+
   public readonly SkillRatings: { label: string; value: string }[] = [
-    { value: '0', label: 'Not observed or not able to execute' },
-    { value: '1', label: 'Attempted but very poorly executed/needs work' },
-    { value: '2', label: 'Good basic form, but needs work' },
-    { value: '3', label: 'Solid, consistent performance' },
+    { value: 'A', label: 'A - Solid, consistent performance' },
+    { value: 'B', label: 'B - Good basic form, but needs work' },
+    { value: 'C', label: 'C - Attempted but very poorly executed/needs work' },
+    { value: 'D', label: 'D - Not observed or not able to execute' },
   ];
 
   public readonly GeneralFields: FormlyFieldConfig[] = [

@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Constants } from '@app/config/constants';
 import { FormlyFieldConfig } from '@ngx-formly/core';
-import { ValidationErrors, FormControl } from '@angular/forms';
 import { FormfieldControlService } from '@app/services/formfield-control.service';
 
 @Injectable({
@@ -12,14 +10,19 @@ export class FormfieldLevel20Service {
   ratingFields: FormlyFieldConfig[];
   summaryFields: FormlyFieldConfig[];
   fields: FormlyFieldConfig[];
-  constructor(private constants: Constants, private formfieldControlService: FormfieldControlService) {}
+  selectRatingPlaceholder: string;
+  skillRatings: { label: string; value: string }[];
+
+  constructor(private formfieldControlService: FormfieldControlService) {}
 
   getFormFields() {
-    var skillRatings = this.formfieldControlService.SkillRatings;
+    this.skillRatings = this.formfieldControlService.SkillRatings;
 
     this.generalFields = this.formfieldControlService.GeneralFields;
 
     this.summaryFields = this.formfieldControlService.SummaryFields;
+
+    this.selectRatingPlaceholder = this.formfieldControlService.SelectRatingPlaceholder;
 
     this.ratingFields = [
       {
@@ -31,9 +34,9 @@ export class FormfieldLevel20Service {
         type: 'select',
         props: {
           label: '1. Minimal understanding of the basic rules of the game i.e. 2 bounce rule',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -41,9 +44,9 @@ export class FormfieldLevel20Service {
         type: 'select',
         props: {
           label: '2. Knows how to keep score',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -51,9 +54,9 @@ export class FormfieldLevel20Service {
         type: 'select',
         props: {
           label: '3. Demonstrates a forehand',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -61,9 +64,9 @@ export class FormfieldLevel20Service {
         type: 'select',
         props: {
           label: '4. Demonstrates a backhand',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -71,9 +74,9 @@ export class FormfieldLevel20Service {
         type: 'select',
         props: {
           label: '5. Demonstrates a volley',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -81,9 +84,9 @@ export class FormfieldLevel20Service {
         type: 'select',
         props: {
           label: '6. Accurately places serve into the correct square',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -91,9 +94,9 @@ export class FormfieldLevel20Service {
         type: 'select',
         props: {
           label: '7. Knows where to stand when serving and returning serve',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -101,9 +104,9 @@ export class FormfieldLevel20Service {
         type: 'select',
         props: {
           label: '8. Has good mobility moving in a safe and balanced manner',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
       {
@@ -111,9 +114,9 @@ export class FormfieldLevel20Service {
         type: 'select',
         props: {
           label: '9. Has good quickness',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
 
@@ -122,9 +125,9 @@ export class FormfieldLevel20Service {
         type: 'select',
         props: {
           label: '10. Has good hand-eye coordination',
-          options: skillRatings,
+          options: this.skillRatings,
           required: true,
-          placeholder: 'Select from list',
+          placeholder: this.selectRatingPlaceholder,
         },
       },
     ];
