@@ -22,8 +22,8 @@ export class Level40Component implements OnInit {
   options: FormlyFormOptions = {};
   fields: FormlyFieldConfig[];
 
-  public show: boolean = true;
-  public buttonName: any = 'Hide';
+  public show: boolean = false;
+  public buttonName: any = 'View Report Card';
 
   constructor(serviceFormFields: FormfieldLevel40Service, private router: Router) {
     this.fields = serviceFormFields.getFormFields();
@@ -35,28 +35,28 @@ export class Level40Component implements OnInit {
       playername: 'Fuji Nguyen',
       playeremail: 'fuji.nguyen@workcontrol.com',
       assessmentDate: '2022-10-24',
-      'skill-1': 'A',
-      'skill40-2': 'A',
-      'skill40-3': 'A',
-      'skill40-4': 'A',
-      'skill40-5': 'A',
-      'skill40-6': 'A',
-      'skill40-7': 'A',
-      'skill40-8': 'A',
-      'skill40-9': 'A',
-      'skill40-10': 'A',
-      'skill40-11': 'A',
-      'skill40-12': 'D',
-      'skill40-13': 'A',
-      'skill40-14': 'B',
-      'skill40-15': 'A',
-      'skill40-16': 'A',
-      'skill40-17': 'A',
-      'skill40-18': 'A',
-      'skill40-19': 'B',
-      'skill40-20': 'A',
-      'skill40-21': 'A',
-      'skill40-22': 'C',
+      '40-1': 'D',
+      '40-2': 'A',
+      '40-3': 'A',
+      '40-4': 'A',
+      '40-5': 'A',
+      '40-6': 'A',
+      '40-7': 'A',
+      '40-8': 'A',
+      '40-9': 'A',
+      '40-10': 'A',
+      '40-11': 'A',
+      '40-12': 'D',
+      '40-13': 'A',
+      '40-14': 'B',
+      '40-15': 'A',
+      '40-16': 'A',
+      '40-17': 'A',
+      '40-18': 'A',
+      '40-19': 'B',
+      '40-20': 'A',
+      '40-21': 'A',
+      '40-22': 'C',
       evaluatorname: 'Emily Nguyen',
       evaluatoremail: 'emily@gmail.com',
       Notes: 'Lefty user',

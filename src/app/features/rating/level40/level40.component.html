@@ -15,15 +15,9 @@
     <app-reportcard [model]="model"></app-reportcard>
   </ng-container>
 
-  <!--
-
-  <ng-template #reportcard>
-    <app-reportcard [model]="model"></app-reportcard>
-    <hr>
-
-  </ng-template> -->
-
   <button (click)="toggle()" class="btn btn-primary" [disabled]="!form.valid">
     {{ buttonName }}
   </button>
 </div>
+
+<p>{{ model | json }}</p>

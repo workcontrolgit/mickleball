@@ -1,10 +1,10 @@
 <div class="container-fluid" id="printSection">
   <!-- HTML form mark up -->
-  <h3 class="text-secondary">Pickbleball Report Card</h3>
+  <h3 class="text-secondary">Skill Assessment Report Card</h3>
 
   <div class="container">
     <div class="row row-cols-2">
-      <div class="col" ng-if="!model['level']"><strong>Level:</strong> {{ model['level'] }}</div>
+      <div class="col" ng-if="!model['level']"><strong>Pickleball Level:</strong> {{ model['level'] }}</div>
       <div class="col"><strong>Assessment Date:</strong> {{ model['assessmentDate'] }}</div>
       <div class="col"><strong>Player's Name:</strong> {{ model['playeremail'] }}</div>
       <div class="col"><strong>Player's Email:</strong> {{ model['playeremail'] }}</div>
@@ -16,132 +16,132 @@
   <table class="table table-striped table-hover">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Skill</th>
+        <th scope="col">Skill Code</th>
+        <th scope="col">Description</th>
         <th scope="col">Rating</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <th scope="row">1</th>
+        <th scope="row">40-1</th>
         <td>Consistently hits forehand with depth and control</td>
         <td>
-          <container-element [ngSwitch]="model['skill-1']">
+          <container-element [ngSwitch]="model['40-1']">
             <!-- the same view can be shown in more than one case -->
-            <span *ngSwitchCase="'A'" class="text-success">{{ model['skill-1'] }}</span>
-            <span *ngSwitchCase="'B'" class="text-primary">{{ model['skill-1'] }}</span>
-            <span *ngSwitchCase="'C'" class="text-warning">{{ model['skill-1'] }}</span>
+            <span *ngSwitchCase="'A'" class="text-success">{{ model['40-1'] }}</span>
+            <span *ngSwitchCase="'B'" class="text-primary">{{ model['40-1'] }}</span>
+            <span *ngSwitchCase="'C'" class="text-warning">{{ model['40-1'] }}</span>
             <!--default case when there are no matches -->
-            <span *ngSwitchDefault class="text-danger">{{ model['skill-1'] }}</span>
+            <span *ngSwitchDefault class="text-danger">{{ model['40-1'] }}</span>
           </container-element>
         </td>
       </tr>
       <tr>
-        <th scope="row">2</th>
+        <th scope="row">40-2</th>
         <td>Consistently hits backhand with depth and control</td>
-        <td>{{ model['skill40-2'] }}</td>
+        <td>{{ model['40-2'] }}</td>
       </tr>
       <tr>
-        <th scope="row">3</th>
+        <th scope="row">40-3</th>
         <td>Consistently gets serve in with varying depth and speed</td>
-        <td>{{ model['skill40-3'] }}</td>
+        <td>{{ model['40-3'] }}</td>
       </tr>
       <tr>
-        <th scope="row">4</th>
+        <th scope="row">40-4</th>
         <td>Consistently gets return of serve in with varying depth and speed</td>
-        <td>{{ model['skill40-4'] }}</td>
+        <td>{{ model['40-4'] }}</td>
       </tr>
       <tr>
-        <th scope="row">5</th>
+        <th scope="row">40-5</th>
         <td>Consistent and dependable overheads (directional control, depth and placement)</td>
-        <td>{{ model['skill40-5'] }}</td>
+        <td>{{ model['40-5'] }}</td>
       </tr>
       <tr>
-        <th scope="row">6</th>
+        <th scope="row">40-6</th>
         <td>Accurate in placing lobs</td>
-        <td>{{ model['skill40-6'] }}</td>
+        <td>{{ model['40-6'] }}</td>
       </tr>
       <tr>
-        <th scope="row">7</th>
+        <th scope="row">40-7</th>
         <td>Able to sustain dink rally with control, height and depth of shot</td>
-        <td>{{ model['skill40-7'] }}</td>
+        <td>{{ model['40-7'] }}</td>
       </tr>
       <tr>
-        <th scope="row">8</th>
+        <th scope="row">40-8</th>
         <td>Understands which balls are attackable and those that are not in a dink rally</td>
-        <td>{{ model['skill40-8'] }}</td>
+        <td>{{ model['40-8'] }}</td>
       </tr>
       <tr>
-        <th scope="row">9</th>
+        <th scope="row">40-9</th>
         <td>Sustains a dink exchange with patience at the net to elicit a “put away” shot</td>
-        <td>{{ model['skill40-9'] }}</td>
+        <td>{{ model['40-9'] }}</td>
       </tr>
       <tr>
-        <th scope="row">10</th>
+        <th scope="row">40-10</th>
         <td>Consistently executes 3rd shot drop from the baseline to approach the net</td>
         <td>
-          {{ model['skill40-10'] }}
+          {{ model['40-10'] }}
         </td>
       </tr>
       <tr>
-        <th scope="row">11</th>
+        <th scope="row">40-11</th>
         <td>Able to change soft shots to power shots to create an advantage</td>
-        <td>{{ model['skill40-11'] }}</td>
+        <td>{{ model['40-11'] }}</td>
       </tr>
       <tr>
-        <th scope="row">12</th>
+        <th scope="row">40-12</th>
         <td>Able to volley a variety of shots at varying speeds</td>
-        <td>{{ model['skill40-12'] }}</td>
+        <td>{{ model['40-12'] }}</td>
       </tr>
       <tr>
-        <th scope="row">13</th>
+        <th scope="row">40-13</th>
         <td>Able to block and return fast, hard volleys</td>
-        <td>{{ model['skill40-13'] }}</td>
+        <td>{{ model['40-13'] }}</td>
       </tr>
       <tr>
-        <th scope="row">14</th>
+        <th scope="row">40-14</th>
         <td>Able to control NVZ (non-volley zone) keeping their opponents back</td>
-        <td>{{ model['skill40-14'] }}</td>
+        <td>{{ model['40-14'] }}</td>
       </tr>
       <tr>
-        <th scope="row">15</th>
+        <th scope="row">40-15</th>
         <td>Aware of partners position on the court and moves as a team'</td>
-        <td>{{ model['skill40-15'] }}</td>
+        <td>{{ model['40-15'] }}</td>
       </tr>
       <tr>
-        <th scope="row">16</th>
+        <th scope="row">40-16</th>
         <td>Solid understanding of stacking and when and how it can be used effectively</td>
-        <td>{{ model['skill40-16'] }}</td>
+        <td>{{ model['40-16'] }}</td>
       </tr>
       <tr>
-        <th scope="row">17</th>
+        <th scope="row">40-17</th>
         <td>Demonstrates ability to change position in an offensive manner (switching)</td>
-        <td>{{ model['skill40-17'] }}</td>
+        <td>{{ model['40-17'] }}</td>
       </tr>
       <tr>
-        <th scope="row">18</th>
+        <th scope="row">40-18</th>
         <td>Demonstrates a broad knowledge of the rules of the game</td>
-        <td>{{ model['skill40-18'] }}</td>
+        <td>{{ model['40-18'] }}</td>
       </tr>
       <tr>
-        <th scope="row">19</th>
+        <th scope="row">40-19</th>
         <td>Has a moderate number of unforced errors per game</td>
-        <td>{{ model['skill40-19'] }}</td>
+        <td>{{ model['40-19'] }}</td>
       </tr>
       <tr>
-        <th scope="row">20</th>
+        <th scope="row">40-20</th>
         <td>Can identify opponents’ weaknesses and formulate plan to attack weaknesses</td>
-        <td>{{ model['skill40-20'] }}</td>
+        <td>{{ model['40-20'] }}</td>
       </tr>
       <tr>
-        <th scope="row">21</th>
+        <th scope="row">40-21</th>
         <td>Plays competitively in tournaments</td>
-        <td>{{ model['skill40-21'] }}</td>
+        <td>{{ model['40-21'] }}</td>
       </tr>
       <tr>
-        <th scope="row">22</th>
+        <th scope="row">40-22</th>
         <td>Has good mobility, quickness, and hand-eye coordination</td>
-        <td>{{ model['skill40-22'] }}</td>
+        <td>{{ model['40-22'] }}</td>
       </tr>
     </tbody>
   </table>
@@ -149,7 +149,7 @@
   <strong>Assessment Notes:</strong> {{ model['Notes'] }}
   <hr />
   <ul>
-    <strong>Legend</strong>
+    <strong>Rating Legend</strong>
     <li>A - Solid, consistent performance</li>
     <li>B - Good basic form, but needs work</li>
     <li>C - Attempted but very poorly executed/needs work</li>
