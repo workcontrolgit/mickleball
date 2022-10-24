@@ -2,33 +2,13 @@ import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, ValidatorFn, Validators, ValidationErrors } from '@angular/forms';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 
-import { FormField } from '../@shared/models/form-field';
-
 @Injectable({
   providedIn: 'root',
 })
 export class FormfieldControlService {
   constructor() {}
 
-  toFormGroup(inputs: FormField<string>[]): FormGroup {
-    const group: any = {};
-    inputs.forEach((input) => {
-      let validator: ValidatorFn[] = input.required ? [Validators.required] : [];
-      switch (input.validator) {
-        case 'email':
-          validator.push(Validators.email);
-          break;
-        default:
-          break;
-      }
-      group[input.key] =
-        validator.length > 0 ? new FormControl(input.value || '', validator) : new FormControl(input.value || '');
-    });
-
-    return new FormGroup(group);
-  }
-
-  public readonly SelectRatingPlaceholder: string = 'Select a grade';
+  public readonly SelectRatingPlaceholder: string = 'Select rating';
 
   public readonly SkillRatings: { label: string; value: string }[] = [
     { value: 'A', label: 'A - Solid, consistent performance' },
@@ -43,21 +23,21 @@ export class FormfieldControlService {
       template: '<div class="alert alert-warning"><h4>Section 1 - Player Information</h4></div>',
     },
     {
-      key: 'name',
+      key: 'playername',
       type: 'input',
       templateOptions: {
         label: 'Name',
-        placeholder: 'Enter name',
+        placeholder: 'enter player name',
         required: true,
       },
     },
     {
-      key: 'email',
+      key: 'playeremail',
       type: 'input',
       templateOptions: {
         type: 'email',
         label: 'Email',
-        placeholder: 'Enter email',
+        placeholder: 'enter player email',
         required: true,
       },
       validators: {
@@ -79,14 +59,36 @@ export class FormfieldControlService {
   public readonly SummaryFields: FormlyFieldConfig[] = [
     {
       className: 'section-label',
-      template: '<div class="alert alert-info"><h4>Section 3 - Summary</h4></div>',
+      template: '<div class="alert alert-info"><h4>Section 3 - Evaluator Information</h4></div>',
     },
     {
-      key: 'Comments',
+      key: 'evaluatorname',
+      type: 'input',
+      templateOptions: {
+        label: 'Name',
+        placeholder: 'enter evaluator name',
+        required: true,
+      },
+    },
+    {
+      key: 'evaluatoremail',
+      type: 'input',
+      templateOptions: {
+        type: 'email',
+        label: 'Email',
+        placeholder: 'enter evaluator email',
+        required: true,
+      },
+      validators: {
+        validation: [this.EmailValidator],
+      },
+    },
+    {
+      key: 'Notes',
       type: 'textarea',
       props: {
-        label: 'Comments',
-        placeholder: 'Enter any notes about the assessment here',
+        label: 'Assessment Notes',
+        placeholder: 'enter any notes about the assessment here',
         rows: 5,
       },
     },
@@ -106,5 +108,9 @@ export class FormfieldControlService {
     )
       ? null
       : { email: true };
+  }
+
+  EmailValidatorMessage(err: any, field: FormlyFieldConfig) {
+    return `"${field?.formControl?.value}" is not a valid email address`;
   }
 }

@@ -27,7 +27,7 @@ export class FormfieldLevel20Service {
     this.ratingFields = [
       {
         className: 'section-label',
-        template: '<div class="alert alert-success"><h4>Section 2 - Skill Rating</h4></div>',
+        template: '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4></div>',
       },
       {
         key: 'skill20-1',

@@ -26,12 +26,15 @@ export class FormfieldLevel40Service {
 
     this.ratingFields = [
       {
-        className: 'section-label',
-        template:
-          '<div class="alert alert-success"><h4>Section 2 - Skill Rating</h4><strong>4.0 Skill Level should ALSO possess all 3.5 Skills</strong></div>',
+        key: 'level',
       },
       {
-        key: 'skill40-1',
+        className: 'section-label',
+        template:
+          '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><strong>4.0 Skill Level should ALSO possess all 3.5 Skills</strong></div>',
+      },
+      {
+        key: 'skill-1',
         type: 'select',
         props: {
           label: '1. Consistently hits forehand with depth and control',
