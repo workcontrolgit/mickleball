@@ -26,9 +26,12 @@ export class FormfieldLevel50Service {
 
     this.ratingFields = [
       {
+        key: 'level',
+      },
+      {
         className: 'section-label',
         template:
-          '<div class="alert alert-success"><h4>Section 2 - Skill Rating</h4><strong>5.0 Skill Level should ALSO possess all 4.5 Skills</strong></div>',
+          '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><strong>5.0 Skill Level should ALSO possess all 4.5 Skills</strong></div>',
       },
       {
         key: 'skill50-1',

@@ -8,6 +8,7 @@ import { Level35Component } from './level35/level35.component';
 import { Level40Component } from './level40/level40.component';
 import { Level45Component } from './level45/level45.component';
 import { Level50Component } from './level50/level50.component';
+import { ReportcardComponent } from './reportcard/reportcard.component';
 
 import { marker } from '@biesbjerg/ngx-translate-extract-marker';
 import { AuthGuard } from '@app/@core/auth/auth-guard.service';
@@ -60,6 +61,12 @@ const routes: Routes = [
     component: Level50Component,
     //canActivate: [AuthGuard],
     data: { title: marker('Skill Assessment for 5.0 Players') },
+  },
+  {
+    path: 'reportcard',
+    component: ReportcardComponent,
+    //canActivate: [AuthGuard],
+    data: { title: marker('Skill Assessment Report Card') },
   },
 ];
 
