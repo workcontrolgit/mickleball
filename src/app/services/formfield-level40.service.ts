@@ -34,7 +34,7 @@ export class FormfieldLevel40Service {
           '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><strong>4.0 Skill Level should ALSO possess all 3.5 Skills</strong></div>',
       },
       {
-        key: '40-1',
+        key: 'skillcode40-1',
         type: 'select',
         props: {
           label: '1. Consistently hits forehand with depth and control',
@@ -44,7 +44,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-2',
+        key: 'skillcode40-2',
         type: 'select',
         props: {
           label: '2. Consistently hits backhand with depth and control',
@@ -54,7 +54,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-3',
+        key: 'skillcode40-3',
         type: 'select',
         props: {
           label: '3. Consistently gets serve in with varying depth and speed',
@@ -64,7 +64,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-4',
+        key: 'skillcode40-4',
         type: 'select',
         props: {
           label: '4. Consistently gets return of serve in with varying depth and speed',
@@ -74,7 +74,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-5',
+        key: 'skillcode40-5',
         type: 'select',
         props: {
           label: '5. Consistent and dependable overheads (directional control, depth and placement)',
@@ -84,7 +84,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-6',
+        key: 'skillcode40-6',
         type: 'select',
         props: {
           label: '6. Accurate in placing lobs',
@@ -94,7 +94,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-7',
+        key: 'skillcode40-7',
         type: 'select',
         props: {
           label: '7. Able to sustain dink rally with control, height and depth of shot',
@@ -104,7 +104,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-8',
+        key: 'skillcode40-8',
         type: 'select',
         props: {
           label: '8. Understands which balls are attackable and those that are not in a dink rally',
@@ -114,7 +114,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-9',
+        key: 'skillcode40-9',
         type: 'select',
         props: {
           label: '9. Sustains a dink exchange with patience at the net to elicit a “put away” shot',
@@ -124,7 +124,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-10',
+        key: 'skillcode40-10',
         type: 'select',
         props: {
           label: '10. Consistently executes 3rd shot drop from the baseline to approach the net',
@@ -134,7 +134,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-11',
+        key: 'skillcode40-11',
         type: 'select',
         props: {
           label: '11. Able to change soft shots to power shots to create an advantage',
@@ -144,7 +144,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-12',
+        key: 'skillcode40-12',
         type: 'select',
         props: {
           label: '12. Able to volley a variety of shots at varying speeds',
@@ -154,7 +154,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-13',
+        key: 'skillcode40-13',
         type: 'select',
         props: {
           label: '13. Able to block and return fast, hard volleys',
@@ -164,7 +164,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-14',
+        key: 'skillcode40-14',
         type: 'select',
         props: {
           label: '14. Able to control NVZ (non-volley zone) keeping their opponents back',
@@ -174,7 +174,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-15',
+        key: 'skillcode40-15',
         type: 'select',
         props: {
           label: '15. Aware of partners position on the court and moves as a team',
@@ -184,7 +184,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-16',
+        key: 'skillcode40-16',
         type: 'select',
         props: {
           label: '16. Solid understanding of stacking and when and how it can be used effectively',
@@ -194,7 +194,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-17',
+        key: 'skillcode40-17',
         type: 'select',
         props: {
           label: '17. Demonstrates ability to change position in an offensive manner (switching)',
@@ -204,7 +204,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-18',
+        key: 'skillcode40-18',
         type: 'select',
         props: {
           label: '18. Demonstrates a broad knowledge of the rules of the game',
@@ -214,7 +214,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-19',
+        key: 'skillcode40-19',
         type: 'select',
         props: {
           label: '19. Has a moderate number of unforced errors per game',
@@ -224,7 +224,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-20',
+        key: 'skillcode40-20',
         type: 'select',
         props: {
           label: '20. Can identify opponents’ weaknesses and formulate plan to attack weaknesses',
@@ -234,7 +234,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-21',
+        key: 'skillcode40-21',
         type: 'select',
         props: {
           label: '21. Plays competitively in tournaments',
@@ -244,7 +244,7 @@ export class FormfieldLevel40Service {
         },
       },
       {
-        key: '40-22',
+        key: 'skillcode40-22',
         type: 'select',
         props: {
           label: '22. Has good mobility, quickness, and hand-eye coordination',

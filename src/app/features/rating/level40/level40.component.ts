@@ -14,10 +14,8 @@ import { Router } from '@angular/router';
 export class Level40Component implements OnInit {
   // ngx formly
   form = new FormGroup({});
-  //model = {"level": "4.0"};
-  model = {};
-  level = '4.0';
-  showreportcard: boolean = true;
+  //model = {};
+  model = { level: '4.0' };
 
   options: FormlyFormOptions = {};
   fields: FormlyFieldConfig[];
@@ -30,43 +28,42 @@ export class Level40Component implements OnInit {
   }
 
   ngOnInit() {
-    this.model = {
-      level: '4.0',
-      playername: 'Fuji Nguyen',
-      playeremail: 'fuji.nguyen@workcontrol.com',
-      assessmentDate: '2022-10-24',
-      '40-1': 'D',
-      '40-2': 'A',
-      '40-3': 'A',
-      '40-4': 'A',
-      '40-5': 'A',
-      '40-6': 'A',
-      '40-7': 'A',
-      '40-8': 'A',
-      '40-9': 'A',
-      '40-10': 'A',
-      '40-11': 'A',
-      '40-12': 'D',
-      '40-13': 'A',
-      '40-14': 'B',
-      '40-15': 'A',
-      '40-16': 'A',
-      '40-17': 'A',
-      '40-18': 'A',
-      '40-19': 'B',
-      '40-20': 'A',
-      '40-21': 'A',
-      '40-22': 'C',
-      evaluatorname: 'Emily Nguyen',
-      evaluatoremail: 'emily@gmail.com',
-      Notes: 'Lefty user',
-      terms: true,
-    };
+    // this.model = {
+    //   level: '4.0',
+    //   playername: 'Fuji Nguyen',
+    //   playeremail: 'fuji.nguyen@workcontrol.com',
+    //   assessmentDate: '2022-10-24',
+    //   'skillcode40-1': 'D',
+    //   'skillcode40-2': 'A',
+    //   'skillcode40-3': 'A',
+    //   'skillcode40-4': 'A',
+    //   'skillcode40-5': 'A',
+    //   'skillcode40-6': 'A',
+    //   'skillcode40-7': 'A',
+    //   'skillcode40-8': 'A',
+    //   'skillcode40-9': 'A',
+    //   'skillcode40-10': 'A',
+    //   'skillcode40-11': 'A',
+    //   'skillcode40-12': 'D',
+    //   'skillcode40-13': 'A',
+    //   'skillcode40-14': 'B',
+    //   'skillcode40-15': 'A',
+    //   'skillcode40-16': 'A',
+    //   'skillcode40-17': 'A',
+    //   'skillcode40-18': 'A',
+    //   'skillcode40-19': 'B',
+    //   'skillcode40-20': 'A',
+    //   'skillcode40-21': 'A',
+    //   'skillcode40-22': 'C',
+    //   evaluatorname: 'Emily Nguyen',
+    //   evaluatoremail: 'emily@gmail.com',
+    //   Notes: 'Lefty user',
+    //   terms: true,
+    // };
   }
 
   submit() {
     // alert(JSON.stringify(this.model));
-    this.showreportcard = false;
   }
 
   toggle() {

@@ -6,14 +6,14 @@
     <div class="row row-cols-2">
       <div class="col" ng-if="!model['level']"><strong>Pickleball Level:</strong> {{ model['level'] }}</div>
       <div class="col"><strong>Assessment Date:</strong> {{ model['assessmentDate'] }}</div>
-      <div class="col"><strong>Player's Name:</strong> {{ model['playeremail'] }}</div>
+      <div class="col"><strong>Player's Name:</strong> {{ model.playername }}</div>
       <div class="col"><strong>Player's Email:</strong> {{ model['playeremail'] }}</div>
       <div class="col"><strong>Evaluator's Name:</strong> {{ model['evaluatorname'] }}</div>
       <div class="col"><strong>Evaluator's Email:</strong> {{ model['evaluatoremail'] }}</div>
     </div>
   </div>
 
-  <table class="table table-striped table-hover">
+  <table class="table table-bordered mt-3">
     <thead>
       <tr>
         <th scope="col">Skill Code</th>
@@ -22,126 +22,19 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">40-1</th>
-        <td>Consistently hits forehand with depth and control</td>
+      <tr *ngFor="let skill of myObjArray">
+        <td>{{ skill.Skillcode }}</td>
+        <td>{{ skill.Description }}</td>
         <td>
-          <container-element [ngSwitch]="model['40-1']">
+          <container-element [ngSwitch]="skill.Rating">
             <!-- the same view can be shown in more than one case -->
-            <span *ngSwitchCase="'A'" class="text-success">{{ model['40-1'] }}</span>
-            <span *ngSwitchCase="'B'" class="text-primary">{{ model['40-1'] }}</span>
-            <span *ngSwitchCase="'C'" class="text-warning">{{ model['40-1'] }}</span>
+            <span *ngSwitchCase="'A'" class="text-success">{{ skill.Rating }}</span>
+            <span *ngSwitchCase="'B'" class="text-info">{{ skill.Rating }}</span>
+            <span *ngSwitchCase="'C'" class="text-warning">{{ skill.Rating }}</span>
             <!--default case when there are no matches -->
-            <span *ngSwitchDefault class="text-danger">{{ model['40-1'] }}</span>
+            <span *ngSwitchDefault class="text-danger">{{ skill.Rating }}</span>
           </container-element>
         </td>
-      </tr>
-      <tr>
-        <th scope="row">40-2</th>
-        <td>Consistently hits backhand with depth and control</td>
-        <td>{{ model['40-2'] }}</td>
-      </tr>
-      <tr>
-        <th scope="row">40-3</th>
-        <td>Consistently gets serve in with varying depth and speed</td>
-        <td>{{ model['40-3'] }}</td>
-      </tr>
-      <tr>
-        <th scope="row">40-4</th>
-        <td>Consistently gets return of serve in with varying depth and speed</td>
-        <td>{{ model['40-4'] }}</td>
-      </tr>
-      <tr>
-        <th scope="row">40-5</th>
-        <td>Consistent and dependable overheads (directional control, depth and placement)</td>
-        <td>{{ model['40-5'] }}</td>
-      </tr>
-      <tr>
-        <th scope="row">40-6</th>
-        <td>Accurate in placing lobs</td>
-        <td>{{ model['40-6'] }}</td>
-      </tr>
-      <tr>
-        <th scope="row">40-7</th>
-        <td>Able to sustain dink rally with control, height and depth of shot</td>
-        <td>{{ model['40-7'] }}</td>
-      </tr>
-      <tr>
-        <th scope="row">40-8</th>
-        <td>Understands which balls are attackable and those that are not in a dink rally</td>
-        <td>{{ model['40-8'] }}</td>
-      </tr>
-      <tr>
-        <th scope="row">40-9</th>
-        <td>Sustains a dink exchange with patience at the net to elicit a “put away” shot</td>
-        <td>{{ model['40-9'] }}</td>
-      </tr>
-      <tr>
-        <th scope="row">40-10</th>
-        <td>Consistently executes 3rd shot drop from the baseline to approach the net</td>
-        <td>
-          {{ model['40-10'] }}
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">40-11</th>
-        <td>Able to change soft shots to power shots to create an advantage</td>
-        <td>{{ model['40-11'] }}</td>
-      </tr>
-      <tr>
-        <th scope="row">40-12</th>
-        <td>Able to volley a variety of shots at varying speeds</td>
-        <td>{{ model['40-12'] }}</td>
-      </tr>
-      <tr>
-        <th scope="row">40-13</th>
-        <td>Able to block and return fast, hard volleys</td>
-        <td>{{ model['40-13'] }}</td>
-      </tr>
-      <tr>
-        <th scope="row">40-14</th>
-        <td>Able to control NVZ (non-volley zone) keeping their opponents back</td>
-        <td>{{ model['40-14'] }}</td>
-      </tr>
-      <tr>
-        <th scope="row">40-15</th>
-        <td>Aware of partners position on the court and moves as a team'</td>
-        <td>{{ model['40-15'] }}</td>
-      </tr>
-      <tr>
-        <th scope="row">40-16</th>
-        <td>Solid understanding of stacking and when and how it can be used effectively</td>
-        <td>{{ model['40-16'] }}</td>
-      </tr>
-      <tr>
-        <th scope="row">40-17</th>
-        <td>Demonstrates ability to change position in an offensive manner (switching)</td>
-        <td>{{ model['40-17'] }}</td>
-      </tr>
-      <tr>
-        <th scope="row">40-18</th>
-        <td>Demonstrates a broad knowledge of the rules of the game</td>
-        <td>{{ model['40-18'] }}</td>
-      </tr>
-      <tr>
-        <th scope="row">40-19</th>
-        <td>Has a moderate number of unforced errors per game</td>
-        <td>{{ model['40-19'] }}</td>
-      </tr>
-      <tr>
-        <th scope="row">40-20</th>
-        <td>Can identify opponents’ weaknesses and formulate plan to attack weaknesses</td>
-        <td>{{ model['40-20'] }}</td>
-      </tr>
-      <tr>
-        <th scope="row">40-21</th>
-        <td>Plays competitively in tournaments</td>
-        <td>{{ model['40-21'] }}</td>
-      </tr>
-      <tr>
-        <th scope="row">40-22</th>
-        <td>Has good mobility, quickness, and hand-eye coordination</td>
-        <td>{{ model['40-22'] }}</td>
       </tr>
     </tbody>
   </table>
@@ -150,15 +43,15 @@
   <hr />
   <ul>
     <strong>Rating Legend</strong>
-    <li>A - Solid, consistent performance</li>
-    <li>B - Good basic form, but needs work</li>
-    <li>C - Attempted but very poorly executed/needs work</li>
-    <li>D - Not observed or not able to execute</li>
+    <li class="text-success">A - Solid, consistent performance</li>
+    <li class="text-info">B - Good basic form, but needs work</li>
+    <li class="text-warning">C - Attempted but very poorly executed/needs work</li>
+    <li class="text-danger">D - Not observed or not able to execute</li>
   </ul>
 </div>
 <!-- Directive -->
 <hr />
-<button [print]="['printSection']" class="btn btn-info m-1 print-none">Printer Friendly</button>
+<button [print]="['printSection']" class="btn btn-secondary m-1 print-none">Printer Friendly</button>
 <!-- <hr>
 <form>
   <button type="submit" (onclick)="back()" class="btn btn-secondary">&#8592; Go Back</button>
