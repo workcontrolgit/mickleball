@@ -8,16 +8,17 @@
 
     <form [formGroup]="form" (ngSubmit)="submit()">
       <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+      <button (click)="toggle()" class="btn btn-primary" [disabled]="!form.valid">View Report Card</button>
     </form>
   </ng-container>
 
   <ng-container *ngIf="show">
     <app-reportcard [model]="model"></app-reportcard>
-  </ng-container>
 
-  <button (click)="toggle()" class="btn btn-primary" [disabled]="!form.valid">
-    {{ buttonName }}
-  </button>
+    <button (click)="toggle()" class="btn btn-primary">Go Back</button>
+  </ng-container>
 </div>
 
 <!-- <p>{{ model | json }}</p> -->
+
+{{ form.valid }}

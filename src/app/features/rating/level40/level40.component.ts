@@ -68,9 +68,5 @@ export class Level40Component implements OnInit {
 
   toggle() {
     this.show = !this.show;
-
-    // CHANGE THE NAME OF THE BUTTON.
-    if (this.show) this.buttonName = 'Go Back';
-    else this.buttonName = 'View Report Card';
   }
 }
