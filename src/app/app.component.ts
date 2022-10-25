@@ -32,7 +32,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private authService: AuthService
   ) {
     //this.isAuthenticated = this.authService.isAuthenticated$;
-    this.authService.runInitialLoginSequence();
+    //this.authService.runInitialLoginSequence();
   }
 
   ngOnInit() {

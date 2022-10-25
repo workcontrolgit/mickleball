@@ -12,7 +12,9 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 export class Level25Component implements OnInit {
   // ngx formly
   form = new FormGroup({});
-  model = {};
+  //model = {};
+  model = { level: '2.5' };
+
   options: FormlyFormOptions = {};
   fields: FormlyFieldConfig[];
 

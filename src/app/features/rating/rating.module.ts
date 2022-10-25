@@ -13,12 +13,13 @@ import { Level35Component } from './level35/level35.component';
 import { Level40Component } from './level40/level40.component';
 import { Level45Component } from './level45/level45.component';
 import { Level50Component } from './level50/level50.component';
-import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { ReportcardComponent } from './reportcard/reportcard.component';
+
 import { ReactiveFormsModule, ValidationErrors, FormControl } from '@angular/forms';
-import { DynamicFormInputComponent } from './dynamic-form-input/dynamic-form-input.component';
 import { FormlyModule, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 
+// TODO move into service
 export function EmailValidator(control: FormControl | any): ValidationErrors | null {
   return /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(
     control.value
@@ -29,6 +30,8 @@ export function EmailValidator(control: FormControl | any): ValidationErrors | n
 export function EmailValidatorMessage(err: any, field: FormlyFieldConfig) {
   return `"${field?.formControl?.value}" is not a valid email address`;
 }
+
+import { NgxPrintElementModule } from 'ngx-print-element';
 
 @NgModule({
   declarations: [
@@ -41,8 +44,7 @@ export function EmailValidatorMessage(err: any, field: FormlyFieldConfig) {
     Level40Component,
     Level45Component,
     Level50Component,
-    DynamicFormComponent,
-    DynamicFormInputComponent,
+    ReportcardComponent,
   ],
   imports: [
     CommonModule,
@@ -55,6 +57,7 @@ export function EmailValidatorMessage(err: any, field: FormlyFieldConfig) {
       ],
       validators: [{ name: 'email', validation: EmailValidator }],
     }),
+    NgxPrintElementModule,
     FormlyBootstrapModule, // must be imported as the last module as it contains the fallback route
     RatingRoutingModule,
   ],

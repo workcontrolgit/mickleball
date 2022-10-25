@@ -18,7 +18,6 @@ import { ShouldLoginComponent } from './should-login.component';
 
 import { NgHttpLoaderModule } from 'ng-http-loader';
 
-import { FormlyModule } from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 
 @NgModule({
@@ -28,9 +27,6 @@ import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
     FormsModule,
     FormlyBootstrapModule,
     HttpClientModule,
-    FormlyModule.forRoot({
-      validationMessages: [{ name: 'required', message: 'This field is required' }],
-    }),
     TranslateModule.forRoot(),
     NgHttpLoaderModule.forRoot(),
     NgbModule,
