@@ -64,41 +64,32 @@ export class ReportcardComponent implements OnInit {
 
   ngOnInit() {
     // rating level 4.0
+    var objModel: any;
     var skillcode: string;
     var description: string;
     var rating: string;
     var evalString: string;
 
     if (this.model['level'] == '4.0') {
-      for (let i = 0; i < Skillcode40.length; i++) {
-        skillcode = Skillcode40[i].Skillcode;
-        description = Skillcode40[i].Description;
-
-        evalString = "this.model['skillcode" + skillcode + "']";
-        rating = eval("this.model['skillcode" + skillcode + "']");
-
-        this.objSkillRating.push({
-          Skillcode: skillcode,
-          Description: description,
-          Rating: rating,
-        });
-      }
+      objModel = Skillcode40;
     }
 
     if (this.model['level'] == '3.5') {
-      for (let i = 0; i < Skillcode35.length; i++) {
-        skillcode = Skillcode35[i].Skillcode;
-        description = Skillcode35[i].Description;
+      objModel = Skillcode35;
+    }
 
-        evalString = "this.model['skillcode" + skillcode + "']";
-        rating = eval("this.model['skillcode" + skillcode + "']");
+    for (let i = 0; i < objModel.length; i++) {
+      skillcode = objModel[i].Skillcode;
+      description = objModel[i].Description;
 
-        this.objSkillRating.push({
-          Skillcode: skillcode,
-          Description: description,
-          Rating: rating,
-        });
-      }
+      evalString = "this.model['" + skillcode + "']";
+      rating = eval("this.model['" + skillcode + "']");
+
+      this.objSkillRating.push({
+        Skillcode: skillcode,
+        Description: description,
+        Rating: rating,
+      });
     }
   }
 }

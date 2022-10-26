@@ -8,7 +8,7 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 export class FormfieldControlService {
   constructor() {}
 
-  public readonly SelectRatingPlaceholder: string = 'Select rating';
+  public readonly SelectRatingPlaceholder: string = 'Select a rating';
 
   public readonly SkillRatings: { label: string; value: string }[] = [
     { value: 'A', label: 'A - Solid, consistent performance' },

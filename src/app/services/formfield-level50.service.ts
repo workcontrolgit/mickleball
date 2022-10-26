@@ -31,7 +31,7 @@ export class FormfieldLevel50Service {
       {
         className: 'section-label',
         template:
-          '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><strong>5.0 Skill Level should ALSO possess all 4.5 Skills</strong></div>',
+          '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 5.0 should ALSO possess all 4.5 skills.</span></div>',
       },
       {
         key: 'skillcode50-1',
