@@ -34,7 +34,7 @@ export class FormfieldLevel50Service {
           '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><strong>5.0 Skill Level should ALSO possess all 4.5 Skills</strong></div>',
       },
       {
-        key: 'skill50-1',
+        key: 'skillcode50-1',
         type: 'select',
         props: {
           label: '50-1 Has developed a very high level of variety, depth and pace of serves',
@@ -44,7 +44,7 @@ export class FormfieldLevel50Service {
         },
       },
       {
-        key: 'skill50-2',
+        key: 'skillcode50-2',
         type: 'select',
         props: {
           label: '50-2 Serves with power accuracy and depth and can vary speed and spin of serve',
@@ -54,7 +54,7 @@ export class FormfieldLevel50Service {
         },
       },
       {
-        key: 'skill50-3',
+        key: 'skillcode50-3',
         type: 'select',
         props: {
           label:
@@ -65,7 +65,7 @@ export class FormfieldLevel50Service {
         },
       },
       {
-        key: 'skill50-4',
+        key: 'skillcode50-4',
         type: 'select',
         props: {
           label:
@@ -76,7 +76,7 @@ export class FormfieldLevel50Service {
         },
       },
       {
-        key: 'skill50-5',
+        key: 'skillcode50-5',
         type: 'select',
         props: {
           label: '50-5 Has mastered the dink with shot placement and ability to move opponents',
@@ -86,7 +86,7 @@ export class FormfieldLevel50Service {
         },
       },
       {
-        key: 'skill50-6',
+        key: 'skillcode50-6',
         type: 'select',
         props: {
           label: '50-6 Exhibits patience during rallies with ability to create opportunities to attack using dinks',
@@ -96,7 +96,7 @@ export class FormfieldLevel50Service {
         },
       },
       {
-        key: 'skill50-7',
+        key: 'skillcode50-7',
         type: 'select',
         props: {
           label: '50-7 Increased ability to change the pace of dinks strategically',
@@ -106,7 +106,7 @@ export class FormfieldLevel50Service {
         },
       },
       {
-        key: 'skill50-8',
+        key: 'skillcode50-8',
         type: 'select',
         props: {
           label:
@@ -117,7 +117,7 @@ export class FormfieldLevel50Service {
         },
       },
       {
-        key: 'skill50-9',
+        key: 'skillcode50-9',
         type: 'select',
         props: {
           label: '50-9 Able to intentionally and consistently place the 3rd shot drop',
@@ -127,7 +127,7 @@ export class FormfieldLevel50Service {
         },
       },
       {
-        key: 'skill50-10',
+        key: 'skillcode50-10',
         type: 'select',
         props: {
           label: '50-10 Able to block hard volleys directed at them and consistently drop them in NVZ',
@@ -137,7 +137,7 @@ export class FormfieldLevel50Service {
         },
       },
       {
-        key: 'skill50-11',
+        key: 'skillcode50-11',
         type: 'select',
         props: {
           label: '50-11 Places overheads with ease for winners',
@@ -147,7 +147,7 @@ export class FormfieldLevel50Service {
         },
       },
       {
-        key: 'skill50-12',
+        key: 'skillcode50-12',
         type: 'select',
         props: {
           label: '50-12 Able to volley shots toward opponent’s feet consistently',
@@ -157,7 +157,7 @@ export class FormfieldLevel50Service {
         },
       },
       {
-        key: 'skill50-13',
+        key: 'skillcode50-13',
         type: 'select',
         props: {
           label:
@@ -168,7 +168,7 @@ export class FormfieldLevel50Service {
         },
       },
       {
-        key: 'skill50-14',
+        key: 'skillcode50-14',
         type: 'select',
         props: {
           label: '50-14 Efficient footwork and effective use of weight transfer for improved quickness on court',
@@ -178,7 +178,7 @@ export class FormfieldLevel50Service {
         },
       },
       {
-        key: 'skill50-15',
+        key: 'skillcode50-15',
         type: 'select',
         props: {
           label:
@@ -189,7 +189,7 @@ export class FormfieldLevel50Service {
         },
       },
       {
-        key: 'skill50-16',
+        key: 'skillcode50-16',
         type: 'select',
         props: {
           label: '50-16 Rarely makes unforced errors',
@@ -199,7 +199,7 @@ export class FormfieldLevel50Service {
         },
       },
       {
-        key: 'skill50-17',
+        key: 'skillcode50-17',
         type: 'select',
         props: {
           label: '50-17 Has good mobility, quickness, and hand-eye coordination',

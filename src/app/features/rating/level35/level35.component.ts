@@ -16,6 +16,7 @@ export class Level35Component implements OnInit {
   model = { level: '3.5' };
   options: FormlyFormOptions = {};
   fields: FormlyFieldConfig[];
+  public show: boolean = false;
 
   constructor(serviceFormFields: FormfieldLevel35Service) {
     this.fields = serviceFormFields.getFormFields();
@@ -24,6 +25,10 @@ export class Level35Component implements OnInit {
   ngOnInit() {}
 
   submit() {
-    alert(JSON.stringify(this.model));
+    //alert(JSON.stringify(this.model));
+  }
+
+  toggle() {
+    this.show = !this.show;
   }
 }

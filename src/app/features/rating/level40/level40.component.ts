@@ -21,7 +21,6 @@ export class Level40Component implements OnInit {
   fields: FormlyFieldConfig[];
 
   public show: boolean = false;
-  public buttonName: any = 'View Report Card';
 
   constructor(serviceFormFields: FormfieldLevel40Service, private router: Router) {
     this.fields = serviceFormFields.getFormFields();

@@ -34,7 +34,7 @@ export class FormfieldLevel45Service {
           '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><strong>4.5 Skill Level should ALSO possess all 4.0 Skills</strong></div>',
       },
       {
-        key: 'skill45-1',
+        key: 'skillcode45-1',
         type: 'select',
         props: {
           label: '45-1 Consistently controls and places serves and return of serves',
@@ -44,7 +44,7 @@ export class FormfieldLevel45Service {
         },
       },
       {
-        key: 'skill45-2',
+        key: 'skillcode45-2',
         type: 'select',
         props: {
           label: '45-2 Serves with power accuracy and depth and can vary speed and spin of serve',
@@ -54,7 +54,7 @@ export class FormfieldLevel45Service {
         },
       },
       {
-        key: 'skill45-3',
+        key: 'skillcode45-3',
         type: 'select',
         props: {
           label:
@@ -65,7 +65,7 @@ export class FormfieldLevel45Service {
         },
       },
       {
-        key: 'skill45-4',
+        key: 'skillcode45-4',
         type: 'select',
         props: {
           label: '45-4 Can effectively/consistently direct the ball with the backhand, varying depth and pace',
@@ -75,7 +75,7 @@ export class FormfieldLevel45Service {
         },
       },
       {
-        key: 'skill45-5',
+        key: 'skillcode45-5',
         type: 'select',
         props: {
           label:
@@ -86,7 +86,7 @@ export class FormfieldLevel45Service {
         },
       },
       {
-        key: 'skill45-6',
+        key: 'skillcode45-6',
         type: 'select',
         props: {
           label: '45-6 Recognizes and attempts to hit attackable dinks',
@@ -96,7 +96,7 @@ export class FormfieldLevel45Service {
         },
       },
       {
-        key: 'skill45-7',
+        key: 'skillcode45-7',
         type: 'select',
         props: {
           label: '45-7 Consistently executes effective 3rd shot strategies that are not easily returned',
@@ -106,7 +106,7 @@ export class FormfieldLevel45Service {
         },
       },
       {
-        key: 'skill45-8',
+        key: 'skillcode45-8',
         type: 'select',
         props: {
           label: '45-8 Able to intentionally and consistently place the 3rd shot drop',
@@ -116,7 +116,7 @@ export class FormfieldLevel45Service {
         },
       },
       {
-        key: 'skill45-9',
+        key: 'skillcode45-9',
         type: 'select',
         props: {
           label: '45-9 Able to block hard volleys directed at them and consistently drop them in NVZ',
@@ -126,7 +126,7 @@ export class FormfieldLevel45Service {
         },
       },
       {
-        key: 'skill45-10',
+        key: 'skillcode45-10',
         type: 'select',
         props: {
           label: '45-10 Comfortable hitting swinging volleys and hits overhead shots consistently as putaways',
@@ -136,7 +136,7 @@ export class FormfieldLevel45Service {
         },
       },
       {
-        key: 'skill45-11',
+        key: 'skillcode45-11',
         type: 'select',
         props: {
           label: '45-11 Poaches effectively',
@@ -146,7 +146,7 @@ export class FormfieldLevel45Service {
         },
       },
       {
-        key: 'skill45-12',
+        key: 'skillcode45-12',
         type: 'select',
         props: {
           label: '45-12 Has effective lobs and creates coverage gaps and hits to these gaps consistently',
@@ -156,7 +156,7 @@ export class FormfieldLevel45Service {
         },
       },
       {
-        key: 'skill45-13',
+        key: 'skillcode45-13',
         type: 'select',
         props: {
           label: '45-13 Has good footwork and moves laterally, forward and backward well',
@@ -166,7 +166,7 @@ export class FormfieldLevel45Service {
         },
       },
       {
-        key: 'skill45-14',
+        key: 'skillcode45-14',
         type: 'select',
         props: {
           label: '45-14 Very comfortable playing at the NVZ',
@@ -176,7 +176,7 @@ export class FormfieldLevel45Service {
         },
       },
       {
-        key: 'skill45-15',
+        key: 'skillcode45-15',
         type: 'select',
         props: {
           label: '45-15 Communicates and moves well with partner – easily “stacks” court positions',
@@ -186,7 +186,7 @@ export class FormfieldLevel45Service {
         },
       },
       {
-        key: 'skill45-16',
+        key: 'skillcode45-16',
         type: 'select',
         props: {
           label:
@@ -197,7 +197,7 @@ export class FormfieldLevel45Service {
         },
       },
       {
-        key: 'skill45-17',
+        key: 'skillcode45-17',
         type: 'select',
         props: {
           label: '45-17 Limited number of unforced errors',
@@ -207,7 +207,7 @@ export class FormfieldLevel45Service {
         },
       },
       {
-        key: 'skill45-18',
+        key: 'skillcode45-18',
         type: 'select',
         props: {
           label: '45-18 Has good mobility and quickness',
@@ -217,7 +217,7 @@ export class FormfieldLevel45Service {
         },
       },
       {
-        key: 'skill45-19',
+        key: 'skillcode45-19',
         type: 'select',
         props: {
           label: '45-19 Has good hand-eye coordination',
