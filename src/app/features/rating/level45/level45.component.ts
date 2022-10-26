@@ -12,18 +12,63 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 export class Level45Component implements OnInit {
   // ngx formly
   form = new FormGroup({});
-  //model = {};
-  model = { level: '4.5' };
+  ratinglevel = '4.5';
+
+  model: any;
+  modelDebug = {
+    level: '4.5',
+    playername: 'Fuji Nguyen',
+    playeremail: 'fuji.nguyen@workcontrol.com',
+    assessmentDate: '2022-10-26',
+    '45-1': 'A',
+    '45-2': 'B',
+    '45-3': 'C',
+    '45-4': 'D',
+    '45-5': 'A',
+    '45-6': 'A',
+    '45-7': 'A',
+    '45-8': 'A',
+    '45-9': 'A',
+    '45-10': 'A',
+    '45-11': 'A',
+    '45-12': 'A',
+    '45-13': 'A',
+    '45-14': 'A',
+    '45-15': 'A',
+    '45-16': 'A',
+    '45-17': 'A',
+    '45-18': 'A',
+    '45-19': 'A',
+    evaluatorname: 'Hieu Thi Nguyen',
+    evaluatoremail: 'fuji.nguyen@workcontrol.com',
+    Notes: 'Lefty',
+    terms: true,
+  };
+  modelInit = { level: '4.5' };
   options: FormlyFormOptions = {};
   fields: FormlyFieldConfig[];
+
+  show: boolean = false;
+
+  debug: boolean = false;
 
   constructor(serviceFormFields: FormfieldLevel45Service) {
     this.fields = serviceFormFields.getFormFields();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.debug) {
+      this.model = this.modelDebug;
+    } else {
+      this.model = this.modelInit;
+    }
+  }
 
   submit() {
     //alert(JSON.stringify(this.model));
+  }
+
+  toggle() {
+    this.show = !this.show;
   }
 }

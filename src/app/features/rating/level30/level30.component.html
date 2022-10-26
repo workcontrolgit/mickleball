@@ -1,11 +1,23 @@
 <div class="container-fluid">
-  <!-- HTML form mark up -->
-  <h3 class="text-secondary">Level 3.0 Skill Assessment</h3>
+  <ng-container *ngIf="!show">
+    <h3 class="text-secondary">Level {{ ratinglevel }} Skill Assessment</h3>
 
-  <p>* fields are required.</p>
+    <p>* fields are required.</p>
 
-  <form [formGroup]="form" (ngSubmit)="submit()">
-    <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
-    <!-- <button type="submit" class="btn btn-primary submit-button" [disabled]="!form.valid">Save</button> -->
-  </form>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+      <button (click)="toggle()" class="btn btn-primary" [disabled]="!form.valid">View Report Card</button>
+    </form>
+  </ng-container>
+
+  <ng-container *ngIf="show">
+    <app-reportcard [model]="model"></app-reportcard>
+
+    <button (click)="toggle()" class="btn btn-primary">Go Back</button>
+  </ng-container>
 </div>
+
+<p *ngIf="debug">{{ model | json }}</p>
+
+<!-- <p>{{ model | json }}</p> -->
+<!-- {{ form.valid }} -->

@@ -12,19 +12,56 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 export class Level25Component implements OnInit {
   // ngx formly
   form = new FormGroup({});
-  //model = {};
-  model = { level: '2.5' };
+  ratinglevel = '2.5';
+
+  model: any;
+  modelDebug = {
+    level: '2.5',
+    playername: 'Fuji Nguyen',
+    playeremail: 'fuji.nguyen@workcontrol.com',
+    assessmentDate: '2022-10-26',
+    '25-1': 'A',
+    '25-2': 'B',
+    '25-3': 'C',
+    '25-4': 'D',
+    '25-5': 'A',
+    '25-6': 'A',
+    '25-7': 'A',
+    '25-8': 'A',
+    '25-9': 'A',
+    '25-10': 'A',
+    '25-11': 'A',
+    '25-12': 'A',
+    evaluatorname: 'Chandra',
+    evaluatoremail: 'fuji.nguyen@workcontrol.com',
+    Notes: 'Lefty user',
+    terms: true,
+  };
+  modelInit = { level: '2.5' };
 
   options: FormlyFormOptions = {};
   fields: FormlyFieldConfig[];
+
+  show: boolean = false;
+  debug: boolean = false;
 
   constructor(serviceFormFields: FormfieldLevel25Service) {
     this.fields = serviceFormFields.getFormFields();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.debug) {
+      this.model = this.modelDebug;
+    } else {
+      this.model = this.modelInit;
+    }
+  }
 
   submit() {
     //alert(JSON.stringify(this.model));
+  }
+
+  toggle() {
+    this.show = !this.show;
   }
 }

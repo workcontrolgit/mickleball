@@ -30,10 +30,11 @@ export class FormfieldLevel20Service {
       },
       {
         className: 'section-label',
-        template: '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4></div>',
+        template:
+          '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.</span></div>',
       },
       {
-        key: 'skillcode20-1',
+        key: '20-1',
         type: 'select',
         props: {
           label: '20-1 Minimal understanding of the basic rules of the game i.e 2 bounce rule',
@@ -43,7 +44,7 @@ export class FormfieldLevel20Service {
         },
       },
       {
-        key: 'skillcode20-2',
+        key: '20-2',
         type: 'select',
         props: {
           label: '20-2 Knows how to keep score',
@@ -53,7 +54,7 @@ export class FormfieldLevel20Service {
         },
       },
       {
-        key: 'skillcode20-3',
+        key: '20-3',
         type: 'select',
         props: {
           label: '20-3 Demonstrates a forehand',
@@ -63,7 +64,7 @@ export class FormfieldLevel20Service {
         },
       },
       {
-        key: 'skillcode20-4',
+        key: '20-4',
         type: 'select',
         props: {
           label: '20-4 Demonstrates a backhand',
@@ -73,7 +74,7 @@ export class FormfieldLevel20Service {
         },
       },
       {
-        key: 'skillcode20-5',
+        key: '20-5',
         type: 'select',
         props: {
           label: '20-5 Demonstrates a volley',
@@ -83,7 +84,7 @@ export class FormfieldLevel20Service {
         },
       },
       {
-        key: 'skillcode20-6',
+        key: '20-6',
         type: 'select',
         props: {
           label: '20-6 Accurately places serve into the correct square',
@@ -93,7 +94,7 @@ export class FormfieldLevel20Service {
         },
       },
       {
-        key: 'skillcode20-7',
+        key: '20-7',
         type: 'select',
         props: {
           label: '20-7 Knows where to stand when serving and returning serve',
@@ -103,7 +104,7 @@ export class FormfieldLevel20Service {
         },
       },
       {
-        key: 'skillcode20-8',
+        key: '20-8',
         type: 'select',
         props: {
           label: '20-8 Has good mobility moving in a safe and balanced manner',
@@ -113,7 +114,7 @@ export class FormfieldLevel20Service {
         },
       },
       {
-        key: 'skillcode20-9',
+        key: '20-9',
         type: 'select',
         props: {
           label: '20-9 Has good quickness',
@@ -124,7 +125,7 @@ export class FormfieldLevel20Service {
       },
 
       {
-        key: 'skillcode20-10',
+        key: '20-10',
         type: 'select',
         props: {
           label: '20-10 Has good hand-eye coordination',
