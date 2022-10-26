@@ -37,7 +37,7 @@ export class FormfieldLevel30Service {
         key: 'skill30-1',
         type: 'select',
         props: {
-          label: '1. Able to hit a medium paced forehand with direction and consistency',
+          label: '30-1. Able to hit a medium paced forehand with direction and consistency',
           options: this.skillRatings,
           required: true,
           placeholder: this.selectRatingPlaceholder,
@@ -47,7 +47,7 @@ export class FormfieldLevel30Service {
         key: 'skill30-2',
         type: 'select',
         props: {
-          label: '2. Able to hit a medium paced backhand with direction and consistency',
+          label: '30-2. Able to hit a medium paced backhand with direction and consistency',
           options: this.skillRatings,
           required: true,
           placeholder: this.selectRatingPlaceholder,
@@ -57,7 +57,7 @@ export class FormfieldLevel30Service {
         key: 'skill30-3',
         type: 'select',
         props: {
-          label: '3. Able to hit a medium paced serve with depth, direction and consistency',
+          label: '30-3. Able to hit a medium paced serve with depth, direction and consistency',
           options: this.skillRatings,
           required: true,
           placeholder: this.selectRatingPlaceholder,
@@ -67,7 +67,7 @@ export class FormfieldLevel30Service {
         key: 'skill30-4',
         type: 'select',
         props: {
-          label: '4. Able to consistently sustain a dink rally with control',
+          label: '30-4. Able to consistently sustain a dink rally with control',
           options: this.skillRatings,
           required: true,
           placeholder: this.selectRatingPlaceholder,
@@ -77,7 +77,7 @@ export class FormfieldLevel30Service {
         key: 'skill30-5',
         type: 'select',
         props: {
-          label: '5. Able to hit a medium paced 3rd shot with direction',
+          label: '30-5. Able to hit a medium paced 3rd shot with direction',
           options: this.skillRatings,
           required: true,
           placeholder: this.selectRatingPlaceholder,
@@ -87,7 +87,7 @@ export class FormfieldLevel30Service {
         key: 'skill30-6',
         type: 'select',
         props: {
-          label: '6. Able to hit a medium paced volley with direction and consistency',
+          label: '30-6. Able to hit a medium paced volley with direction and consistency',
           options: this.skillRatings,
           required: true,
           placeholder: this.selectRatingPlaceholder,
@@ -97,7 +97,7 @@ export class FormfieldLevel30Service {
         key: 'skill30-7',
         type: 'select',
         props: {
-          label: '7. Understands the fundamentals of the game',
+          label: '30-7. Understands the fundamentals of the game',
           options: this.skillRatings,
           required: true,
           placeholder: this.selectRatingPlaceholder,
@@ -107,7 +107,7 @@ export class FormfieldLevel30Service {
         key: 'skill30-8',
         type: 'select',
         props: {
-          label: '8. Understands proper court positioning',
+          label: '30-8. Understands proper court positioning',
           options: this.skillRatings,
           required: true,
           placeholder: this.selectRatingPlaceholder,
@@ -117,7 +117,7 @@ export class FormfieldLevel30Service {
         key: 'skill30-9',
         type: 'select',
         props: {
-          label: '9. Understands rules and can keep score',
+          label: '30-9. Understands rules and can keep score',
           options: this.skillRatings,
           required: true,
           placeholder: this.selectRatingPlaceholder,
@@ -127,7 +127,7 @@ export class FormfieldLevel30Service {
         key: 'skill30-10',
         type: 'select',
         props: {
-          label: '10. Has good mobility, quickness, and hand-eye coordination',
+          label: '30-10. Has good mobility, quickness, and hand-eye coordination',
           options: this.skillRatings,
           required: true,
           placeholder: this.selectRatingPlaceholder,
@@ -137,7 +137,7 @@ export class FormfieldLevel30Service {
         key: 'skill30-11',
         type: 'select',
         props: {
-          label: '11. Has started playing in tournaments',
+          label: '30-11. Has started playing in tournaments',
           options: this.skillRatings,
           required: true,
           placeholder: this.selectRatingPlaceholder,
