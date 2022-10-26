@@ -28,9 +28,7 @@
         <td>
           <container-element [ngSwitch]="skill.Rating">
             <!-- the same view can be shown in more than one case -->
-            <span *ngSwitchCase="'A'" class="text-success"
-              ><strong>{{ skill.Rating }}</strong></span
-            >
+            <span *ngSwitchCase="'A'" class="text-success fw-bolder">{{ skill.Rating }}</span>
             <span *ngSwitchCase="'B'" class="text-info fw-bolder">{{ skill.Rating }}</span>
             <span *ngSwitchCase="'C'" class="text-warning fw-bolder">{{ skill.Rating }}</span>
             <!--default case when there are no matches -->
