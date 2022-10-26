@@ -31,10 +31,10 @@ export class FormfieldLevel30Service {
       {
         className: 'section-label',
         template:
-          '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><strong>3.0 Skill Level should ALSO possess all 2.5 Skills</strong></div>',
+          '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 3.0 should ALSO possess all 2.5 skills.</span></div>',
       },
       {
-        key: 'skill30-1',
+        key: '30-1',
         type: 'select',
         props: {
           label: '30-1 Able to hit a medium paced forehand with direction and consistency',
@@ -44,7 +44,7 @@ export class FormfieldLevel30Service {
         },
       },
       {
-        key: 'skill30-2',
+        key: '30-2',
         type: 'select',
         props: {
           label: '30-2 Able to hit a medium paced backhand with direction and consistency',
@@ -54,7 +54,7 @@ export class FormfieldLevel30Service {
         },
       },
       {
-        key: 'skill30-3',
+        key: '30-3',
         type: 'select',
         props: {
           label: '30-3 Able to hit a medium paced serve with depth, direction and consistency',
@@ -64,7 +64,7 @@ export class FormfieldLevel30Service {
         },
       },
       {
-        key: 'skill30-4',
+        key: '30-4',
         type: 'select',
         props: {
           label: '30-4 Able to consistently sustain a dink rally with control',
@@ -74,7 +74,7 @@ export class FormfieldLevel30Service {
         },
       },
       {
-        key: 'skill30-5',
+        key: '30-5',
         type: 'select',
         props: {
           label: '30-5 Able to hit a medium paced 3rd shot with direction',
@@ -84,7 +84,7 @@ export class FormfieldLevel30Service {
         },
       },
       {
-        key: 'skill30-6',
+        key: '30-6',
         type: 'select',
         props: {
           label: '30-6 Able to hit a medium paced volley with direction and consistency',
@@ -94,7 +94,7 @@ export class FormfieldLevel30Service {
         },
       },
       {
-        key: 'skill30-7',
+        key: '30-7',
         type: 'select',
         props: {
           label: '30-7 Understands the fundamentals of the game',
@@ -104,7 +104,7 @@ export class FormfieldLevel30Service {
         },
       },
       {
-        key: 'skill30-8',
+        key: '30-8',
         type: 'select',
         props: {
           label: '30-8 Understands proper court positioning',
@@ -114,7 +114,7 @@ export class FormfieldLevel30Service {
         },
       },
       {
-        key: 'skill30-9',
+        key: '30-9',
         type: 'select',
         props: {
           label: '30-9 Understands rules and can keep score',
@@ -124,7 +124,7 @@ export class FormfieldLevel30Service {
         },
       },
       {
-        key: 'skill30-10',
+        key: '30-10',
         type: 'select',
         props: {
           label: '30-10 Has good mobility, quickness, and hand-eye coordination',
@@ -134,7 +134,7 @@ export class FormfieldLevel30Service {
         },
       },
       {
-        key: 'skill30-11',
+        key: '30-11',
         type: 'select',
         props: {
           label: '30-11 Has started playing in tournaments',

@@ -32,11 +32,11 @@ export class FormfieldLevel25Service {
       {
         className: 'section-label',
         template:
-          '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><strong>2.5 Skill Level should ALSO possess all 2.0 Skills</strong></div>',
+          '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 2.5 should ALSO possess all 2.0 skills.</span></div>',
       },
 
       {
-        key: 'skill25-1',
+        key: '25-1',
         type: 'select',
         templateOptions: {
           label: '25-1 Knows the basic rules of the game including the 2 bounce rule',
@@ -46,7 +46,7 @@ export class FormfieldLevel25Service {
         },
       },
       {
-        key: 'skill25-2',
+        key: '25-2',
         type: 'select',
         props: {
           label: '25-2 Able to hit a forehand with direction',
@@ -56,7 +56,7 @@ export class FormfieldLevel25Service {
         },
       },
       {
-        key: 'skill25-3',
+        key: '25-3',
         type: 'select',
         props: {
           label: '25-3 Able to hit a backhand with direction',
@@ -66,7 +66,7 @@ export class FormfieldLevel25Service {
         },
       },
       {
-        key: 'skill25-4',
+        key: '25-4',
         type: 'select',
         props: {
           label: '25-4 Accurately places serve into correct square focusing on direction',
@@ -76,7 +76,7 @@ export class FormfieldLevel25Service {
         },
       },
       {
-        key: 'skill25-5',
+        key: '25-5',
         type: 'select',
         props: {
           label: '25-5 Able to sustain a dink rally with players of equal ability',
@@ -86,7 +86,7 @@ export class FormfieldLevel25Service {
         },
       },
       {
-        key: 'skill25-6',
+        key: '25-6',
         type: 'select',
         props: {
           label: '25-6 Able to volley with some direction',
@@ -96,7 +96,7 @@ export class FormfieldLevel25Service {
         },
       },
       {
-        key: 'skill25-7',
+        key: '25-7',
         type: 'select',
         props: {
           label: '25-7 Understands the fundamentals of the game',
@@ -106,7 +106,7 @@ export class FormfieldLevel25Service {
         },
       },
       {
-        key: 'skill25-8',
+        key: '25-8',
         type: 'select',
         props: {
           label: '25-8 Understands proper court positioning',
@@ -116,7 +116,7 @@ export class FormfieldLevel25Service {
         },
       },
       {
-        key: 'skill25-9',
+        key: '25-9',
         type: 'select',
         props: {
           label: '25-9 Able to accurately keep score throughout the game',
@@ -126,7 +126,7 @@ export class FormfieldLevel25Service {
         },
       },
       {
-        key: 'skill25-10',
+        key: '25-10',
         type: 'select',
         props: {
           label: '25-10 Has good mobility moving in a safe and balanced manner',
@@ -136,7 +136,7 @@ export class FormfieldLevel25Service {
         },
       },
       {
-        key: 'skill25-11',
+        key: '25-11',
         type: 'select',
         props: {
           label: '25-11 Has good quickness',
@@ -146,7 +146,7 @@ export class FormfieldLevel25Service {
         },
       },
       {
-        key: 'skill25-12',
+        key: '25-12',
         type: 'select',
         props: {
           label: '25-12 Has good hand-eye coordination',
