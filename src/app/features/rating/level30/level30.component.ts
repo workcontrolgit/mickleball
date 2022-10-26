@@ -25,6 +25,6 @@ export class Level30Component implements OnInit {
   ngOnInit() {}
 
   submit() {
-    alert(JSON.stringify(this.model));
+    //alert(JSON.stringify(this.model));
   }
 }
