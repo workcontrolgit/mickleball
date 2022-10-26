@@ -22,17 +22,19 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let skill of myObjArray">
+      <tr *ngFor="let skill of objSkillRating">
         <td>{{ skill.Skillcode }}</td>
         <td>{{ skill.Description }}</td>
         <td>
           <container-element [ngSwitch]="skill.Rating">
             <!-- the same view can be shown in more than one case -->
-            <span *ngSwitchCase="'A'" class="text-success">{{ skill.Rating }}</span>
-            <span *ngSwitchCase="'B'" class="text-info">{{ skill.Rating }}</span>
-            <span *ngSwitchCase="'C'" class="text-warning">{{ skill.Rating }}</span>
+            <span *ngSwitchCase="'A'" class="text-success"
+              ><strong>{{ skill.Rating }}</strong></span
+            >
+            <span *ngSwitchCase="'B'" class="text-info fw-bolder">{{ skill.Rating }}</span>
+            <span *ngSwitchCase="'C'" class="text-warning fw-bolder">{{ skill.Rating }}</span>
             <!--default case when there are no matches -->
-            <span *ngSwitchDefault class="text-danger">{{ skill.Rating }}</span>
+            <span *ngSwitchDefault class="text-danger fw-bolder">{{ skill.Rating }}</span>
           </container-element>
         </td>
       </tr>

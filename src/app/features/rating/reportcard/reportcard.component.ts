@@ -12,18 +12,18 @@ const Skillcode40 = [
   { Skillcode: '40-8', Description: 'Understands which balls are attackable and those that are not in a dink rally' },
   { Skillcode: '40-9', Description: 'Sustains a dink exchange with patience at the net to elicit a “put away” shot' },
   { Skillcode: '40-10', Description: 'Consistently executes 3rd shot drop from the baseline to approach the net' },
-  { Skillcode: '40-11', Description: 'BatGirl' },
-  { Skillcode: '40-12', Description: 'BatGirl' },
-  { Skillcode: '40-13', Description: 'BatGirl' },
-  { Skillcode: '40-14', Description: 'BatGirl' },
-  { Skillcode: '40-15', Description: 'BatGirl' },
-  { Skillcode: '40-16', Description: 'BatGirl' },
-  { Skillcode: '40-17', Description: 'BatGirl' },
-  { Skillcode: '40-18', Description: 'BatGirl' },
-  { Skillcode: '40-19', Description: 'BatGirl' },
-  { Skillcode: '40-20', Description: 'BatGirl' },
-  { Skillcode: '40-21', Description: 'BatGirl' },
-  { Skillcode: '40-22', Description: 'BatGirl' },
+  { Skillcode: '40-11', Description: 'Able to change soft shots to power shots to create an advantage' },
+  { Skillcode: '40-12', Description: 'Able to volley a variety of shots at varying speeds' },
+  { Skillcode: '40-13', Description: 'Able to block and return fast, hard volleys' },
+  { Skillcode: '40-14', Description: 'Able to control NVZ (non-volley zone) keeping their opponents back' },
+  { Skillcode: '40-15', Description: 'Aware of partners position on the court and moves as a team' },
+  { Skillcode: '40-16', Description: 'Solid understanding of stacking and when and how it can be used effectively' },
+  { Skillcode: '40-17', Description: 'Demonstrates ability to change position in an offensive manner (switching)' },
+  { Skillcode: '40-18', Description: 'Demonstrates a broad knowledge of the rules of the game' },
+  { Skillcode: '40-19', Description: 'Has a moderate number of unforced errors per game' },
+  { Skillcode: '40-20', Description: 'Can identify opponents’ weaknesses and formulate plan to attack weaknesses' },
+  { Skillcode: '40-21', Description: 'Plays competitively in tournaments' },
+  { Skillcode: '40-22', Description: 'Has good mobility, quickness, and hand-eye coordination' },
 ];
 
 @Component({
@@ -34,26 +34,32 @@ const Skillcode40 = [
 export class ReportcardComponent implements OnInit {
   state$: Observable<object>;
   @Input() model: any = {};
-  testRating: string;
 
   myObjArray: any = [];
+
+  objSkillRating: any = [];
 
   constructor() {}
 
   ngOnInit() {
     // rating level 4.0
-    var skillcode: string = '40-1';
+    var skillcode: string;
+    var description: string;
+    var rating: string;
     var evalString: string;
-    this.testRating = eval("this.model['skillcode" + skillcode + "']");
 
     for (let i = 0; i < Skillcode40.length; i++) {
-      skillcode = Skillcode40[i].Skillcode.toString();
-      evalString = "this.model['skillcode" + skillcode + "']";
-      this.testRating = eval("this.model['skillcode" + skillcode + "']");
+      skillcode = Skillcode40[i].Skillcode;
+      description = Skillcode40[i].Description;
 
-      console.log(Skillcode40[i].Skillcode); //use i instead of 0
-      console.log(evalString); //use i instead of 0
-      console.log(this.testRating); //use i instead of 0
+      evalString = "this.model['skillcode" + skillcode + "']";
+      rating = eval("this.model['skillcode" + skillcode + "']");
+
+      this.objSkillRating.push({
+        Skillcode: skillcode,
+        Description: description,
+        Rating: rating,
+      });
     }
 
     if (this.model['level'] == '4.0') {
