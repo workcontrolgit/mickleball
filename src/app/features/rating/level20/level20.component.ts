@@ -42,7 +42,7 @@ export class Level20Component implements OnInit {
 
   show: boolean = false;
 
-  debug: boolean = true;
+  debug: boolean = false;
 
   constructor(serviceFormFields: FormfieldLevel20Service) {
     this.fields = serviceFormFields.getFormFields();

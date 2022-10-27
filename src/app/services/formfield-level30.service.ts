@@ -13,137 +13,42 @@ export class FormfieldLevel30Service {
   selectRatingPlaceholder: string;
   skillRatings: { label: string; value: string }[];
 
-  constructor(private formfieldControlService: FormfieldControlService) {}
+  constructor(private formfieldControlService: FormfieldControlService) {
+    this.skillRatings = this.formfieldControlService.SkillRatings;
+    this.generalFields = this.formfieldControlService.GeneralFields;
+    this.summaryFields = this.formfieldControlService.SummaryFields;
+    this.selectRatingPlaceholder = this.formfieldControlService.SelectRatingPlaceholder;
+  }
 
   getFormFields() {
-    this.skillRatings = this.formfieldControlService.SkillRatings;
-
-    this.generalFields = this.formfieldControlService.GeneralFields;
-
-    this.summaryFields = this.formfieldControlService.SummaryFields;
-
-    this.selectRatingPlaceholder = this.formfieldControlService.SelectRatingPlaceholder;
+    var filterLevel = '3.0';
+    var skillcodeList = this.formfieldControlService.GetSkillcodeList(filterLevel);
 
     this.ratingFields = [
       {
         key: 'level',
       },
+
       {
         className: 'section-label',
         template:
           '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 3.0 should ALSO possess all 2.5 skills.</span></div>',
       },
-      {
-        key: '30-1',
-        type: 'select',
-        props: {
-          label: '30-1 Able to hit a medium paced forehand with direction and consistency',
-          options: this.skillRatings,
-          required: true,
-          placeholder: this.selectRatingPlaceholder,
-        },
-      },
-      {
-        key: '30-2',
-        type: 'select',
-        props: {
-          label: '30-2 Able to hit a medium paced backhand with direction and consistency',
-          options: this.skillRatings,
-          required: true,
-          placeholder: this.selectRatingPlaceholder,
-        },
-      },
-      {
-        key: '30-3',
-        type: 'select',
-        props: {
-          label: '30-3 Able to hit a medium paced serve with depth, direction and consistency',
-          options: this.skillRatings,
-          required: true,
-          placeholder: this.selectRatingPlaceholder,
-        },
-      },
-      {
-        key: '30-4',
-        type: 'select',
-        props: {
-          label: '30-4 Able to consistently sustain a dink rally with control',
-          options: this.skillRatings,
-          required: true,
-          placeholder: this.selectRatingPlaceholder,
-        },
-      },
-      {
-        key: '30-5',
-        type: 'select',
-        props: {
-          label: '30-5 Able to hit a medium paced 3rd shot with direction',
-          options: this.skillRatings,
-          required: true,
-          placeholder: this.selectRatingPlaceholder,
-        },
-      },
-      {
-        key: '30-6',
-        type: 'select',
-        props: {
-          label: '30-6 Able to hit a medium paced volley with direction and consistency',
-          options: this.skillRatings,
-          required: true,
-          placeholder: this.selectRatingPlaceholder,
-        },
-      },
-      {
-        key: '30-7',
-        type: 'select',
-        props: {
-          label: '30-7 Understands the fundamentals of the game',
-          options: this.skillRatings,
-          required: true,
-          placeholder: this.selectRatingPlaceholder,
-        },
-      },
-      {
-        key: '30-8',
-        type: 'select',
-        props: {
-          label: '30-8 Understands proper court positioning',
-          options: this.skillRatings,
-          required: true,
-          placeholder: this.selectRatingPlaceholder,
-        },
-      },
-      {
-        key: '30-9',
-        type: 'select',
-        props: {
-          label: '30-9 Understands rules and can keep score',
-          options: this.skillRatings,
-          required: true,
-          placeholder: this.selectRatingPlaceholder,
-        },
-      },
-      {
-        key: '30-10',
-        type: 'select',
-        props: {
-          label: '30-10 Has good mobility, quickness, and hand-eye coordination',
-          options: this.skillRatings,
-          required: true,
-          placeholder: this.selectRatingPlaceholder,
-        },
-      },
-      {
-        key: '30-11',
-        type: 'select',
-        props: {
-          label: '30-11 Has started playing in tournaments',
-          options: this.skillRatings,
-          required: true,
-          placeholder: this.selectRatingPlaceholder,
-        },
-      },
     ];
+
+    for (let i = 0; i < skillcodeList.length; i++) {
+      this.ratingFields.push({
+        key: skillcodeList[i].Skillcode,
+        type: 'select',
+        props: {
+          label: skillcodeList[i].Skillcode + ' ' + skillcodeList[i].Description,
+          options: this.skillRatings,
+          required: true,
+          placeholder: this.selectRatingPlaceholder,
+        },
+      });
+    }
+
     this.fields = this.generalFields.concat(this.ratingFields).concat(this.summaryFields);
 
     return this.fields;
