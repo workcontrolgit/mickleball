@@ -383,6 +383,7 @@ export class FormfieldControlService {
     {
       key: 'terms',
       type: 'checkbox',
+      defaultValue: false,
       templateOptions: {
         label: 'I hereby declare that the assessment is true and correct to the best of my knowledge.',
         required: true,
