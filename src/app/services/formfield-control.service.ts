@@ -372,7 +372,7 @@ export class FormfieldControlService {
         type: 'email',
         label: 'Email',
         placeholder: 'enter evaluator email',
-        required: false,
+        required: true,
       },
       validators: {
         validation: [this.EmailValidator],

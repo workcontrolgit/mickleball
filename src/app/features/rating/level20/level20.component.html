@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <ng-container *ngIf="!show">
     <h3 class="text-secondary">Level {{ ratinglevel }} Skill Assessment</h3>
-    <p>* indicates a required field</p>
+    <p class="fst-italic">Fields marked with * are required.</p>
 
     <form [formGroup]="form" (ngSubmit)="submit()">
       <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>

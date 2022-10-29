@@ -5,7 +5,6 @@ import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
 import { NgbdModalContent } from '../modal-component';
 
 @Component({
@@ -64,7 +63,6 @@ export class Level20Component implements OnInit {
     if (this.form.valid) {
       this.show = !this.show;
     } else {
-      // alert('Please complete all required fields');
       this.open();
     }
   }

@@ -33,14 +33,14 @@ export class FormfieldLevel35Service {
       {
         className: 'section-label',
         template:
-          '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 3.5 should ALSO possess all 3.0 skills.</span></div>',
+          '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 3.5 should ALSO possess all 3.0 skills.</span><p><div>A = solid, consistent performance <br>B = good basic form, but needs work <br> C = attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
       },
     ];
 
     for (let i = 0; i < skillcodeList.length; i++) {
       this.ratingFields.push({
         key: skillcodeList[i].Skillcode,
-        type: 'select',
+        type: 'radio',
         props: {
           label: skillcodeList[i].Skillcode + ' ' + skillcodeList[i].Description,
           options: this.skillRatings,
