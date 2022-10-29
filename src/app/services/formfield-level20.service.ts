@@ -33,18 +33,19 @@ export class FormfieldLevel20Service {
       {
         className: 'section-label',
         template:
-          '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.</span></div>',
+          '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.</span><p><div>A = solid, consistent performance <br>B = good basic form, but needs work <br> C = attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
       },
     ];
 
     for (let i = 0; i < skillcodeList.length; i++) {
       this.ratingFields.push({
         key: skillcodeList[i].Skillcode,
-        type: 'select',
-        props: {
+        type: 'radio',
+        templateOptions: {
           label: skillcodeList[i].Skillcode + ' ' + skillcodeList[i].Description,
           options: this.skillRatings,
           required: true,
+          type: 'radio',
           placeholder: this.selectRatingPlaceholder,
         },
       });

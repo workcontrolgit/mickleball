@@ -19,6 +19,8 @@ import { ReactiveFormsModule, ValidationErrors, FormControl } from '@angular/for
 import { FormlyModule, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 
+import { NgbdModalComponent, NgbdModalContent } from './modal-component';
+
 // TODO move into service
 export function EmailValidator(control: FormControl | any): ValidationErrors | null {
   return /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(
@@ -45,6 +47,8 @@ import { NgxPrintElementModule } from 'ngx-print-element';
     Level45Component,
     Level50Component,
     ReportcardComponent,
+    NgbdModalComponent,
+    NgbdModalContent,
   ],
   imports: [
     CommonModule,
@@ -61,5 +65,7 @@ import { NgxPrintElementModule } from 'ngx-print-element';
     FormlyBootstrapModule, // must be imported as the last module as it contains the fallback route
     RatingRoutingModule,
   ],
+  // exports: [NgbdModalComponent],
+  // bootstrap: [NgbdModalComponent],
 })
 export class RatingModule {}

@@ -2,14 +2,11 @@
   <ng-container *ngIf="!show">
     <h3 class="text-secondary">Level 3.5 Skill Assessment</h3>
 
-    <p>* indicates a required field</p>
+    <p class="fst-italic">Fields marked with * are required.</p>
 
     <form [formGroup]="form" (ngSubmit)="submit()">
       <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
-      <button (click)="toggle()" class="btn btn-primary" [disabled]="!form.valid">View Report Card</button>
-      <p class="fst-italic text-mute">
-        Note: All required fields must be completed before the View Report Card button is enable.
-      </p>
+      <button type="submit" class="btn btn-primary">View Report Card</button>
     </form>
   </ng-container>
 

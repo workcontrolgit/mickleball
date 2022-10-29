@@ -1,11 +1,19 @@
 <div class="container-fluid" id="printSection">
   <!-- HTML form mark up -->
-  <h3 class="text-secondary">Pickleball Report Card</h3>
+
+  <div class="d-flex justify-content-between">
+    <div>
+      <h4 class="text-secondary">Pickleball Report Card</h4>
+    </div>
+    <div class="ml-auto">
+      <button [print]="['printSection']" class="btn btn-link m-1 print-none">Print</button>
+    </div>
+  </div>
 
   <div class="container">
     <div class="row row-cols-2">
-      <div class="col" ng-if="!model['level']"><strong>Pickleball Level:</strong> {{ model['level'] }}</div>
-      <div class="col"><strong>Assessment Date:</strong> {{ model['assessmentDate'] }}</div>
+      <div class="col" ng-if="!model['level']"><strong>Rating Level:</strong> {{ model['level'] }}</div>
+      <div class="col"><strong>Assessment Date:</strong> {{ model['assessmentDate'] | date }}</div>
       <div class="col"><strong>Player's Name:</strong> {{ model.playername }}</div>
       <div class="col"><strong>Player's Email:</strong> {{ model['playeremail'] }}</div>
       <div class="col"><strong>Evaluator's Name:</strong> {{ model['evaluatorname'] }}</div>
@@ -51,7 +59,7 @@
 </div>
 <!-- Directive -->
 <hr />
-<button [print]="['printSection']" class="btn btn-secondary m-1 print-none">Printer Friendly</button>
+<!-- <button [print]="['printSection']" class="btn btn-secondary m-1 print-none">Printer Friendly</button> -->
 <!-- <hr>
 <form>
   <button type="submit" (onclick)="back()" class="btn btn-secondary">&#8592; Go Back</button>

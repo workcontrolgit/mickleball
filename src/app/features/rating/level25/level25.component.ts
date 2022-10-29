@@ -4,6 +4,8 @@ import { FormfieldLevel25Service } from '../../../services/formfield-level25.ser
 import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbdModalContent } from '../modal-component';
 @Component({
   selector: 'app-level25',
   templateUrl: './level25.component.html',
@@ -45,7 +47,7 @@ export class Level25Component implements OnInit {
   show: boolean = false;
   debug: boolean = false;
 
-  constructor(serviceFormFields: FormfieldLevel25Service) {
+  constructor(serviceFormFields: FormfieldLevel25Service, private modalService: NgbModal) {
     this.fields = serviceFormFields.getFormFields();
   }
 
@@ -58,10 +60,18 @@ export class Level25Component implements OnInit {
   }
 
   submit() {
-    //alert(JSON.stringify(this.model));
+    if (this.form.valid) {
+      this.show = !this.show;
+    } else {
+      this.open();
+    }
   }
 
   toggle() {
     this.show = !this.show;
+  }
+
+  open() {
+    const modalRef = this.modalService.open(NgbdModalContent);
   }
 }
