@@ -5,11 +5,8 @@
 
     <form [formGroup]="form" (ngSubmit)="submit()">
       <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
-      <!-- <button class="btn btn-primary" >View Report Card</button> -->
-      <button (click)="toggle()" class="btn btn-primary" [disabled]="!form.valid">View Report Card</button>
-      <p class="fst-italic text-mute">
-        Note: All required fields must be completed before the View Report Card button is enable.
-      </p>
+
+      <button type="submit" class="btn btn-primary">View Report Card</button>
     </form>
   </ng-container>
 

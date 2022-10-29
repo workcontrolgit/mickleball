@@ -11,11 +11,18 @@ export class FormfieldControlService {
   public readonly SelectRatingPlaceholder: string = 'Select a rating';
 
   public readonly SkillRatings: { label: string; value: string }[] = [
-    { value: 'A', label: 'A - Solid, consistent performance' },
-    { value: 'B', label: 'B - Good basic form, but needs work' },
-    { value: 'C', label: 'C - Attempted but very poorly executed/needs work' },
-    { value: 'D', label: 'D - Not observed or not able to execute' },
+    { value: 'A', label: 'A' },
+    { value: 'B', label: 'B' },
+    { value: 'C', label: 'C' },
+    { value: 'D', label: 'D' },
   ];
+
+  // public readonly SkillRatings: { label: string; value: string }[] = [
+  //   { value: 'A', label: 'A - Solid, consistent performance' },
+  //   { value: 'B', label: 'B - Good basic form, but needs work' },
+  //   { value: 'C', label: 'C - Attempted but very poorly executed/needs work' },
+  //   { value: 'D', label: 'D - Not observed or not able to execute' },
+  // ];
 
   public readonly SkillcodeList = [
     {
@@ -365,7 +372,7 @@ export class FormfieldControlService {
         type: 'email',
         label: 'Email',
         placeholder: 'enter evaluator email',
-        required: true,
+        required: false,
       },
       validators: {
         validation: [this.EmailValidator],
@@ -383,10 +390,11 @@ export class FormfieldControlService {
     {
       key: 'terms',
       type: 'checkbox',
-      defaultValue: false,
       templateOptions: {
         label: 'I hereby declare that the assessment is true and correct to the best of my knowledge.',
         required: true,
+        pattern: 'true',
+        defaultValue: false,
       },
     },
   ];
