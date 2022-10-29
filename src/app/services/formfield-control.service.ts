@@ -17,13 +17,6 @@ export class FormfieldControlService {
     { value: 'D', label: 'D' },
   ];
 
-  // public readonly SkillRatings: { label: string; value: string }[] = [
-  //   { value: 'A', label: 'A - Solid, consistent performance' },
-  //   { value: 'B', label: 'B - Good basic form, but needs work' },
-  //   { value: 'C', label: 'C - Attempted but very poorly executed/needs work' },
-  //   { value: 'D', label: 'D - Not observed or not able to execute' },
-  // ];
-
   public readonly SkillcodeList = [
     {
       Skillcode: '20-1',

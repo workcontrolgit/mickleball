@@ -31,7 +31,7 @@ export class FormfieldLevel25Service {
       {
         className: 'section-label',
         template:
-          '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 2.5 should ALSO possess all 2.0 skills.</span><p><div>A = solid, consistent performance <br>B = good basic form, but needs work <br> C = attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
+          '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 2.5 should ALSO possess all 2.0 skills.</span><p><div>A = Solid, consistent performance <br>B = Good basic form, but needs work <br> C = Attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
       },
     ];
 
