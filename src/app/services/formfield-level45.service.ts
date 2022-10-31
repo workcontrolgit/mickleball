@@ -14,7 +14,7 @@ export class FormfieldLevel45Service {
   skillRatings: { label: string; value: string }[];
 
   constructor(private formfieldControlService: FormfieldControlService) {
-    this.skillRatings = this.formfieldControlService.SkillRatings;
+    this.skillRatings = this.formfieldControlService.GetRatingList();
     this.generalFields = this.formfieldControlService.GeneralFields;
     this.summaryFields = this.formfieldControlService.SummaryFields;
     this.selectRatingPlaceholder = this.formfieldControlService.SelectRatingPlaceholder;
@@ -22,7 +22,7 @@ export class FormfieldLevel45Service {
 
   getFormFields() {
     var filterLevel = '4.5';
-    var skillcodeList = this.formfieldControlService.GetSkillcodeList(filterLevel);
+    var skillcodeList = this.formfieldControlService.LstSkillcode(filterLevel);
 
     this.ratingFields = [
       {

@@ -28,7 +28,7 @@ export class ReportcardComponent implements OnInit {
 
     filterLevel = this.model['level'];
 
-    objSkillByLevel = this.performFilter(filterLevel);
+    objSkillByLevel = this.formfieldControlService.LstSkillcode(filterLevel);
 
     for (let i = 0; i < objSkillByLevel.length; i++) {
       skillcode = objSkillByLevel[i].Skillcode;
@@ -43,12 +43,5 @@ export class ReportcardComponent implements OnInit {
         Rating: rating,
       });
     }
-  }
-
-  performFilter(filterBy: string): any[] {
-    filterBy = filterBy.toLocaleLowerCase();
-    return this.formfieldControlService.SkillcodeList.filter(
-      (Skillcode: any) => Skillcode.Level.toLocaleLowerCase().indexOf(filterBy) !== -1
-    );
   }
 }

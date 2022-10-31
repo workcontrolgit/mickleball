@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { FormControl, ValidationErrors } from '@angular/forms';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 
+type TypeLabelValue = Array<{ label: string; value: string }>;
+
 @Injectable({
   providedIn: 'root',
 })
@@ -10,14 +12,26 @@ export class FormfieldControlService {
 
   public readonly SelectRatingPlaceholder: string = 'Select a rating';
 
-  public readonly SkillRatings: { label: string; value: string }[] = [
-    { value: 'A', label: 'A' },
-    { value: 'B', label: 'B' },
-    { value: 'C', label: 'C' },
-    { value: 'D', label: 'D' },
+  public readonly TableRatingCode = [
+    { Ratingcode: 'A', Description: 'Solid, consistent performance' },
+    { Ratingcode: 'B', Description: 'Good basic form, but needs work' },
+    { Ratingcode: 'C', Description: 'Attempted but very poorly executed/needs work' },
+    { Ratingcode: 'D', Description: 'Not observed or not able to execute' },
   ];
 
-  public readonly SkillcodeList = [
+  GetRatingList(): TypeLabelValue {
+    var lstRating: TypeLabelValue = [];
+
+    for (let i = 0; i < this.TableRatingCode.length; i++) {
+      lstRating.push({
+        label: this.TableRatingCode[i].Ratingcode,
+        value: this.TableRatingCode[i].Ratingcode,
+      });
+    }
+    return lstRating;
+  }
+
+  public readonly TableSkillCode = [
     {
       Skillcode: '20-1',
       Description: 'Minimal understanding of the basic rules of the game i.e 2 bounce rule',
@@ -404,8 +418,8 @@ export class FormfieldControlService {
     return `"${field?.formControl?.value}" is not a valid email address`;
   }
 
-  GetSkillcodeList(filterBy: string): any[] {
+  LstSkillcode(filterBy: string): any[] {
     filterBy = filterBy.toLocaleLowerCase();
-    return this.SkillcodeList.filter((Skillcode: any) => Skillcode.Level.toLocaleLowerCase().indexOf(filterBy) !== -1);
+    return this.TableSkillCode.filter((Skillcode: any) => Skillcode.Level.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 }
