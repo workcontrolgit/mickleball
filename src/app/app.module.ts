@@ -18,14 +18,14 @@ import { ShouldLoginComponent } from './should-login.component';
 
 import { NgHttpLoaderModule } from 'ng-http-loader';
 
-import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+// import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 
 @NgModule({
   imports: [
     BrowserModule,
     ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production }),
     FormsModule,
-    FormlyBootstrapModule,
+    // FormlyBootstrapModule,
     HttpClientModule,
     TranslateModule.forRoot(),
     NgHttpLoaderModule.forRoot(),
