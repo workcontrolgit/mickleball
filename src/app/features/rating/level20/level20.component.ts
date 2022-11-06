@@ -7,6 +7,8 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalContent } from '../modal-component';
 
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-level20',
   templateUrl: './level20.component.html',
@@ -16,6 +18,8 @@ export class Level20Component implements OnInit {
   // ngx formly
   form = new FormGroup({});
   ratinglevel = '2.0';
+
+  datemodel: NgbDateStruct;
 
   model: any;
   modelDebug = {

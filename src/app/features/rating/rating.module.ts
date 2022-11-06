@@ -34,6 +34,7 @@ export function EmailValidatorMessage(err: any, field: FormlyFieldConfig) {
 }
 
 import { NgxPrintElementModule } from 'ngx-print-element';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { NgxPrintElementModule } from 'ngx-print-element';
       ],
       validators: [{ name: 'email', validation: EmailValidator }],
     }),
+    FormsModule,
     NgxPrintElementModule,
     FormlyBootstrapModule, // must be imported as the last module as it contains the fallback route
     RatingRoutingModule,
