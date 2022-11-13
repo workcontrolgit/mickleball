@@ -23,6 +23,10 @@ const log = new Logger('App');
 export class AppComponent implements OnInit, OnDestroy {
   filteredUrlPatterns: string | null = environment.Oidc_Issuer;
 
+  // isAuthenticated$: Observable<boolean>;
+  // isDoneLoading$: Observable<boolean>;
+  // canActivateProtectedRoutes$: Observable<boolean>;
+
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -31,7 +35,9 @@ export class AppComponent implements OnInit, OnDestroy {
     private i18nService: I18nService,
     private authService: AuthService
   ) {
-    //this.isAuthenticated = this.authService.isAuthenticated$;
+    // this.isAuthenticated$ = this.authService.isAuthenticated$;
+    // this.isDoneLoading$ = this.authService.isDoneLoading$;
+    // this.canActivateProtectedRoutes$ = this.authService.canActivateProtectedRoutes$;
     //this.authService.runInitialLoginSequence();
   }
 

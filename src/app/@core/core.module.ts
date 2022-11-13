@@ -1,4 +1,4 @@
-import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
+import { APP_INITIALIZER, ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
@@ -12,6 +12,7 @@ import { Constants } from '../config/constants';
 
 // OIDC Integration
 import { AuthConfig, OAuthModule, OAuthModuleConfig, OAuthStorage } from 'angular-oauth2-oidc';
+import { authAppInitializerFactory } from './auth/auth-app-initializer.factory';
 import { authConfig } from './auth/auth-config';
 import { AuthGuardWithForcedLogin } from './auth/auth-guard-with-forced-login.service';
 import { AuthGuard } from './auth/auth-guard.service';
@@ -54,6 +55,7 @@ export class CoreModule {
     return {
       ngModule: CoreModule,
       providers: [
+        { provide: APP_INITIALIZER, useFactory: authAppInitializerFactory, deps: [AuthService], multi: true },
         { provide: AuthConfig, useValue: authConfig },
         { provide: OAuthModuleConfig, useValue: authModuleConfig },
         { provide: OAuthStorage, useFactory: storageFactory },
