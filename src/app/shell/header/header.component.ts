@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit {
   }
 
   login() {
+    //this.authService.runInitialLoginSequence();
     this.authService.login();
   }
 
