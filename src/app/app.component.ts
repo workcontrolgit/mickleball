@@ -9,7 +9,6 @@ import { environment } from '@env/environment';
 import { Logger, UntilDestroy, untilDestroyed } from '@core';
 import { I18nService } from '@app/i18n';
 
-import { Observable } from 'rxjs';
 import { AuthService } from '@app/@core/auth/auth.service';
 
 const log = new Logger('App');
@@ -21,11 +20,8 @@ const log = new Logger('App');
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, OnDestroy {
-  filteredUrlPatterns: string | null = environment.Oidc_Issuer;
-
-  // isAuthenticated$: Observable<boolean>;
-  // isDoneLoading$: Observable<boolean>;
-  // canActivateProtectedRoutes$: Observable<boolean>;
+  // http loader filter
+  filteredUrlPatterns: string | null = environment.Oidc_Issuer + '/connect';
 
   constructor(
     private router: Router,
@@ -34,12 +30,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private translateService: TranslateService,
     private i18nService: I18nService,
     private authService: AuthService
-  ) {
-    // this.isAuthenticated$ = this.authService.isAuthenticated$;
-    // this.isDoneLoading$ = this.authService.isDoneLoading$;
-    // this.canActivateProtectedRoutes$ = this.authService.canActivateProtectedRoutes$;
-    //this.authService.runInitialLoginSequence();
-  }
+  ) {}
 
   ngOnInit() {
     // Setup logger
