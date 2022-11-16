@@ -22,6 +22,11 @@ const routes: Routes = [
       path: 'rating',
       loadChildren: () => import('./features/rating/rating.module').then((m) => m.RatingModule),
     },
+    {
+      path: 'position',
+      loadChildren: () => import('./features/position/position.module').then((m) => m.PositionModule),
+      //data: {role: 'Manager'},
+    },
   ]),
 
   { path: 'should-login', component: ShouldLoginComponent },
