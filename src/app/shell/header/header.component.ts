@@ -23,25 +23,20 @@ export class HeaderComponent implements OnInit {
   }
 
   login() {
-    //this.authService.runInitialLoginSequence();
     this.authService.login();
   }
 
   logout() {
-    //this.authenticationService.logout().subscribe(() => this.router.navigate(['/login'], { replaceUrl: true }));
     this.authService.logout();
   }
 
-  // get username(): string | null {
-  //   this.profileData$ = this.authService.;
-  //   this.profileData$.subscribe((data) => {
-  //     this.name = data.name;
-  //     //console.log (this.name)
-  //   });
-  //   return this.name ? this.name : null;
-  // }
-
+  get name(): string | null {
+    return this.authService.identityClaims ? (this.authService.identityClaims as any)['name'] : null;
+  }
   get username(): string | null {
+    return this.authService.identityClaims ? (this.authService.identityClaims as any)['preferred_username'] : null;
+  }
+  get email(): string | null {
     return this.authService.identityClaims ? (this.authService.identityClaims as any)['email'] : null;
   }
 }

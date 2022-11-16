@@ -41,7 +41,7 @@
           </a>
           <div ngbDropdownMenu aria-labelledby="user-dropdown" class="dropdown-menu dropdown-menu-right">
             <h6 class="dropdown-header" *ngIf="(isAuthenticated | async) === true">
-              <span translate>Logged in as</span> <b>{{ username }}</b>
+              <span translate>Logged in as</span> <b>{{ name }}</b>
               <div class="dropdown-divider"></div>
             </h6>
             <button class="dropdown-item" (click)="logout()" translate *ngIf="(isAuthenticated | async) === true">
