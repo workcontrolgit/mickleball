@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Angulartics2Module } from 'angulartics2';
 
 import { environment } from '@env/environment';
 import { CoreModule } from '@core';
@@ -31,8 +32,9 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
     SharedModule,
     ShellModule,
     HomeModule,
-    AppRoutingModule,
     ReactiveFormsModule,
+    Angulartics2Module.forRoot(),
+    AppRoutingModule,
   ],
   declarations: [AppComponent, FallbackComponent, ShouldLoginComponent],
   providers: [],

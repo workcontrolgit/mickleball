@@ -6,6 +6,17 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalContent } from '../modal-component';
+import { ApiHttpService } from '@app/services/api-http.service';
+import { ApiEndpointsService } from '@app/services/api-endpoints.service';
+import { DataResponsePosition } from '@shared/classes/data-response-position';
+import { DataResponseEvaluation } from '@shared/classes/data-response-evaluation';
+import { Evaluation } from '@shared/models/evaluation';
+import { Logger } from '@core';
+
+import { AuthService } from '@app/@core/auth/auth.service';
+import { Observable } from 'rxjs';
+
+const log = new Logger('Evaluation');
 
 @Component({
   selector: 'app-level40',
@@ -16,6 +27,11 @@ export class Level40Component implements OnInit {
   // ngx formly
   form = new FormGroup({});
   ratinglevel = '4.0';
+  evaluation: Evaluation;
+
+  evaluations: Evaluation[];
+
+  isAuthenticated: Observable<boolean>;
 
   model: any;
 
@@ -57,18 +73,73 @@ export class Level40Component implements OnInit {
   fields: FormlyFieldConfig[];
 
   show: boolean = false;
-  debug: boolean = false;
+  debug: boolean = true;
 
-  constructor(serviceFormFields: FormfieldLevel40Service, private modalService: NgbModal) {
-    this.fields = serviceFormFields.getFormFields();
+  constructor(
+    private serviceFormFields: FormfieldLevel40Service,
+    private apiHttpService: ApiHttpService,
+    private apiEndpointsService: ApiEndpointsService,
+    private modalService: NgbModal,
+    private authService: AuthService
+  ) {
+    this.isAuthenticated = authService.isAuthenticated$;
+    //this.fields = this.serviceFormFields.getFormFields();
+    // this.read('3d3244bb-4d7b-454b-a5be-f622b84b1660');
   }
 
   ngOnInit() {
-    if (this.debug) {
-      this.model = this.modelDebug;
-    } else {
-      this.model = this.modelInit;
-    }
+    this.fields = this.serviceFormFields.getFormFields();
+
+    // get login user
+    // this.read(this.sub);
+
+    this.read2(this.sub, this.ratinglevel);
+  }
+
+  // CRUD > Read, map to REST/HTTP GET
+  read2(playerId: any, skillLevel: any): void {
+    this.apiHttpService
+      .get(this.apiEndpointsService.getEvaluationByPlayerIdAndSkillLevelEndpoint(playerId, skillLevel))
+      .subscribe(
+        //Assign resp to class-level model object.
+        (resp: any) => {
+          //Assign data to class-level model object.
+          this.evaluations = resp.data;
+
+          if (Array.isArray(this.evaluations) && this.evaluations.length) {
+            var firstItem: any = this.evaluations.splice(0, 1)[0];
+            this.model = JSON.parse(firstItem.result);
+          }
+
+          //   this.evaluations.forEach( (evaluation) => {
+          //     this.model = JSON.parse(evaluation.result);
+          // });
+
+          // log.debug(this.evaluations);
+          // this.model = JSON.stringify(this.evaluations);
+        },
+        (error) => {
+          log.debug(error);
+        }
+      );
+  }
+
+  read(id: any): void {
+    this.apiHttpService.get(this.apiEndpointsService.getEvaluationByIdEndpoint(id)).subscribe(
+      //Assign resp to class-level model object.
+      (resp: DataResponseEvaluation) => {
+        //Assign data to class-level model object.
+        this.evaluation = resp.data;
+        this.model = JSON.parse(this.evaluation.result);
+      },
+      (error) => {
+        log.debug(error);
+      }
+    );
+  }
+
+  get sub(): string | null {
+    return this.authService.identityClaims ? (this.authService.identityClaims as any)['sub'] : null;
   }
 
   submit() {

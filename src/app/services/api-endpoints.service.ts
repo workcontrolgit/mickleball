@@ -53,6 +53,19 @@ export class ApiEndpointsService {
 
   // call Mock endpoint
   // https://angular-datatables-demo-server.herokuapp.com
+
+  // call Evaluations endpoint
+  public getEvaluationByIdEndpoint = (id: string): string => this.createUrlWithPathVariables('Evaluations', [id]);
+
+  public getEvaluationByPlayerIdAndSkillLevelEndpoint(playerId: string, skillLevel: string): string {
+    return this.createUrlWithQueryParameters('Evaluations', (qs: QueryStringParameters) => {
+      qs.push('PlayerId', playerId);
+      qs.push('SkillLevel', skillLevel);
+    });
+  }
+
+  // call Positions endpoint
+
   public getPositionByIdEndpoint = (id: string): string => this.createUrlWithPathVariables('Positions', [id]);
 
   public deletePositionByIdEndpoint = (id: string): string => this.createUrlWithPathVariables('Positions', [id]);
