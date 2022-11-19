@@ -8,7 +8,7 @@
       "skipQuickstart": false,
       "initGit": true,
       "usePrefix": true,
-      "appName": "CATToolkitAngular",
+      "appName": "Mickleball",
       "target": ["web"],
       "pwa": true,
       "ui": "bootstrap",
@@ -19,7 +19,7 @@
       "tools": ["prettier", "hads"],
       "utility": [],
       "deploy": "none",
-      "projectName": "CATToolkitAngular",
+      "projectName": "Mickleball",
       "packageManager": "npm",
       "mobile": [],
       "desktop": []
