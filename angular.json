@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "CATToolkitAngular": {
+    "Mickleball": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -82,11 +82,11 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "CATToolkitAngular:build"
+            "browserTarget": "Mickleball:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "CATToolkitAngular:build:production"
+              "browserTarget": "Mickleball:build:production"
             },
             "ci": {}
           }
@@ -94,7 +94,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "CATToolkitAngular:build"
+            "browserTarget": "Mickleball:build"
           }
         },
         "test": {
@@ -125,11 +125,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "CATToolkitAngular:serve"
+            "devServerTarget": "Mickleball:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "CATToolkitAngular:serve:production"
+              "devServerTarget": "Mickleball:serve:production"
             }
           }
         }

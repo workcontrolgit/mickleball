@@ -21,6 +21,12 @@ import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 
 import { NgbdModalComponent, NgbdModalContent } from './modal-component';
 
+import { DatePikerComponent } from './components/date-piker/date-piker.component';
+import { DatePickerValueAccessor } from './components/date-piker/date-picker.directive';
+
+import { FieldsetWrapper } from './wrappers/FiledsetWrapper.component';
+import { LabelWrapper } from './wrappers/LabelWrapper.component';
+
 // TODO move into service
 export function EmailValidator(control: FormControl | any): ValidationErrors | null {
   return /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(
@@ -50,12 +56,21 @@ import { FormsModule } from '@angular/forms';
     ReportcardComponent,
     NgbdModalComponent,
     NgbdModalContent,
+    DatePikerComponent,
+    DatePickerValueAccessor,
+    // FieldsetWrapper,
+    LabelWrapper,
   ],
   imports: [
     CommonModule,
     NgbModule,
     ReactiveFormsModule,
     FormlyModule.forRoot({
+      types: [{ name: 'date', component: DatePikerComponent, wrappers: ['label', 'fieldset'] }],
+      wrappers: [
+        { name: 'label', component: LabelWrapper },
+        { name: 'fieldset', component: FieldsetWrapper },
+      ],
       validationMessages: [
         { name: 'required', message: 'This field is required' },
         { name: 'email', message: EmailValidatorMessage },
