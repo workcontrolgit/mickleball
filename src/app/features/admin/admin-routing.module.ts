@@ -12,7 +12,7 @@ const routes: Routes = [
     canActivate: [AuthGuard, RoleGuard],
     data: {
       title: marker('Admin'),
-      role: 'HrAdmin',
+      role: 'Admin',
     },
   },
 ];
