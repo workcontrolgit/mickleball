@@ -83,8 +83,6 @@ export class Level40Component implements OnInit {
     private authService: AuthService
   ) {
     this.isAuthenticated = authService.isAuthenticated$;
-    //this.fields = this.serviceFormFields.getFormFields();
-    // this.read('3d3244bb-4d7b-454b-a5be-f622b84b1660');
   }
 
   ngOnInit() {
@@ -92,8 +90,9 @@ export class Level40Component implements OnInit {
 
     // get login user
     // this.read(this.sub);
-
-    this.read2(this.sub, this.ratinglevel);
+    if (this.authService.hasValidToken()) {
+      this.read2(this.sub, this.ratinglevel);
+    }
   }
 
   // CRUD > Read, map to REST/HTTP GET
