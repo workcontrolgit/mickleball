@@ -11,7 +11,7 @@ import { DataResponseEvaluation } from '@shared/classes/data-response-evaluation
 import { Evaluation } from '@shared/models/evaluation';
 import { Logger } from '@core';
 import { AuthService } from '@core/auth/auth.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 const log = new Logger('Evaluation');
 type TypeLabelValue = Array<{ label: string; value: string }>;
@@ -75,7 +75,8 @@ export class FormComponent implements OnInit {
     private apiEndpointsService: ApiEndpointsService,
     private modalService: NgbModal,
     private authService: AuthService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -171,11 +172,12 @@ export class FormComponent implements OnInit {
   }
 
   submit() {
-    if (this.form.valid) {
-      this.show = !this.show;
-    } else {
-      this.open();
-    }
+    this.router.navigateByUrl('/rating/reportcard', { state: this.model });
+    // if (this.form.valid) {
+    //   this.show = !this.show;
+    // } else {
+    //   this.open();
+    // }
   }
   toggle() {
     this.show = !this.show;
@@ -183,5 +185,9 @@ export class FormComponent implements OnInit {
 
   open() {
     const modalRef = this.modalService.open(NgbdModalContent);
+  }
+
+  gotoDynamic() {
+    this.router.navigateByUrl('/rating/reportcard', { state: this.model });
   }
 }

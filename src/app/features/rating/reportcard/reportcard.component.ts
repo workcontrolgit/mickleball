@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { FormfieldControlService } from '@app/services/formfield-control.service';
+import { Router } from '@angular/router';
 
 type TypeSkillRating = Array<{ Skillcode: string; Description: string; Rating: string }>;
 
@@ -22,7 +23,10 @@ export class ReportcardComponent implements OnInit {
 
   objSkillRating: TypeSkillRating = [];
 
-  constructor(private formfieldControlService: FormfieldControlService) {}
+  constructor(private formfieldControlService: FormfieldControlService, private router: Router) {
+    this.model = this.router.getCurrentNavigation().extras.state;
+    console.log(this.router.getCurrentNavigation().extras.state);
+  }
 
   ngOnInit() {
     // rating level 4.0
@@ -42,7 +46,7 @@ export class ReportcardComponent implements OnInit {
       description = objSkillByLevel[i].description;
 
       evalString = "this.model['" + skillcode + "']";
-      rating = eval("this.model['" + skillcode + "']");
+      rating = eval(evalString);
 
       this.objSkillRating.push({
         Skillcode: skillcode,
