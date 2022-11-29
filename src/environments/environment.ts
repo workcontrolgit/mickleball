@@ -21,11 +21,62 @@ export const environment = {
   //Api_Endpoint: 'https://cat-netcore-api.azurewebsites.net/api/v1',
   //Api_Endpoint: 'https://mickleball-netcore-api.azurewebsites.net/api/v1',
   Api_Mock_Endpoint: 'https://angular-datatables-demo-server.herokuapp.com',
+  Evaluation_Instruction: {
+    Level_20:
+      '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.</span><p><div>A = Solid, consistent performance <br>B = Good basic form, but needs work <br> C = Attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
+    Level_25:
+      '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 2.5 should ALSO possess all 2.0 skills.</span><p><div>A = Solid, consistent performance <br>B = Good basic form, but needs work <br> C = Attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
+    Level_30:
+      '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 3.0 should ALSO possess all 2.5 skills.</span><p><div>A = Solid, consistent performance <br>B = Good basic form, but needs work <br> C = Attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
+    Level_35:
+      '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 3.5 should ALSO possess all 3.0 skills.</span><p><div>A = Solid, consistent performance <br>B = Good basic form, but needs work <br> C = Attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
+    Level_40:
+      '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 4.0 should ALSO possess all 3.5 skills.</span><p><div>A = Solid, consistent performance <br>B = Good basic form, but needs work <br> C = Attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
+    Level_45:
+      '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 4.5 should ALSO possess all 4.0 skills.</span><p><div>A = Solid, consistent performance <br>B = Good basic form, but needs work <br> C = Attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
+    Level_50:
+      '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 5.0 should ALSO possess all 4.5 skills.</span><p><div>A = Solid, consistent performance <br>B = Good basic form, but needs work <br> C = Attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
+  },
+  googleSheetsApiKey: 'AIzaSyC3AgyGHXMyj8j-iFZ4ucrenprWrZm0VKI',
+  characters: {
+    spreadsheetId: '1BKTkH8UloZfdkaJT7kIvmJHlCbb8m-Ep6rsNYhYAF4E',
+    worksheetName: 'Characters',
+  },
+
+  ratingcodes: {
+    spreadsheetId: '1BKTkH8UloZfdkaJT7kIvmJHlCbb8m-Ep6rsNYhYAF4E',
+    worksheetName: 'Grades',
+  },
+
+  //   ratingScales: [
+  //     {
+  //         "label": "A",
+  //         "value": "A"
+  //     },
+  //     {
+  //         "label": "B",
+  //         "value": "B"
+  //     },
+  //     {
+  //         "label": "C",
+  //         "value": "C"
+  //     },
+  //     {
+  //         "label": "D",
+  //         "value": "D"
+  //     }
+  // ],
+  // "TableRatingCode": [
+  //   { ratingScale: 'A', Description: 'Solid, consistent performance' },
+  //   { ratingScale: 'B', Description: 'Good basic form, but needs work' },
+  //   { ratingScale: 'C', Description: 'Attempted but very poorly executed/needs work' },
+  //   { ratingScale: 'D', Description: 'Not observed or not able to execute' },
+  // ],
 
   //IdentityServer/OIDC Configuration
-  Oidc_Issuer: 'https://localhost:44310', //this is for IdentityServer4 Admin UI running on localhost https://github.com/workcontrolgit/TokenProject.AdminUI
+  //Oidc_Issuer: 'https://localhost:44310', //this is for IdentityServer4 Admin UI running on localhost https://github.com/workcontrolgit/TokenProject.AdminUI
   //Oidc_Issuer: 'https://cat-token-identity.azurewebsites.net', //demo identityserver4 in Azure
-  //Oidc_Issuer: 'https://mickleball-token-identity.azurewebsites.net', //demo identityserver4 in Azure
+  Oidc_Issuer: 'https://mickleball-token-identity.azurewebsites.net', //demo identityserver4 in Azure
   Oidc_ClientId: 'MickleballClient', // client id setup in IdentityServer4
   Oidc_responseType: 'code', //code flow PKCE, https://github.com/workcontrolgit/TokenProject.AdminUI
   Oidc_redirectUri: window.location.origin + '/auth-callback',
@@ -35,8 +86,8 @@ export const environment = {
   Oidc_useSilentRefresh: true, // Needed for Code Flow to suggest using iframe-based refreshes
   Oidc_silentRefreshTimeout: 50000, // For faster testing
   Oidc_timeoutFactor: 0.25, // For faster testing
-  Oidc_sessionChecksEnabled: true,
-  Oidc_showDebugInformation: true, // Also requires enabling "Verbose" level in devtools
+  Oidc_sessionChecksEnabled: false,
+  Oidc_showDebugInformation: false, // Also requires enabling "Verbose" level in devtools
   Oidc_clearHashAfterLogin: false, // https://github.com/manfredsteyer/angular-oauth2-oidc/issues/457#issuecomment-431807040,
   Oidc_nonceStateSeparator: 'semicolon', // Real semicolon gets mangled by IdentityServer's URI encoding
 };

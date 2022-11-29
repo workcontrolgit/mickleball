@@ -16,7 +16,7 @@ export class FormfieldLevel20Service {
 
   constructor(private formfieldControlService: FormfieldControlService) {
     //this.skillRatings = this.formfieldControlService.SkillRatings;
-    this.skillRatings = this.formfieldControlService.GetRatingList();
+    this.skillRatings = this.formfieldControlService.getGradeLetters();
     this.generalFields = this.formfieldControlService.GeneralFields;
     this.summaryFields = this.formfieldControlService.SummaryFields;
     this.selectRatingPlaceholder = this.formfieldControlService.SelectRatingPlaceholder;

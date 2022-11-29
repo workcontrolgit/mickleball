@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { FormControl, ValidationErrors } from '@angular/forms';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 import { DatabaseService } from './database.service';
+import { ConfigurationService } from '@app/services/configuration.service';
 
 type TypeLabelValue = Array<{ label: string; value: string }>;
 
@@ -9,22 +10,22 @@ type TypeLabelValue = Array<{ label: string; value: string }>;
   providedIn: 'root',
 })
 export class FormfieldControlService {
-  constructor(private databaseService: DatabaseService) {}
+  constructor(private databaseService: DatabaseService, private configService: ConfigurationService) {}
 
   public readonly SelectRatingPlaceholder: string = 'Select a rating';
 
-  public readonly TableRatingCode = this.databaseService.TableRatingCode;
+  public readonly TableRatingCode = this.configService.settings;
 
-  GetRatingList(): TypeLabelValue {
-    var lstRating: TypeLabelValue = [];
+  getGradeLetters(): TypeLabelValue {
+    var lstGrades: TypeLabelValue = [];
 
     for (let i = 0; i < this.TableRatingCode.length; i++) {
-      lstRating.push({
-        label: this.TableRatingCode[i].Ratingcode,
-        value: this.TableRatingCode[i].Ratingcode,
+      lstGrades.push({
+        label: this.TableRatingCode[i].grade,
+        value: this.TableRatingCode[i].grade,
       });
     }
-    return lstRating;
+    return lstGrades;
   }
 
   public readonly TableSkillCode = this.databaseService.TableSkillCode;

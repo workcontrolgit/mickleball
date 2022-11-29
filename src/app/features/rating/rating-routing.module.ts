@@ -1,18 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RatingComponent } from './rating.component';
-import { Level20Component } from './level20/level20.component';
-import { Level25Component } from './level25/level25.component';
-import { Level30Component } from './level30/level30.component';
-import { Level35Component } from './level35/level35.component';
-import { Level40Component } from './level40/level40.component';
-import { Level45Component } from './level45/level45.component';
-import { Level50Component } from './level50/level50.component';
+import { FormComponent } from './form/form.component';
 import { ReportcardComponent } from './reportcard/reportcard.component';
 
 import { marker } from '@biesbjerg/ngx-translate-extract-marker';
 import { AuthGuard } from '@app/@core/auth/auth-guard.service';
-import { NgbdModalComponent } from './modal-component';
+import { NgbdModalComponent } from './components/modal/modal-component';
 
 const routes: Routes = [
   {
@@ -23,45 +17,45 @@ const routes: Routes = [
   },
   {
     path: 'level20',
-    component: Level20Component,
+    component: FormComponent,
     //canActivate: [AuthGuard],
-    data: { title: marker('Skill Assessment for 2.0 Players') },
+    data: { title: marker('Skill Assessment for 2.0 Players'), skillLevel: '2.0' },
   },
   {
     path: 'level25',
-    component: Level25Component,
+    component: FormComponent,
     //canActivate: [AuthGuard],
-    data: { title: marker('Skill Assessment for 2.5 Players') },
+    data: { title: marker('Skill Assessment for 2.5 Players'), skillLevel: '2.5' },
   },
   {
     path: 'level30',
-    component: Level30Component,
+    component: FormComponent,
     //canActivate: [AuthGuard],
-    data: { title: marker('Skill Assessment for 3.0 Players') },
+    data: { title: marker('Skill Assessment for 3.0 Players'), skillLevel: '3.0' },
   },
   {
     path: 'level35',
-    component: Level35Component,
+    component: FormComponent,
     //canActivate: [AuthGuard],
-    data: { title: marker('Skill Assessment for 3.5 Players') },
+    data: { title: marker('Skill Assessment for 3.5 Players'), skillLevel: '3.5' },
   },
   {
     path: 'level40',
-    component: Level40Component,
-    //canActivate: [AuthGuard],
-    data: { title: marker('Skill Assessment for 4.0 Players') },
+    component: FormComponent,
+    canActivate: [AuthGuard],
+    data: { title: marker('Skill Assessment for 4.0 Players'), skillLevel: '4.0' },
   },
   {
     path: 'level45',
-    component: Level45Component,
+    component: FormComponent,
     //canActivate: [AuthGuard],
-    data: { title: marker('Skill Assessment for 4.5 Players') },
+    data: { title: marker('Skill Assessment for 4.5 Players'), skillLevel: '4.5' },
   },
   {
     path: 'level50',
-    component: Level50Component,
+    component: FormComponent,
     //canActivate: [AuthGuard],
-    data: { title: marker('Skill Assessment for 5.0 Players') },
+    data: { title: marker('Skill Assessment for 5.0 Players'), skillLevel: '5.0' },
   },
   {
     path: 'reportcard',

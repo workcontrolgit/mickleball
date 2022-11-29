@@ -8,8 +8,6 @@ import { RouteReusableStrategy } from './route-reusable-strategy';
 import { ApiPrefixInterceptor } from './http/api-prefix.interceptor';
 import { ErrorHandlerInterceptor } from './http/error-handler.interceptor';
 
-import { Constants } from '../config/constants';
-
 // OIDC Integration
 import { AuthConfig, OAuthModule, OAuthModuleConfig, OAuthStorage } from 'angular-oauth2-oidc';
 import { authAppInitializerFactory } from './auth/auth-app-initializer.factory';
@@ -47,7 +45,6 @@ export function storageFactory(): OAuthStorage {
       provide: RouteReuseStrategy,
       useClass: RouteReusableStrategy,
     },
-    Constants,
   ],
 })
 export class CoreModule {

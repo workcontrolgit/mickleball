@@ -11,17 +11,17 @@ export class FormfieldLevel40Service {
   summaryFields: FormlyFieldConfig[];
   fields: FormlyFieldConfig[];
   selectRatingPlaceholder: string;
-  skillRatings: { label: string; value: string }[];
+  ratingScale: { label: string; value: string }[];
 
   constructor(private formfieldControlService: FormfieldControlService) {
-    this.skillRatings = this.formfieldControlService.GetRatingList();
+    this.ratingScale = this.formfieldControlService.getGradeLetters();
     this.generalFields = this.formfieldControlService.GeneralFields;
     this.summaryFields = this.formfieldControlService.SummaryFields;
     this.selectRatingPlaceholder = this.formfieldControlService.SelectRatingPlaceholder;
   }
 
-  getFormFields() {
-    var filterLevel = '4.0';
+  getFormFields(filterLevel: string) {
+    // var filterLevel = '4.0';
     var skillcodeList = this.formfieldControlService.LstSkillcode(filterLevel);
 
     this.ratingFields = [
@@ -42,7 +42,7 @@ export class FormfieldLevel40Service {
         type: 'radio',
         props: {
           label: skillcodeList[i].Skillcode + ' ' + skillcodeList[i].Description,
-          options: this.skillRatings,
+          options: this.ratingScale,
           required: true,
           placeholder: this.selectRatingPlaceholder,
         },

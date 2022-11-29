@@ -5,33 +5,33 @@ import { FormfieldControlService } from '@app/services/formfield-control.service
 @Injectable({
   providedIn: 'root',
 })
-export class FormfieldLevel25Service {
+export class FormfieldSkillRatingService {
   generalFields: FormlyFieldConfig[];
-  ratingFields: FormlyFieldConfig[] = [];
+  ratingFields: FormlyFieldConfig[];
   summaryFields: FormlyFieldConfig[];
   fields: FormlyFieldConfig[];
   selectRatingPlaceholder: string;
-  skillRatings: { label: string; value: string }[];
+  ratingScale: { label: string; value: string }[];
 
   constructor(private formfieldControlService: FormfieldControlService) {
-    this.skillRatings = this.formfieldControlService.getGradeLetters();
+    this.ratingScale = this.formfieldControlService.getGradeLetters();
     this.generalFields = this.formfieldControlService.GeneralFields;
     this.summaryFields = this.formfieldControlService.SummaryFields;
     this.selectRatingPlaceholder = this.formfieldControlService.SelectRatingPlaceholder;
   }
 
-  getFormFields() {
-    var filterLevel = '2.5';
-    var skillcodeList = this.formfieldControlService.LstSkillcode(filterLevel);
+  getFormFields(ratingLevel: string, instruction: string) {
+    // var filterLevel = '4.0';
+    var skillcodeList = this.formfieldControlService.LstSkillcode(ratingLevel);
 
     this.ratingFields = [
       {
         key: 'level',
       },
+
       {
         className: 'section-label',
-        template:
-          '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 2.5 should ALSO possess all 2.0 skills.</span><p><div>A = Solid, consistent performance <br>B = Good basic form, but needs work <br> C = Attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
+        template: instruction,
       },
     ];
 
@@ -41,13 +41,14 @@ export class FormfieldLevel25Service {
         type: 'radio',
         props: {
           label: skillcodeList[i].Skillcode + ' ' + skillcodeList[i].Description,
-          options: this.skillRatings,
+          options: this.ratingScale,
           required: true,
           placeholder: this.selectRatingPlaceholder,
         },
       });
     }
 
+    // combine three section 1, 2 and 3
     this.fields = this.generalFields.concat(this.ratingFields).concat(this.summaryFields);
 
     return this.fields;

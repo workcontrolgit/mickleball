@@ -50,6 +50,7 @@
     "datatables.net": "^1.12.1",
     "datatables.net-dt": "^1.12.1",
     "jquery": "^3.4.1",
+    "ng-google-sheets-db": "^2.0.0",
     "ng-http-loader": "^11.0.0",
     "ngx-print-element": "^2.0.16",
     "ngx-sharebuttons": "^11.0.0",

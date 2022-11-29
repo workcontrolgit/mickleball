@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Constants } from '@app/config/constants';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 import { FormfieldControlService } from '@app/services/formfield-control.service';
 
@@ -14,8 +13,8 @@ export class FormfieldLevel35Service {
   selectRatingPlaceholder: string;
   skillRatings: { label: string; value: string }[];
 
-  constructor(private constants: Constants, private formfieldControlService: FormfieldControlService) {
-    this.skillRatings = this.formfieldControlService.GetRatingList();
+  constructor(private formfieldControlService: FormfieldControlService) {
+    this.skillRatings = this.formfieldControlService.getGradeLetters();
     this.generalFields = this.formfieldControlService.GeneralFields;
     this.summaryFields = this.formfieldControlService.SummaryFields;
     this.selectRatingPlaceholder = this.formfieldControlService.SelectRatingPlaceholder;

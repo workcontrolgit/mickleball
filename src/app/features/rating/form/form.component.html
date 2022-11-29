@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <ng-container *ngIf="!show">
-    <h3 class="text-secondary">Level {{ ratinglevel }} Skill Assessment</h3>
+    <h3 class="text-secondary">Level {{ skillLevel }} Skill Assessment</h3>
 
     <p class="fst-italic">Fields marked with * are required.</p>
 
@@ -18,6 +18,3 @@
 </div>
 
 <p *ngIf="debug">{{ model | json }}</p>
-
-<!-- <p>{{ model | json }}</p> -->
-<!-- {{ form.valid }} -->

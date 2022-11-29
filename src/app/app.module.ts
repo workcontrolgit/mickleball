@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -19,6 +19,14 @@ import { ShouldLoginComponent } from './should-login.component';
 
 import { NgHttpLoaderModule } from 'ng-http-loader';
 
+import { API_KEY, GoogleSheetsDbService } from 'ng-google-sheets-db';
+
+import { ConfigurationService } from './services/configuration.service';
+
+export function initConfig(configService: ConfigurationService) {
+  return () => configService.load2();
+}
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -37,7 +45,19 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
     AppRoutingModule,
   ],
   declarations: [AppComponent, FallbackComponent, ShouldLoginComponent],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      deps: [ConfigurationService],
+      multi: true,
+      useFactory: initConfig,
+    },
+    {
+      provide: API_KEY,
+      useValue: environment.googleSheetsApiKey,
+    },
+    GoogleSheetsDbService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

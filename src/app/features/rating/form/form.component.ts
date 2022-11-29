@@ -1,38 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { FormfieldLevel40Service } from '@app/services/formfield-level40.service';
-
+import { FormfieldSkillRatingService } from '@app/services/formfield-skillrating.service';
+import { environment } from '@env/environment';
 import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
-
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { NgbdModalContent } from '../modal-component';
+import { NgbdModalContent } from '@app/features/rating/components/modal/modal-component';
 import { ApiHttpService } from '@app/services/api-http.service';
 import { ApiEndpointsService } from '@app/services/api-endpoints.service';
-import { DataResponsePosition } from '@shared/classes/data-response-position';
 import { DataResponseEvaluation } from '@shared/classes/data-response-evaluation';
 import { Evaluation } from '@shared/models/evaluation';
 import { Logger } from '@core';
-
-import { AuthService } from '@app/@core/auth/auth.service';
-import { Observable } from 'rxjs';
+import { AuthService } from '@core/auth/auth.service';
+import { ActivatedRoute } from '@angular/router';
 
 const log = new Logger('Evaluation');
-
+type TypeLabelValue = Array<{ label: string; value: string }>;
 @Component({
   selector: 'app-level40',
-  templateUrl: './level40.component.html',
-  styleUrls: ['./level40.component.css'],
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.css'],
 })
-export class Level40Component implements OnInit {
+export class FormComponent implements OnInit {
   // ngx formly
   form = new FormGroup({});
-  ratinglevel = '4.0';
+  skillLevel = '4.0';
   evaluation: Evaluation;
-
   evaluations: Evaluation[];
-
-  isAuthenticated: Observable<boolean>;
-
   model: any;
 
   modelDebug = {
@@ -73,25 +66,68 @@ export class Level40Component implements OnInit {
   fields: FormlyFieldConfig[];
 
   show: boolean = false;
-  debug: boolean = true;
+  debug: boolean = false;
+  level: any;
 
   constructor(
-    private serviceFormFields: FormfieldLevel40Service,
+    private serviceFormFields: FormfieldSkillRatingService,
     private apiHttpService: ApiHttpService,
     private apiEndpointsService: ApiEndpointsService,
     private modalService: NgbModal,
-    private authService: AuthService
-  ) {
-    this.isAuthenticated = authService.isAuthenticated$;
-  }
+    private authService: AuthService,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.fields = this.serviceFormFields.getFormFields();
+    // https://www.geekstrick.com/pass-data-from-routes-to-components-in-angular/
+
+    this.activatedRoute.data.subscribe((data) => {
+      this.skillLevel = data.skillLevel;
+    });
+
+    var instructions: string;
+
+    switch (this.skillLevel) {
+      case '2.0': {
+        instructions = environment.Evaluation_Instruction.Level_20;
+        break;
+      }
+      case '2.5': {
+        instructions = environment.Evaluation_Instruction.Level_25;
+        break;
+      }
+      case '3.0': {
+        instructions = environment.Evaluation_Instruction.Level_30;
+        break;
+      }
+      case '3.5': {
+        instructions = environment.Evaluation_Instruction.Level_35;
+        break;
+      }
+      case '4.0': {
+        instructions = environment.Evaluation_Instruction.Level_40;
+        break;
+      }
+      case '4.5': {
+        instructions = environment.Evaluation_Instruction.Level_45;
+        break;
+      }
+      case '5.0': {
+        instructions = environment.Evaluation_Instruction.Level_50;
+        break;
+      }
+      default: {
+        instructions = 'undefined';
+        break;
+      }
+    }
+
+    this.fields = this.serviceFormFields.getFormFields(this.skillLevel, instructions);
 
     // get login user
     // this.read(this.sub);
     if (this.authService.hasValidToken()) {
-      this.read2(this.sub, this.ratinglevel);
+      this.read2(this.sub, this.skillLevel);
     }
   }
 
@@ -109,13 +145,6 @@ export class Level40Component implements OnInit {
             var firstItem: any = this.evaluations.splice(0, 1)[0];
             this.model = JSON.parse(firstItem.result);
           }
-
-          //   this.evaluations.forEach( (evaluation) => {
-          //     this.model = JSON.parse(evaluation.result);
-          // });
-
-          // log.debug(this.evaluations);
-          // this.model = JSON.stringify(this.evaluations);
         },
         (error) => {
           log.debug(error);

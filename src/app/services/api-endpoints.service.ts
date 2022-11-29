@@ -4,17 +4,19 @@ import { Injectable } from '@angular/core';
 import { UrlBuilder } from '@shared/classes/url-builder';
 import { QueryStringParameters } from '@shared/classes/query-string-parameters';
 // Application Constants
-import { Constants } from '@app/config/constants';
+// import { Constants } from '@app/config/constants';
+
+import { environment } from '@env/environment';
+
 @Injectable({
   providedIn: 'root',
 })
 
 // Returns the api endpoints urls to use in services in a consistent way
 export class ApiEndpointsService {
-  constructor(
-    // Application Constants
-    private constants: Constants
-  ) {}
+  constructor() // Application Constants
+  //private constants: Constants
+  {}
 
   /* #region EXAMPLES */
   public getDataByIdEndpoint = (id: string): string => this.createUrlWithPathVariables('data', [id]);
@@ -86,7 +88,7 @@ export class ApiEndpointsService {
   // URL
   private createUrl(action: string, isMockAPI: boolean = false): string {
     const urlBuilder: UrlBuilder = new UrlBuilder(
-      isMockAPI ? this.constants.Api_Mock_Endpoint : this.constants.Api_Endpoint,
+      isMockAPI ? environment.Api_Mock_Endpoint : environment.Api_Endpoint,
       action
     );
     return urlBuilder.toString();
@@ -97,7 +99,7 @@ export class ApiEndpointsService {
     action: string,
     queryStringHandler?: (queryStringParameters: QueryStringParameters) => void
   ): string {
-    const urlBuilder: UrlBuilder = new UrlBuilder(this.constants.Api_Endpoint, action);
+    const urlBuilder: UrlBuilder = new UrlBuilder(environment.Api_Endpoint, action);
     // Push extra query string params
     if (queryStringHandler) {
       queryStringHandler(urlBuilder.queryString);
@@ -114,7 +116,7 @@ export class ApiEndpointsService {
         encodedPathVariablesUrl += `/${encodeURIComponent(pathVariable.toString())}`;
       }
     }
-    const urlBuilder: UrlBuilder = new UrlBuilder(this.constants.Api_Endpoint, `${action}${encodedPathVariablesUrl}`);
+    const urlBuilder: UrlBuilder = new UrlBuilder(environment.Api_Endpoint, `${action}${encodedPathVariablesUrl}`);
     return urlBuilder.toString();
   }
   /* #endregion */

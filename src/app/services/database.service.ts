@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-type TypeRatingCode = Array<{ Ratingcode: string; Description: string }>;
+type TypeRatingCode = Array<{ ratingScale: string; Description: string }>;
 type TypeSkillCode = Array<{ Skillcode: string; Description: string; Level: string }>;
 type TypeDrill = Array<{ Name: string; Url: string; Author: string; Skillcode: string }>;
 
@@ -19,12 +19,12 @@ export class DatabaseService {
     },
   ];
 
-  public readonly TableRatingCode: TypeRatingCode = [
-    { Ratingcode: 'A', Description: 'Solid, consistent performance' },
-    { Ratingcode: 'B', Description: 'Good basic form, but needs work' },
-    { Ratingcode: 'C', Description: 'Attempted but very poorly executed/needs work' },
-    { Ratingcode: 'D', Description: 'Not observed or not able to execute' },
-  ];
+  // public readonly TableRatingCode: TypeRatingCode = [
+  //   { ratingScale: 'A', Description: 'Solid, consistent performance' },
+  //   { ratingScale: 'B', Description: 'Good basic form, but needs work' },
+  //   { ratingScale: 'C', Description: 'Attempted but very poorly executed/needs work' },
+  //   { ratingScale: 'D', Description: 'Not observed or not able to execute' },
+  // ]
 
   public readonly TableSkillCode: TypeSkillCode = [
     {
