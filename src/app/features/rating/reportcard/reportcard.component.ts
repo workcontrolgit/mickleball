@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { FormfieldControlService } from '@app/services/formfield-control.service';
 
+type TypeSkillRating = Array<{ Skillcode: string; Description: string; Rating: string }>;
+
 @Component({
   selector: 'app-reportcard',
   templateUrl: './reportcard.component.html',
@@ -11,9 +13,14 @@ export class ReportcardComponent implements OnInit {
   state$: Observable<object>;
   @Input() model: any = {};
 
+  success: string = 'text-success fw-bolder';
+  info: string = 'text-info fw-bolder';
+  warning: string = 'text-warning fw-bolder';
+  danger: string = 'text-danger fw-bolder';
+
   //myObjArray: any = [];
 
-  objSkillRating: any = [];
+  objSkillRating: TypeSkillRating = [];
 
   constructor(private formfieldControlService: FormfieldControlService) {}
 
@@ -31,8 +38,8 @@ export class ReportcardComponent implements OnInit {
     objSkillByLevel = this.formfieldControlService.LstSkillcode(filterLevel);
 
     for (let i = 0; i < objSkillByLevel.length; i++) {
-      skillcode = objSkillByLevel[i].Skillcode;
-      description = objSkillByLevel[i].Description;
+      skillcode = objSkillByLevel[i].skillcode;
+      description = objSkillByLevel[i].description;
 
       evalString = "this.model['" + skillcode + "']";
       rating = eval("this.model['" + skillcode + "']");

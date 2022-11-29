@@ -1,9 +1,9 @@
-export const ratingcodeAttributesMapping = {
+export const GradeAttributesMapping = {
   grade: 'Grade',
   description: 'Description',
 };
 
-export interface RatingScale {
+export interface Grade {
   grade: string;
   description: string;
 }

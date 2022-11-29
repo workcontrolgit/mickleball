@@ -38,40 +38,16 @@ export const environment = {
       '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 5.0 should ALSO possess all 4.5 skills.</span><p><div>A = Solid, consistent performance <br>B = Good basic form, but needs work <br> C = Attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
   },
   googleSheetsApiKey: 'AIzaSyC3AgyGHXMyj8j-iFZ4ucrenprWrZm0VKI',
-  characters: {
-    spreadsheetId: '1BKTkH8UloZfdkaJT7kIvmJHlCbb8m-Ep6rsNYhYAF4E',
-    worksheetName: 'Characters',
-  },
+  // characters: {
+  //   spreadsheetId: '1BKTkH8UloZfdkaJT7kIvmJHlCbb8m-Ep6rsNYhYAF4E',
+  //   worksheetName: 'Characters',
+  // },
 
-  ratingcodes: {
-    spreadsheetId: '1BKTkH8UloZfdkaJT7kIvmJHlCbb8m-Ep6rsNYhYAF4E',
-    worksheetName: 'Grades',
+  googleSheetInfo: {
+    spreadsheetId: '17zEoQvmjqBHoDykjxgun4upXg5QT6KooHnuAp_wXmac',
+    worksheetGrades: 'Grades',
+    worksheetSkills: 'Skills',
   },
-
-  //   ratingScales: [
-  //     {
-  //         "label": "A",
-  //         "value": "A"
-  //     },
-  //     {
-  //         "label": "B",
-  //         "value": "B"
-  //     },
-  //     {
-  //         "label": "C",
-  //         "value": "C"
-  //     },
-  //     {
-  //         "label": "D",
-  //         "value": "D"
-  //     }
-  // ],
-  // "TableRatingCode": [
-  //   { ratingScale: 'A', Description: 'Solid, consistent performance' },
-  //   { ratingScale: 'B', Description: 'Good basic form, but needs work' },
-  //   { ratingScale: 'C', Description: 'Attempted but very poorly executed/needs work' },
-  //   { ratingScale: 'D', Description: 'Not observed or not able to execute' },
-  // ],
 
   //IdentityServer/OIDC Configuration
   //Oidc_Issuer: 'https://localhost:44310', //this is for IdentityServer4 Admin UI running on localhost https://github.com/workcontrolgit/TokenProject.AdminUI

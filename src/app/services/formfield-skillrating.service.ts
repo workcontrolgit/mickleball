@@ -11,10 +11,10 @@ export class FormfieldSkillRatingService {
   summaryFields: FormlyFieldConfig[];
   fields: FormlyFieldConfig[];
   selectRatingPlaceholder: string;
-  ratingScale: { label: string; value: string }[];
+  gradeLetters: { label: string; value: string }[];
 
   constructor(private formfieldControlService: FormfieldControlService) {
-    this.ratingScale = this.formfieldControlService.getGradeLetters();
+    this.gradeLetters = this.formfieldControlService.getGradeLetters();
     this.generalFields = this.formfieldControlService.GeneralFields;
     this.summaryFields = this.formfieldControlService.SummaryFields;
     this.selectRatingPlaceholder = this.formfieldControlService.SelectRatingPlaceholder;
@@ -37,11 +37,11 @@ export class FormfieldSkillRatingService {
 
     for (let i = 0; i < skillcodeList.length; i++) {
       this.ratingFields.push({
-        key: skillcodeList[i].Skillcode,
+        key: skillcodeList[i].skillcode,
         type: 'radio',
         props: {
-          label: skillcodeList[i].Skillcode + ' ' + skillcodeList[i].Description,
-          options: this.ratingScale,
+          label: skillcodeList[i].skillcode + ' ' + skillcodeList[i].description,
+          options: this.gradeLetters,
           required: true,
           placeholder: this.selectRatingPlaceholder,
         },

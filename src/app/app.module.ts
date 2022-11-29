@@ -21,10 +21,15 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
 
 import { API_KEY, GoogleSheetsDbService } from 'ng-google-sheets-db';
 
-import { ConfigurationService } from './services/configuration.service';
+import { TableGradesService } from './services/table-grades.service';
+import { TableSkillsService } from './services/table-skills.service';
 
-export function initConfig(configService: ConfigurationService) {
-  return () => configService.load2();
+export function initTableGrades(configService: TableGradesService) {
+  return () => configService.load();
+}
+
+export function initTableSkills(configService: TableSkillsService) {
+  return () => configService.load();
 }
 
 @NgModule({
@@ -48,9 +53,15 @@ export function initConfig(configService: ConfigurationService) {
   providers: [
     {
       provide: APP_INITIALIZER,
-      deps: [ConfigurationService],
+      deps: [TableGradesService],
       multi: true,
-      useFactory: initConfig,
+      useFactory: initTableGrades,
+    },
+    {
+      provide: APP_INITIALIZER,
+      deps: [TableSkillsService],
+      multi: true,
+      useFactory: initTableSkills,
     },
     {
       provide: API_KEY,
