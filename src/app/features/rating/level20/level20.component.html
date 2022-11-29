@@ -4,19 +4,6 @@
     <p class="fst-italic">Fields marked with * are required.</p>
 
     <form [formGroup]="form" (ngSubmit)="submit()">
-      <div class="input-group">
-        <input
-          class="form-control"
-          placeholder="yyyy-mm-dd"
-          name="dp"
-          [(ngModel)]="datemodel"
-          [ngModelOptions]="{ standalone: true }"
-          ngbDatepicker
-          #d="ngbDatepicker"
-        />
-        <button class="btn btn-outline-secondary bi bi-calendar-week" (click)="d.toggle()" type="button"></button>
-      </div>
-
       <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
 
       <button type="submit" class="btn btn-primary">View Report Card</button>
