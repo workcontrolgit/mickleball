@@ -106,7 +106,7 @@ export class FormfieldControlService {
       key: 'Notes',
       type: 'textarea',
       props: {
-        label: 'Assessment Notes',
+        label: 'Evaluation Notes',
         placeholder: 'enter any notes about the assessment here',
         rows: 5,
       },

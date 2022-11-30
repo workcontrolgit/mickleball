@@ -1,22 +1,36 @@
 <div class="container-fluid">
-  <ng-container *ngIf="!show">
-    <h3 class="text-secondary">Level {{ skillLevel }} Skill Assessment</h3>
+  <h3 class="text-secondary">Level {{ skillLevel }} Skill Assessment</h3>
 
-    <p class="fst-italic">Fields marked with * are required.</p>
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+    <li [ngbNavItem]="1">
+      <a ngbNavLink>Evaluation</a>
+      <ng-template ngbNavContent>
+        <h4 class="text-secondary">Evaluation Form</h4>
+        <p class="fst-italic">Fields marked with * are required.</p>
 
-    <form [formGroup]="form" (ngSubmit)="submit()">
-      <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
-      <button type="submit" class="btn btn-primary">View Report Card</button>
-    </form>
-  </ng-container>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+          <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+          <button type="submit" class="btn btn-primary">View Report Card</button>
+        </form>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="2">
+      <a ngbNavLink>Report Card</a>
+      <ng-template ngbNavContent>
+        <app-reportcard [model]="model"></app-reportcard>
+      </ng-template>
+    </li>
+    <!-- <li [ngbNavItem]="3">
+        <a ngbNavLink>Training</a>
+        <ng-template ngbNavContent>
+        </ng-template>
+      </li> -->
+  </ul>
 
-  <ng-container *ngIf="show">
-    <app-reportcard [model]="model"></app-reportcard>
-
-    <button (click)="toggle()" class="btn btn-primary">Go Back</button>
-  </ng-container>
+  <!-- Content output -->
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
 </div>
 
-<button (click)="gotoDynamic()">Goto Dynamic Component</button>
+<!-- <pre>Active: {{ active }}</pre> -->
 
 <p *ngIf="debug">{{ model | json }}</p>

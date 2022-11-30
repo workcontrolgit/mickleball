@@ -12,14 +12,15 @@ import { Evaluation } from '@shared/models/evaluation';
 import { Logger } from '@core';
 import { AuthService } from '@core/auth/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 const log = new Logger('Evaluation');
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css'],
+  selector: 'app-evaluation',
+  templateUrl: './evaluation.component.html',
+  styleUrls: ['./evaluation.component.css'],
 })
-export class FormComponent implements OnInit {
+export class EvaluationComponent implements OnInit {
   // ngx formly
   form = new FormGroup({});
   skillLevel = '4.0';

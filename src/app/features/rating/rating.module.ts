@@ -10,11 +10,12 @@ import { RatingComponent } from './rating.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormComponent } from './form/form.component';
 import { ReportcardComponent } from './reportcard/reportcard.component';
-import { NgbdModalComponent, NgbdModalContent } from './components/modal/modal-component';
-import { DatePikerComponent } from './components/date-piker/date-piker.component';
-import { DatePickerValueAccessor } from './components/date-piker/date-picker.directive';
-import { FieldsetWrapper } from './wrappers/FiledsetWrapper.component';
-import { LabelWrapper } from './wrappers/LabelWrapper.component';
+import { EvaluationComponent } from './evaluation/evaluation.component';
+import { NgbdModalComponent, NgbdModalContent } from '../../@shared/components/modal/modal-component';
+import { DatePikerComponent } from '../../@shared/components/date-piker/date-piker.component';
+import { DatePickerValueAccessor } from '../../@shared/components/date-piker/date-picker.directive';
+import { FieldsetWrapper } from '../../@shared/wrappers/FiledsetWrapper.component';
+import { LabelWrapper } from '../../@shared/wrappers/LabelWrapper.component';
 
 // TODO move into service
 export function EmailValidator(control: FormControl | any): ValidationErrors | null {
@@ -37,6 +38,7 @@ import { FormsModule } from '@angular/forms';
     DashboardComponent,
     FormComponent,
     ReportcardComponent,
+    EvaluationComponent,
     NgbdModalComponent,
     NgbdModalContent,
     DatePikerComponent,

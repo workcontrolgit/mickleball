@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { FormfieldControlService } from '@app/services/formfield-control.service';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 type TypeSkillRating = Array<{ Skillcode: string; Description: string; Rating: string }>;
 
@@ -22,10 +23,19 @@ export class ReportcardComponent implements OnInit {
   //myObjArray: any = [];
 
   objSkillRating: TypeSkillRating = [];
+  previousUrl: string;
 
   constructor(private formfieldControlService: FormfieldControlService, private router: Router) {
-    this.model = this.router.getCurrentNavigation().extras.state;
-    console.log(this.router.getCurrentNavigation().extras.state);
+    router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe((event: NavigationEnd) => {
+      console.log('prev:', event.url);
+      //this.previousUrl = event.url;
+      console.log(this.previousUrl);
+    });
+
+    // this.model = this.router.getCurrentNavigation().extras.state;
+    // console.log(this.router.getCurrentNavigation().extras.state);
+    // this.previousUrl = this.router.getCurrentNavigation().previousNavigation.finalUrl.toString();
+    // console.log(this.router.getCurrentNavigation().previousNavigation.finalUrl.toString());
   }
 
   ngOnInit() {

@@ -3,7 +3,7 @@
 
   <div class="d-flex justify-content-between">
     <div>
-      <h4 class="text-secondary">Pickleball Report Card</h4>
+      <h4 class="text-secondary">Report Card</h4>
     </div>
     <div class="ml-auto">
       <button [print]="['printSection']" class="btn btn-link m-1 print-none">Print</button>
@@ -12,12 +12,10 @@
 
   <div class="container">
     <div class="row row-cols-2">
-      <div class="col" ng-if="!model['level']"><strong>Skill Level:</strong> {{ model['level'] }}</div>
-      <div class="col"><strong>Assessment Date:</strong> {{ model['assessmentDate'] | date }}</div>
       <div class="col"><strong>Player's Name:</strong> {{ model.playername }}</div>
       <div class="col"><strong>Player's Email:</strong> {{ model['playeremail'] }}</div>
-      <div class="col"><strong>Evaluator's Name:</strong> {{ model['evaluatorname'] }}</div>
-      <div class="col"><strong>Evaluator's Email:</strong> {{ model['evaluatoremail'] }}</div>
+      <div class="col"><strong>Assessment Date:</strong> {{ model['assessmentDate'] | date }}</div>
+      <div class="col" ng-if="!model['level']"><strong>Skill Level:</strong> {{ model['level'] }}</div>
     </div>
   </div>
 
@@ -40,7 +38,12 @@
     </tbody>
   </table>
 
-  <strong>Assessment Notes:</strong> {{ model['Notes'] }}
+  <div class="row row-cols-2">
+    <div class="col"><strong>Evaluator's Name:</strong> {{ model['evaluatorname'] }}</div>
+    <div class="col"><strong>Evaluator's Email:</strong> {{ model['evaluatoremail'] }}</div>
+  </div>
+
+  <strong>Evaluation Notes:</strong> {{ model['Notes'] }}
   <hr />
   <ul>
     <strong>Rating Legend</strong>
@@ -52,6 +55,7 @@
 </div>
 <!-- Directive -->
 <hr />
+<a class="card-link nounderline" [routerLink]="previousUrl" [state]="model">Back</a>
 <!-- <button [print]="['printSection']" class="btn btn-secondary m-1 print-none">Printer Friendly</button> -->
 <!-- <hr>
 <form>
