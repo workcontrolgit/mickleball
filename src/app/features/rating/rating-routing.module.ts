@@ -27,19 +27,19 @@ const routes: Routes = [
     path: 'level20',
     component: FormComponent,
     //canActivate: [AuthGuard],
-    data: { title: marker('Skill Assessment for 2.0 Players') },
+    data: { title: marker('Skill Assessment for 2.0 Players'), model: model20 },
   },
   {
     path: 'level25',
     component: FormComponent,
     //canActivate: [AuthGuard],
-    data: { title: marker('Skill Assessment for 2.5 Players') },
+    data: { title: marker('Skill Assessment for 2.5 Players'), model: model25 },
   },
   {
     path: 'level30',
     component: FormComponent,
     //canActivate: [AuthGuard],
-    data: { title: marker('Skill Assessment for 3.0 Players') },
+    data: { title: marker('Skill Assessment for 3.0 Players'), model: model30 },
   },
   {
     path: 'level35',
@@ -50,20 +50,20 @@ const routes: Routes = [
   {
     path: 'level40',
     component: FormComponent,
-    canActivate: [AuthGuard],
+    //canActivate: [AuthGuard],
     data: { title: marker('Skill Assessment for 4.0 Players'), model: model40 },
   },
   {
     path: 'level45',
     component: FormComponent,
     //canActivate: [AuthGuard],
-    data: { title: marker('Skill Assessment for 4.5 Players') },
+    data: { title: marker('Skill Assessment for 4.5 Players'), model: model45 },
   },
   {
     path: 'level50',
     component: FormComponent,
     //canActivate: [AuthGuard],
-    data: { title: marker('Skill Assessment for 5.0 Players') },
+    data: { title: marker('Skill Assessment for 5.0 Players'), model: model50 },
   },
   {
     path: 'reportcard',

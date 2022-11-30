@@ -26,12 +26,6 @@ export class ReportcardComponent implements OnInit {
   previousUrl: string;
 
   constructor(private formfieldControlService: FormfieldControlService, private router: Router) {
-    router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe((event: NavigationEnd) => {
-      console.log('prev:', event.url);
-      //this.previousUrl = event.url;
-      console.log(this.previousUrl);
-    });
-
     // this.model = this.router.getCurrentNavigation().extras.state;
     // console.log(this.router.getCurrentNavigation().extras.state);
     // this.previousUrl = this.router.getCurrentNavigation().previousNavigation.finalUrl.toString();
