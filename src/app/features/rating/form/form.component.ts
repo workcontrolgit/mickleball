@@ -18,17 +18,51 @@ const log = new Logger('Evaluation');
 export class FormComponent implements OnInit {
   // ngx formly
   form = new FormGroup({});
-  skillLevel = '4.0';
-  evaluation: Evaluation;
-  evaluations: Evaluation[];
+  skillLevel: string;
+  // evaluation: Evaluation;
+  // evaluations: Evaluation[];
   model: any;
-  active = 1;
+  active: number;
+  disabled = true;
 
-  options: FormlyFormOptions = {};
-  fields: FormlyFieldConfig[];
+  //options: FormlyFormOptions = {};
+  //fields: FormlyFieldConfig[];
 
   debug: boolean = false;
-  level: any;
+  //level: any;
+
+  modelDebug = {
+    level: '4.0',
+    playername: 'Fuji Nguyen',
+    playeremail: 'fuji.nguyen@workcontrol.com',
+    assessmentDate: '2022-10-24',
+    '40-1': 'D',
+    '40-2': 'A',
+    '40-3': 'A',
+    '40-4': 'A',
+    '40-5': 'A',
+    '40-6': 'A',
+    '40-7': 'A',
+    '40-8': 'A',
+    '40-9': 'A',
+    '40-10': 'A',
+    '40-11': 'A',
+    '40-12': 'D',
+    '40-13': 'A',
+    '40-14': 'B',
+    '40-15': 'A',
+    '40-16': 'A',
+    '40-17': 'A',
+    '40-18': 'A',
+    '40-19': 'B',
+    '40-20': 'A',
+    '40-21': 'A',
+    '40-22': 'C',
+    evaluatorname: 'Emily Nguyen',
+    evaluatoremail: 'emily@gmail.com',
+    Notes: 'Lefty user',
+    terms: true,
+  };
 
   constructor(
     private apiHttpService: ApiHttpService,
@@ -41,99 +75,53 @@ export class FormComponent implements OnInit {
       this.model = data.model;
       this.skillLevel = this.model['level'];
     });
+  }
 
-    // const state = this.router.getCurrentNavigation().extras.state;
-    // this.model = state;
-    // this.skillLevel = this.model['level'];
-    // console.log(this.router.getCurrentNavigation().extras.state);
+  selectTab(isValidForm: boolean) {
+    this.active = 2;
+    this.disabled = !isValidForm;
   }
 
   ngOnInit() {
-    // https://www.geekstrick.com/pass-data-from-routes-to-components-in-angular/
-    // this.activatedRoute.data.subscribe((data) => {
-    //   console.log(data);
-    //   this.model = data.model;
-    //   this.skillLevel = this.model['level'];
-    // });
-    // var instructions: string;
-    // switch (this.skillLevel) {
-    //   case '2.0': {
-    //     instructions = environment.Evaluation_Instruction.Level_20;
-    //     break;
-    //   }
-    //   case '2.5': {
-    //     instructions = environment.Evaluation_Instruction.Level_25;
-    //     break;
-    //   }
-    //   case '3.0': {
-    //     instructions = environment.Evaluation_Instruction.Level_30;
-    //     break;
-    //   }
-    //   case '3.5': {
-    //     instructions = environment.Evaluation_Instruction.Level_35;
-    //     break;
-    //   }
-    //   case '4.0': {
-    //     instructions = environment.Evaluation_Instruction.Level_40;
-    //     break;
-    //   }
-    //   case '4.5': {
-    //     instructions = environment.Evaluation_Instruction.Level_45;
-    //     break;
-    //   }
-    //   case '5.0': {
-    //     instructions = environment.Evaluation_Instruction.Level_50;
-    //     break;
-    //   }
-    //   default: {
-    //     instructions = 'undefined';
-    //     break;
-    //   }
-    // }
-    // this.fields = this.serviceFormFields.getFormFields(this.skillLevel, instructions);
-    // get login user
-    // this.read(this.sub);
-    // if (this.authService.hasValidToken()) {
-    //   this.read2(this.sub, this.skillLevel);
-    // }
+    //this.model = this.modelDebug;
   }
 
   // CRUD > Read, map to REST/HTTP GET
-  read2(playerId: any, skillLevel: any): void {
-    this.apiHttpService
-      .get(this.apiEndpointsService.getEvaluationByPlayerIdAndSkillLevelEndpoint(playerId, skillLevel))
-      .subscribe(
-        //Assign resp to class-level model object.
-        (resp: any) => {
-          //Assign data to class-level model object.
-          this.evaluations = resp.data;
+  // read2(playerId: any, skillLevel: any): void {
+  //   this.apiHttpService
+  //     .get(this.apiEndpointsService.getEvaluationByPlayerIdAndSkillLevelEndpoint(playerId, skillLevel))
+  //     .subscribe(
+  //       //Assign resp to class-level model object.
+  //       (resp: any) => {
+  //         //Assign data to class-level model object.
+  //         this.evaluations = resp.data;
 
-          if (Array.isArray(this.evaluations) && this.evaluations.length) {
-            var firstItem: any = this.evaluations.splice(0, 1)[0];
-            this.model = JSON.parse(firstItem.result);
-          }
-        },
-        (error) => {
-          log.debug(error);
-        }
-      );
-  }
+  //         if (Array.isArray(this.evaluations) && this.evaluations.length) {
+  //           var firstItem: any = this.evaluations.splice(0, 1)[0];
+  //           this.model = JSON.parse(firstItem.result);
+  //         }
+  //       },
+  //       (error) => {
+  //         log.debug(error);
+  //       }
+  //     );
+  // }
 
-  read(id: any): void {
-    this.apiHttpService.get(this.apiEndpointsService.getEvaluationByIdEndpoint(id)).subscribe(
-      //Assign resp to class-level model object.
-      (resp: DataResponseEvaluation) => {
-        //Assign data to class-level model object.
-        this.evaluation = resp.data;
-        this.model = JSON.parse(this.evaluation.result);
-      },
-      (error) => {
-        log.debug(error);
-      }
-    );
-  }
+  // read(id: any): void {
+  //   this.apiHttpService.get(this.apiEndpointsService.getEvaluationByIdEndpoint(id)).subscribe(
+  //     //Assign resp to class-level model object.
+  //     (resp: DataResponseEvaluation) => {
+  //       //Assign data to class-level model object.
+  //       this.evaluation = resp.data;
+  //       this.model = JSON.parse(this.evaluation.result);
+  //     },
+  //     (error) => {
+  //       log.debug(error);
+  //     }
+  //   );
+  // }
 
-  get sub(): string | null {
-    return this.authService.identityClaims ? (this.authService.identityClaims as any)['sub'] : null;
-  }
+  // get sub(): string | null {
+  //   return this.authService.identityClaims ? (this.authService.identityClaims as any)['sub'] : null;
+  // }
 }

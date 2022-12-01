@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { FormfieldSkillRatingService } from '@app/services/formfield-skillrating.service';
 import { environment } from '@env/environment';
 import { FormGroup } from '@angular/forms';
@@ -29,6 +29,8 @@ export class EvaluationComponent implements OnInit {
   // show: boolean = false;
   debug: boolean = false;
   level: any;
+
+  @Output() ValidEvaluationEvent = new EventEmitter<boolean>();
 
   constructor(private serviceFormFields: FormfieldSkillRatingService, private modalService: NgbModal) {}
 
@@ -75,6 +77,18 @@ export class EvaluationComponent implements OnInit {
     this.fields = this.serviceFormFields.getFormFields(skillLevel, instructions);
   }
 
+  submit() {
+    if (this.form.invalid) {
+      this.open();
+    } else {
+      this.ValidEvaluationEvent.emit(this.form.valid);
+    }
+  }
+
+  open() {
+    const modalRef = this.modalService.open(NgbdModalContent);
+  }
+
   // CRUD > Read, map to REST/HTTP GET
   // read2(playerId: any, skillLevel: any): void {
   //   this.apiHttpService
@@ -113,14 +127,4 @@ export class EvaluationComponent implements OnInit {
   // get sub(): string | null {
   //   return this.authService.identityClaims ? (this.authService.identityClaims as any)['sub'] : null;
   // }
-
-  submit() {
-    if (this.form.invalid) {
-      this.open();
-    }
-  }
-
-  open() {
-    const modalRef = this.modalService.open(NgbdModalContent);
-  }
 }

@@ -5,18 +5,10 @@
     <li [ngbNavItem]="1">
       <a ngbNavLink>Evaluation</a>
       <ng-template ngbNavContent>
-        <app-evaluation [model]="model"></app-evaluation>
-
-        <!-- <h4 class="text-secondary">Evaluation Form</h4>
-        <p class="fst-italic">Fields marked with * are required.</p>
-
-        <form [formGroup]="form" (ngSubmit)="submit()">
-          <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
-          <button type="submit" class="btn btn-primary">View Report Card</button>
-        </form> -->
+        <app-evaluation [model]="model" (ValidEvaluationEvent)="selectTab($event)"></app-evaluation>
       </ng-template>
     </li>
-    <li [ngbNavItem]="2">
+    <li [ngbNavItem]="2" [disabled]="disabled">
       <a ngbNavLink>Report Card</a>
       <ng-template ngbNavContent>
         <app-reportcard [model]="model"></app-reportcard>
@@ -31,6 +23,13 @@
 
   <!-- Content output -->
   <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+  <!-- <hr>
+  <div class="mb-3">
+    <button class="btn btn-sm btn-primary" [disabled]="active === 2" (click)="nav.select(2)">
+      View Report Card
+    </button>
+  </div> -->
 </div>
 
 <!-- <pre>Active: {{ active }}</pre> -->
