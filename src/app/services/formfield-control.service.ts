@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { FormControl, ValidationErrors } from '@angular/forms';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 import { DatabaseService } from './database.service';
+import { TableGradesService } from '@app/services/table-grades.service';
+import { TableSkillsService } from '@app/services/table-skills.service';
 
 type TypeLabelValue = Array<{ label: string; value: string }>;
 
@@ -9,25 +11,30 @@ type TypeLabelValue = Array<{ label: string; value: string }>;
   providedIn: 'root',
 })
 export class FormfieldControlService {
-  constructor(private databaseService: DatabaseService) {}
+  constructor(
+    private databaseService: DatabaseService,
+    private tblGradesService: TableGradesService,
+    private tblSkillsService: TableSkillsService
+  ) {}
 
   public readonly SelectRatingPlaceholder: string = 'Select a rating';
 
-  public readonly TableRatingCode = this.databaseService.TableRatingCode;
+  public readonly TableGrades = this.tblGradesService.TableGrades;
 
-  GetRatingList(): TypeLabelValue {
-    var lstRating: TypeLabelValue = [];
+  getGradeLetters(): TypeLabelValue {
+    var lstGrades: TypeLabelValue = [];
 
-    for (let i = 0; i < this.TableRatingCode.length; i++) {
-      lstRating.push({
-        label: this.TableRatingCode[i].Ratingcode,
-        value: this.TableRatingCode[i].Ratingcode,
+    for (let i = 0; i < this.TableGrades.length; i++) {
+      lstGrades.push({
+        label: this.TableGrades[i].grade,
+        value: this.TableGrades[i].grade,
       });
     }
-    return lstRating;
+    return lstGrades;
   }
 
-  public readonly TableSkillCode = this.databaseService.TableSkillCode;
+  // public readonly TableSkillCode = this.databaseService.TableSkillCode;
+  public readonly TableSkills = this.tblSkillsService.TableSkills;
 
   public readonly GeneralFields: FormlyFieldConfig[] = [
     {
@@ -99,7 +106,7 @@ export class FormfieldControlService {
       key: 'Notes',
       type: 'textarea',
       props: {
-        label: 'Assessment Notes',
+        label: 'Evaluation Notes',
         placeholder: 'enter any notes about the assessment here',
         rows: 5,
       },
@@ -130,6 +137,6 @@ export class FormfieldControlService {
 
   LstSkillcode(filterBy: string): any[] {
     filterBy = filterBy.toLocaleLowerCase();
-    return this.TableSkillCode.filter((Skillcode: any) => Skillcode.Level.toLocaleLowerCase().indexOf(filterBy) !== -1);
+    return this.TableSkills.filter((Skillcode: any) => Skillcode.level.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 }

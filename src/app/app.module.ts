@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Angulartics2Module } from 'angulartics2';
 
 import { environment } from '@env/environment';
 import { CoreModule } from '@core';
@@ -17,6 +18,19 @@ import { FallbackComponent } from './fallback.component';
 import { ShouldLoginComponent } from './should-login.component';
 
 import { NgHttpLoaderModule } from 'ng-http-loader';
+
+import { API_KEY, GoogleSheetsDbService } from 'ng-google-sheets-db';
+
+import { TableGradesService } from './services/table-grades.service';
+import { TableSkillsService } from './services/table-skills.service';
+
+export function initTableGrades(configService: TableGradesService) {
+  return () => configService.load();
+}
+
+export function initTableSkills(configService: TableSkillsService) {
+  return () => configService.load();
+}
 
 @NgModule({
   imports: [
@@ -31,11 +45,30 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
     SharedModule,
     ShellModule,
     HomeModule,
-    AppRoutingModule,
     ReactiveFormsModule,
+    Angulartics2Module.forRoot(),
+    AppRoutingModule,
   ],
   declarations: [AppComponent, FallbackComponent, ShouldLoginComponent],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      deps: [TableGradesService],
+      multi: true,
+      useFactory: initTableGrades,
+    },
+    {
+      provide: APP_INITIALIZER,
+      deps: [TableSkillsService],
+      multi: true,
+      useFactory: initTableSkills,
+    },
+    {
+      provide: API_KEY,
+      useValue: environment.googleSheetsApiKey,
+    },
+    GoogleSheetsDbService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

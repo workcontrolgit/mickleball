@@ -1,6 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { FormfieldControlService } from '@app/services/formfield-control.service';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
+
+type TypeSkillRating = Array<{ Skillcode: string; Description: string; Rating: string }>;
 
 @Component({
   selector: 'app-reportcard',
@@ -11,11 +15,22 @@ export class ReportcardComponent implements OnInit {
   state$: Observable<object>;
   @Input() model: any = {};
 
+  success: string = 'text-success fw-bolder';
+  info: string = 'text-info fw-bolder';
+  warning: string = 'text-warning fw-bolder';
+  danger: string = 'text-danger fw-bolder';
+
   //myObjArray: any = [];
 
-  objSkillRating: any = [];
+  objSkillRating: TypeSkillRating = [];
+  previousUrl: string;
 
-  constructor(private formfieldControlService: FormfieldControlService) {}
+  constructor(private formfieldControlService: FormfieldControlService, private router: Router) {
+    // this.model = this.router.getCurrentNavigation().extras.state;
+    // console.log(this.router.getCurrentNavigation().extras.state);
+    // this.previousUrl = this.router.getCurrentNavigation().previousNavigation.finalUrl.toString();
+    // console.log(this.router.getCurrentNavigation().previousNavigation.finalUrl.toString());
+  }
 
   ngOnInit() {
     // rating level 4.0
@@ -31,11 +46,11 @@ export class ReportcardComponent implements OnInit {
     objSkillByLevel = this.formfieldControlService.LstSkillcode(filterLevel);
 
     for (let i = 0; i < objSkillByLevel.length; i++) {
-      skillcode = objSkillByLevel[i].Skillcode;
-      description = objSkillByLevel[i].Description;
+      skillcode = objSkillByLevel[i].skillcode;
+      description = objSkillByLevel[i].description;
 
       evalString = "this.model['" + skillcode + "']";
-      rating = eval("this.model['" + skillcode + "']");
+      rating = eval(evalString);
 
       this.objSkillRating.push({
         Skillcode: skillcode,

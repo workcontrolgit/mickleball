@@ -10,61 +10,68 @@
     </div>
   </div>
 
-  <div class="container">
-    <div class="row row-cols-2">
-      <div class="col" ng-if="!model['level']"><strong>Rating Level:</strong> {{ model['level'] }}</div>
-      <div class="col"><strong>Assessment Date:</strong> {{ model['assessmentDate'] | date }}</div>
-      <div class="col"><strong>Player's Name:</strong> {{ model.playername }}</div>
-      <div class="col"><strong>Player's Email:</strong> {{ model['playeremail'] }}</div>
-      <div class="col"><strong>Evaluator's Name:</strong> {{ model['evaluatorname'] }}</div>
-      <div class="col"><strong>Evaluator's Email:</strong> {{ model['evaluatoremail'] }}</div>
+  <div class="card">
+    <div class="card-header">
+      <h5>Player Information</h5>
+    </div>
+    <div class="card-body">
+      <div class="row row-cols-2">
+        <div class="col"><strong>Name:</strong> {{ model.playername }}</div>
+        <div class="col"><strong>Email:</strong> {{ model['playeremail'] }}</div>
+        <div class="col"><strong>Assessment Date:</strong> {{ model['assessmentDate'] | date }}</div>
+        <div class="col" ng-if="!model['level']"><strong>Skill Level:</strong> {{ model['level'] }}</div>
+      </div>
     </div>
   </div>
 
-  <table class="table table-bordered mt-3">
-    <thead>
-      <tr>
-        <th scope="col">Skill Code</th>
-        <th scope="col">Description</th>
-        <th scope="col">Rating</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let skill of objSkillRating">
-        <td>{{ skill.Skillcode }}</td>
-        <td>{{ skill.Description }}</td>
-        <td>
-          <container-element [ngSwitch]="skill.Rating">
-            <!-- the same view can be shown in more than one case -->
-            <span *ngSwitchCase="'A'" class="text-success fw-bolder">{{ skill.Rating }}</span>
-            <span *ngSwitchCase="'B'" class="text-info fw-bolder">{{ skill.Rating }}</span>
-            <span *ngSwitchCase="'C'" class="text-warning fw-bolder">{{ skill.Rating }}</span>
-            <!--default case when there are no matches -->
-            <span *ngSwitchDefault class="text-danger fw-bolder">{{ skill.Rating }}</span>
-          </container-element>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="card mt-3">
+    <div class="card-header">
+      <h5>Skill Evaluation</h5>
+    </div>
+    <div class="card-body">
+      <table class="table mt-3">
+        <thead>
+          <tr>
+            <th scope="col">Skill Code</th>
+            <th scope="col">Description</th>
+            <th scope="col">Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let skill of objSkillRating">
+            <td>{{ skill.Skillcode }}</td>
+            <td>{{ skill.Description }}</td>
+            <td>
+              <span [ngClass]="{ A: success, B: info, C: warning, D: danger }[skill.Rating]">{{ skill.Rating }}</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-  <strong>Assessment Notes:</strong> {{ model['Notes'] }}
-  <hr />
-  <ul>
+  <div class="card mt-3">
+    <div class="card-header">
+      <h5>Evaluator Information</h5>
+    </div>
+    <div class="card-body">
+      <div class="row row-cols-2">
+        <div class="col"><strong>Name:</strong> {{ model['evaluatorname'] }}</div>
+        <div class="col"><strong>Email:</strong> {{ model['evaluatoremail'] }}</div>
+      </div>
+      <strong>Evaluation Notes:</strong> {{ model['Notes'] }}
+    </div>
+  </div>
+
+  <div class="alert alert-warning mt-3">
     <strong>Rating Legend</strong>
-    <li class="text-success">A = Solid, consistent performance</li>
-    <li class="text-info">B = Good basic form, but needs work</li>
-    <li class="text-warning">C = Attempted but very poorly executed/needs work</li>
-    <li class="text-danger">D = Not observed or not able to execute</li>
-  </ul>
+    <ul>
+      <li class="text-success">A = Solid, consistent performance</li>
+      <li class="text-info">B = Good basic form, but needs work</li>
+      <li class="text-warning">C = Attempted but very poorly executed/needs work</li>
+      <li class="text-danger">D = Not observed or not able to execute</li>
+    </ul>
+  </div>
 </div>
-<!-- Directive -->
-<hr />
-<!-- <button [print]="['printSection']" class="btn btn-secondary m-1 print-none">Printer Friendly</button> -->
-<!-- <hr>
-<form>
-  <button type="submit" (onclick)="back()" class="btn btn-secondary">&#8592; Go Back</button>
-</form> -->
 
 <!-- <p>{{ model | json }}</p> -->
-
-<!-- <p>{{test}}</p> -->
