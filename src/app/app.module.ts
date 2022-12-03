@@ -24,6 +24,8 @@ import { API_KEY, GoogleSheetsDbService } from 'ng-google-sheets-db';
 import { TableGradesService } from './services/table-grades.service';
 import { TableSkillsService } from './services/table-skills.service';
 
+import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+
 export function initTableGrades(configService: TableGradesService) {
   return () => configService.load();
 }
@@ -45,6 +47,8 @@ export function initTableSkills(configService: TableSkillsService) {
     SharedModule,
     ShellModule,
     HomeModule,
+    NgxGoogleAnalyticsModule.forRoot('G-G7BYVD349P'),
+    NgxGoogleAnalyticsRouterModule,
     ReactiveFormsModule,
     Angulartics2Module.forRoot(),
     AppRoutingModule,

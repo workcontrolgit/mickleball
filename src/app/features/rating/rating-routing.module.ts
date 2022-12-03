@@ -6,7 +6,7 @@ import { ReportcardComponent } from './reportcard/reportcard.component';
 
 import { marker } from '@biesbjerg/ngx-translate-extract-marker';
 import { AuthGuard } from '@app/@core/auth/auth-guard.service';
-import { NgbdModalComponent } from '../../@shared/components/modal/modal-component';
+// import { NgbdModalComponent } from '../../@shared/components/modal/modal-component';
 
 const model20 = { level: '2.0' };
 const model25 = { level: '2.5' };
@@ -71,12 +71,12 @@ const routes: Routes = [
     //canActivate: [AuthGuard],
     data: { title: marker('Skill Assessment Report Card') },
   },
-  {
-    path: 'modal',
-    component: NgbdModalComponent,
-    //canActivate: [AuthGuard],
-    data: { title: marker('Skill Assessment Report Card') },
-  },
+  // {
+  //   path: 'modal',
+  //   component: NgbdModalComponent,
+  //   //canActivate: [AuthGuard],
+  //   data: { title: marker('Skill Assessment Report Card') },
+  // },
 ];
 
 @NgModule({
