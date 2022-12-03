@@ -4,7 +4,7 @@ import { environment } from '@env/environment';
 import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { NgbdModalContent } from '@app/@shared/components/modal/modal-component';
+import { WarningDialogComponent } from '@app/@shared/components/warning-dialog/warning-dialog-component';
 import { Evaluation } from '@shared/models/evaluation';
 import { Logger } from '@core';
 
@@ -74,7 +74,8 @@ export class EvaluationComponent implements OnInit {
       }
     }
 
-    this.fields = this.serviceFormFields.getFormFields(skillLevel, instructions);
+    //this.fields = this.serviceFormFields.getFormFields(skillLevel, instructions);
+    this.fields = this.serviceFormFields.getFormFields(skillLevel);
   }
 
   submit() {
@@ -86,7 +87,8 @@ export class EvaluationComponent implements OnInit {
   }
 
   open() {
-    const modalRef = this.modalService.open(NgbdModalContent);
+    const modalRef = this.modalService.open(WarningDialogComponent);
+    //modalRef.componentInstance.title = "Uh oh";
   }
 
   // CRUD > Read, map to REST/HTTP GET

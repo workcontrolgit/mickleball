@@ -14,8 +14,7 @@ import { environment } from '@env/environment';
 
 // Returns the api endpoints urls to use in services in a consistent way
 export class ApiEndpointsService {
-  constructor() //private constants: Constants // Application Constants
-  {}
+  constructor() {} //private constants: Constants // Application Constants
 
   /* #region EXAMPLES */
   public getDataByIdEndpoint = (id: string): string => this.createUrlWithPathVariables('data', [id]);
