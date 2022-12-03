@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
-import { ApiHttpService } from '@app/services/api-http.service';
-import { ApiEndpointsService } from '@app/services/api-endpoints.service';
-import { DataResponseEvaluation } from '@shared/classes/data-response-evaluation';
-import { Evaluation } from '@shared/models/evaluation';
 import { Logger } from '@core';
-import { AuthService } from '@core/auth/auth.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 const log = new Logger('Evaluation');
 @Component({
@@ -64,12 +58,7 @@ export class FormComponent implements OnInit {
     terms: true,
   };
 
-  constructor(
-    private apiHttpService: ApiHttpService,
-    private apiEndpointsService: ApiEndpointsService,
-    private authService: AuthService,
-    private activatedRoute: ActivatedRoute
-  ) {
+  constructor(private activatedRoute: ActivatedRoute) {
     this.activatedRoute.data.subscribe((data) => {
       console.log(data);
       this.model = data.model;

@@ -3,11 +3,7 @@ import { FieldWrapper } from '@ngx-formly/core';
 
 @Component({
   selector: 'formly-wrapper-fieldset',
-  template: `
-    <div class="form-group" [class.has-error]="showError">
-      <ng-template #fieldComponent></ng-template>
-    </div>
-  `,
+  templateUrl: './filedset-wrapper.component.html',
 })
 export class FieldsetWrapper extends FieldWrapper {
   @ViewChild('fieldComponent', { read: ViewContainerRef }) fieldComponent: ViewContainerRef;
