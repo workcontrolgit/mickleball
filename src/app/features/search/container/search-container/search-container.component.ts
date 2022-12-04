@@ -1,3 +1,4 @@
+import { OnInit } from '@angular/core';
 // search-container.component.ts
 
 import { Component } from '@angular/core';
@@ -15,6 +16,8 @@ export class SearchContainerComponent {
   videos: Video[] = [];
 
   constructor(private searchService: SearchService) {}
+
+  OnInit() {}
 
   handleSearch(inputValue: string) {
     this.loading = true;

@@ -1,3 +1,4 @@
+import { OnInit } from '@angular/core';
 // search-input.component.ts
 
 import { Component, AfterViewInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
@@ -14,6 +15,9 @@ export class SearchInputComponent implements AfterViewInit {
   @Output() search: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() {}
+  OnInit() {
+    //this.search.emit(this.inputElement.nativeElement);
+  }
 
   ngAfterViewInit() {
     fromEvent(this.inputElement.nativeElement, 'keyup')
