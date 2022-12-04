@@ -1,3 +1,30 @@
+<div class="container-fluid mt-5">
+  <table class="table table-striped">
+    <!-- <thead>
+        <tr>
+          <th>thumbnail</th>
+          <th>videoId</th>
+          <th>title</th>
+          <th>channelTitle</th>
+          <th>publishedAt</th>
+          <th>description</th>
+          <th>videoUrl</th>
+        </tr>
+    </thead> -->
+    <tbody>
+      <tr *ngFor="let video of videos">
+        <td><img [src]="video.thumbnail" /></td>
+        <td>{{ video.videoId }}</td>
+        <td>{{ video.title }}</td>
+        <td>{{ video.channelTitle }}</td>
+        <td>{{ video.publishedAt }}</td>
+        <td>{{ video.description }}</td>
+        <td>{{ video.videoUrl }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <div class="ui four column grid">
   <div class="column" *ngFor="let video of videos">
     <div class="ui card">
@@ -23,3 +50,5 @@
     </div>
   </div>
 </div>
+
+<p *ngIf="debug">{{ videos | json }}</p>

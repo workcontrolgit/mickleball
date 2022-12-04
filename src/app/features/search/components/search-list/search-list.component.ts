@@ -2,6 +2,9 @@
 
 import { Component, OnInit, Input } from '@angular/core';
 import { Video } from '@shared/models/search.interface';
+import { Logger } from '@core';
+
+const log = new Logger('search-list');
 
 @Component({
   selector: 'app-search-list',
@@ -10,8 +13,11 @@ import { Video } from '@shared/models/search.interface';
 })
 export class SearchListComponent implements OnInit {
   @Input() videos: Video[];
+  debug: boolean = true;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    log.debug(this.videos);
+  }
 }
