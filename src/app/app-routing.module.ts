@@ -23,7 +23,7 @@ const routes: Routes = [
       loadChildren: () => import('./features/rating/rating.module').then((m) => m.RatingModule),
     },
     {
-      path: 'drill',
+      path: 'training',
       loadChildren: () => import('./features/search/search.module').then((m) => m.SearchModule),
     },
     {

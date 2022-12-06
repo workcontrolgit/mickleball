@@ -13,11 +13,18 @@ const log = new Logger('search-list');
 })
 export class SearchListComponent implements OnInit {
   @Input() videos: Video[];
-  debug: boolean = true;
+  debug: boolean = false;
+  private apiLoaded = false;
 
   constructor() {}
 
   ngOnInit() {
+    if (!this.apiLoaded) {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      document.body.appendChild(tag);
+      this.apiLoaded = true;
+    }
     log.debug(this.videos);
   }
 }

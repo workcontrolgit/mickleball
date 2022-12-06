@@ -8,9 +8,11 @@ import { SearchInputComponent } from './components/search-input/search-input.com
 import { SearchListComponent } from './components/search-list/search-list.component';
 import { SearchContainerComponent } from './container/search-container/search-container.component';
 
+import { YouTubePlayerModule } from '@angular/youtube-player';
+
 @NgModule({
   declarations: [SearchComponent, SearchInputComponent, SearchListComponent, SearchContainerComponent],
-  imports: [CommonModule, SearchRoutingModule],
+  imports: [CommonModule, YouTubePlayerModule, SearchRoutingModule],
   providers: [],
 })
 export class SearchModule {}
