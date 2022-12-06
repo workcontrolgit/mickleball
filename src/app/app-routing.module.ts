@@ -23,8 +23,8 @@ const routes: Routes = [
       loadChildren: () => import('./features/rating/rating.module').then((m) => m.RatingModule),
     },
     {
-      path: 'drill',
-      loadChildren: () => import('./features/search/search.module').then((m) => m.SearchModule),
+      path: 'training',
+      loadChildren: () => import('./features/training/training.module').then((m) => m.TraininghModule),
     },
     {
       path: 'position',

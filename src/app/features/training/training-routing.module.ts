@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SearchComponent } from './search.component';
+import { TrainingComponent } from './training.component';
 
 import { marker } from '@biesbjerg/ngx-translate-extract-marker';
 
 const routes: Routes = [
   {
     path: '',
-    component: SearchComponent,
+    component: TrainingComponent,
     //canActivate: [AuthGuard],
     data: { title: marker('Video Search') },
   },
@@ -17,4 +17,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class SearchRoutingModule {}
+export class TrainingRoutingModule {}
