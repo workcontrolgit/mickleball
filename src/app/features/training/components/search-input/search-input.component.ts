@@ -25,11 +25,11 @@ export class SearchInputComponent implements AfterViewInit {
         debounceTime(500),
         pluck('target', 'value'),
         distinctUntilChanged(),
-        filter((value: string) => value.length > 3),
+        filter((value: string) => value.length > 2),
         map((value) => value)
       )
       .subscribe((value) => {
-        this.search.emit(value);
+        this.search.emit('pickleball technique ' + value);
       });
   }
 }
