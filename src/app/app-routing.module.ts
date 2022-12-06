@@ -24,7 +24,7 @@ const routes: Routes = [
     },
     {
       path: 'training',
-      loadChildren: () => import('./features/search/search.module').then((m) => m.SearchModule),
+      loadChildren: () => import('./features/training/training.module').then((m) => m.TraininghModule),
     },
     {
       path: 'position',

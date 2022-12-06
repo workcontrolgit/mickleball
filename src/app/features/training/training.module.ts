@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SearchRoutingModule } from './search-routing.module';
+import { TrainingRoutingModule } from './training-routing.module';
 
-import { SearchComponent } from './search.component';
+import { TrainingComponent } from './training.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { SearchListComponent } from './components/search-list/search-list.component';
 import { SearchContainerComponent } from './container/search-container/search-container.component';
@@ -11,8 +11,8 @@ import { SearchContainerComponent } from './container/search-container/search-co
 import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
-  declarations: [SearchComponent, SearchInputComponent, SearchListComponent, SearchContainerComponent],
-  imports: [CommonModule, YouTubePlayerModule, SearchRoutingModule],
+  declarations: [TrainingComponent, SearchInputComponent, SearchListComponent, SearchContainerComponent],
+  imports: [CommonModule, YouTubePlayerModule, TrainingRoutingModule],
   providers: [],
 })
-export class SearchModule {}
+export class TraininghModule {}
