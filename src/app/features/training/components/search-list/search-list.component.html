@@ -1,0 +1,19 @@
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col" *ngFor="let video of videos">
+    <div class="card">
+      <youtube-player width="100%" [videoId]="video.videoId"></youtube-player>
+      <div class="card-body">
+        <h5 class="card-title">{{ video.title }}</h5>
+        <p class="card-text">{{ video.description }}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          Video by <a href="{{ video.channelUrl }}" class="card-link">{{ video.channelTitle }}</a>
+        </li>
+        <li class="list-group-item">Published on {{ video.publishedAt }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<p *ngIf="debug">{{ videos | json }}</p>
