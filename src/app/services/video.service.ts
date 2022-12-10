@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class SearchService {
+export class VideoService {
   private API_URL = 'https://www.googleapis.com/youtube/v3/search';
   private API_TOKEN = 'AIzaSyAq9W0tD3SJxtn6RE0aUcBseMMz_WcKhAU';
 

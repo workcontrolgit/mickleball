@@ -19,6 +19,11 @@ export class SearchInputComponent implements AfterViewInit {
     //this.search.emit(this.inputElement.nativeElement);
   }
 
+  // https://medium.com/angular-in-depth/expecting-the-unexpected-best-practices-for-error-handling-in-angular-21c3662ef9e4
+  // https://code-maze.com/net-core-web-development-part11/
+  // https://pkief.medium.com/global-error-handling-in-angular-ea395ce174b1
+  //https://meetupfeed.io/talk/error-handling-in-angular-complete-guide video
+
   ngAfterViewInit() {
     fromEvent(this.inputElement.nativeElement, 'keyup')
       .pipe(

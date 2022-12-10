@@ -2,7 +2,7 @@ import { OnInit } from '@angular/core';
 // search-container.component.ts
 
 import { Component } from '@angular/core';
-import { SearchService } from '@app/services/search.service';
+import { VideoService } from '@app/services/video.service';
 import { Video } from '@shared/models/search.interface';
 
 @Component({
@@ -15,7 +15,7 @@ export class SearchContainerComponent {
   loading = false;
   videos: Video[] = [];
 
-  constructor(private searchService: SearchService) {}
+  constructor(private searchService: VideoService) {}
 
   OnInit() {}
 
