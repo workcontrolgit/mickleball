@@ -20,7 +20,7 @@ import { RoleGuard } from './auth/role-guard.service';
 
 // Global error handler
 import { ErrorHandler } from '@angular/core';
-import { GlobalErrorHandler } from '@core/errors/global-error-handler';
+import { GlobalErrorHandler } from '@app/services/error/global-error-handler';
 
 // We need a factory since localStorage is not available at AOT build time
 // eslint-disable-next-line prefer-arrow/prefer-arrow-functions

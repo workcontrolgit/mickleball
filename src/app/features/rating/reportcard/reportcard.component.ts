@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { FormfieldControlService } from '@app/services/formfield-control.service';
+import { FormfieldControlService } from '@app/services/form/formfield-control.service';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 

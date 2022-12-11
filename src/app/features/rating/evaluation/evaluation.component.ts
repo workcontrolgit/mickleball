@@ -1,5 +1,5 @@
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
-import { FormfieldSkillRatingService } from '@app/services/formfield-skillrating.service';
+import { FormfieldSkillRatingService } from '@app/services/form/formfield-skillrating.service';
 import { environment } from '@env/environment';
 import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';

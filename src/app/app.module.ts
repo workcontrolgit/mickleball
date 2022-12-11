@@ -21,8 +21,8 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
 
 import { API_KEY, GoogleSheetsDbService } from 'ng-google-sheets-db';
 
-import { TableGradesService } from './services/table-grades.service';
-import { TableSkillsService } from './services/table-skills.service';
+import { TableGradesService } from './services/api/table-grades.service';
+import { TableSkillsService } from './services/api/table-skills.service';
 
 import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 
