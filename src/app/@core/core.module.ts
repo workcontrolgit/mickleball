@@ -18,6 +18,10 @@ import { authModuleConfig } from './auth/auth-module-config';
 import { AuthService } from './auth/auth.service';
 import { RoleGuard } from './auth/role-guard.service';
 
+// Global error handler
+import { ErrorHandler } from '@angular/core';
+import { GlobalErrorHandler } from '@core/errors/global-error-handler';
+
 // We need a factory since localStorage is not available at AOT build time
 // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
 export function storageFactory(): OAuthStorage {
@@ -45,6 +49,10 @@ export function storageFactory(): OAuthStorage {
       provide: RouteReuseStrategy,
       useClass: RouteReusableStrategy,
     },
+    {
+      provide: ErrorHandler,
+      useClass: GlobalErrorHandler,
+    },
   ],
 })
 export class CoreModule {
@@ -52,7 +60,7 @@ export class CoreModule {
     return {
       ngModule: CoreModule,
       providers: [
-        { provide: APP_INITIALIZER, useFactory: authAppInitializerFactory, deps: [AuthService], multi: true },
+        // { provide: APP_INITIALIZER, useFactory: authAppInitializerFactory, deps: [AuthService], multi: true },
         { provide: AuthConfig, useValue: authConfig },
         { provide: OAuthModuleConfig, useValue: authModuleConfig },
         { provide: OAuthStorage, useFactory: storageFactory },

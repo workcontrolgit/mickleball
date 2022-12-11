@@ -9,6 +9,7 @@ import { DataResponsePosition } from '@shared/classes/data-response-position';
 import { ConfirmationDialogService } from '@app/services/confirmation-dialog.service';
 import { RxwebValidators } from '@rxweb/reactive-form-validators';
 import { ToastService } from '@app/services/toast.service';
+import { ErrorDialogService } from '@shared/errors/error-dialog.service';
 
 const log = new Logger('Detail');
 
@@ -32,7 +33,8 @@ export class DetailComponent implements OnInit {
     private formBuilder: UntypedFormBuilder,
     private apiHttpService: ApiHttpService,
     private apiEndpointsService: ApiEndpointsService,
-    private confirmationDialogService: ConfirmationDialogService
+    private confirmationDialogService: ConfirmationDialogService,
+    private errorDialogService: ErrorDialogService
   ) {
     this.createForm();
   }
