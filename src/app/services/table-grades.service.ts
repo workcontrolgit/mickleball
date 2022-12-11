@@ -22,8 +22,8 @@ export class TableGradesService {
 
   constructor(private googleSheetsDbService: GoogleSheetsDbService) {
     this.dataRequest$ = this.googleSheetsDbService.get<Grade>(
-      environment.googleSheetInfo.spreadsheetId,
-      environment.googleSheetInfo.worksheetGrades,
+      environment.googleSheet.spreadsheetId,
+      environment.googleSheet.worksheetGrades,
       GradeAttributesMapping
     );
   }

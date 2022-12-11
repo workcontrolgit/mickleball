@@ -17,6 +17,7 @@ export const environment = {
   //Api_Endpoint: 'https://cat-netcore-api.azurewebsites.net/api/v1',
   //Api_Endpoint: 'https://mickleball-netcore-api.azurewebsites.net/api/v1',
   apiMockEndpoint: 'https://angular-datatables-demo-server.herokuapp.com',
+
   evaluationInstruction: {
     level20:
       '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.</span><p><div>A = Solid, consistent performance <br>B = Good basic form, but needs work <br> C = Attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
@@ -33,14 +34,19 @@ export const environment = {
     level50:
       '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 5.0 should ALSO possess all 4.5 skills.</span><p><div>A = Solid, consistent performance <br>B = Good basic form, but needs work <br> C = Attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
   },
-  googleSheetsApiKey: 'AIzaSyC3AgyGHXMyj8j-iFZ4ucrenprWrZm0VKI',
-  googleSheetInfo: {
+  // skills list in googlesheet
+  googleSheet: {
+    apiKey: 'AIzaSyC3AgyGHXMyj8j-iFZ4ucrenprWrZm0VKI',
     spreadsheetId: '17zEoQvmjqBHoDykjxgun4upXg5QT6KooHnuAp_wXmac',
     worksheetGrades: 'Grades',
     worksheetSkills: 'Skills',
   },
-  youtubeApiUrl: 'https://www.googleapis.com/youtube/v3/search',
-  youtubeApiKey: 'AIzaSyAq9W0tD3SJxtn6RE0aUcBseMMz_WcKhAU',
+  // training video search in youtube
+  youtube: {
+    apiUrl: 'https://www.googleapis.com/youtube/v3/search',
+    apiKey: 'AIzaSyAq9W0tD3SJxtn6RE0aUcBseMMz_WcKhAU',
+    maxResults: 10,
+  },
 
   //IdentityServer/OIDC Configuration
 

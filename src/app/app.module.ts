@@ -73,7 +73,7 @@ export function initTableSkills(configService: TableSkillsService) {
     },
     {
       provide: API_KEY,
-      useValue: environment.googleSheetsApiKey,
+      useValue: environment.googleSheet.apiKey,
     },
     GoogleSheetsDbService,
     // {

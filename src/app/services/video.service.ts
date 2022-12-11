@@ -11,9 +11,9 @@ import { environment } from '@env/environment';
   providedIn: 'root',
 })
 export class VideoService {
-  private apiURL = environment.youtubeApiUrl;
-  private apiToken = environment.youtubeApiKey;
-  private maxResults = 10;
+  private apiURL = environment.youtube.apiUrl;
+  private apiToken = environment.youtube.apiKey;
+  private maxResults = environment.youtube.maxResults;
 
   constructor(private http: HttpClient) {}
 
