@@ -8,9 +8,9 @@
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
-          Video by <a href="{{ video.channelUrl }}" class="card-link">{{ video.channelTitle }}</a>
+          <strong>Video by</strong> <a href="{{ video.channelUrl }}" class="card-link">{{ video.channelTitle }}</a>
         </li>
-        <li class="list-group-item">Published on {{ video.publishedAt }}</li>
+        <li class="list-group-item"><strong>Published on</strong> {{ video.publishedAt | date }}</li>
       </ul>
     </div>
   </div>

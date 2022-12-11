@@ -22,8 +22,8 @@ export class TableSkillsService {
 
   constructor(private googleSheetsDbService: GoogleSheetsDbService) {
     this.dataRequest$ = this.googleSheetsDbService.get<Skill>(
-      environment.googleSheetInfo.spreadsheetId,
-      environment.googleSheetInfo.worksheetSkills,
+      environment.googleSheet.spreadsheetId,
+      environment.googleSheet.worksheetSkills,
       SkillAttributesMapping
     );
   }
