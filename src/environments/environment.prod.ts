@@ -9,28 +9,26 @@ import { env } from './.env';
 export const environment = {
   production: true,
   version: env.npm_package_version,
-  serverUrl: 'https://api.chucknorris.io',
+  serverUrl: '/api',
   defaultLanguage: 'en-US',
   supportedLanguages: ['en-US'],
-  // REST API server
   //Api_Endpoint: 'https://cat-netcore-api.azurewebsites.net/api/v1',
-  Api_Endpoint: 'https://mickleball-netcore-api.azurewebsites.net/api/v1',
-  Api_Mock_Endpoint: 'https://angular-datatables-demo-server.herokuapp.com',
-
-  Evaluation_Instruction: {
-    Level_20:
+  //Api_Endpoint: 'https://mickleball-netcore-api.azurewebsites.net/api/v1',
+  apiMockEndpoint: 'https://angular-datatables-demo-server.herokuapp.com',
+  evaluationInstruction: {
+    level20:
       '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.</span><p><div>A = Solid, consistent performance <br>B = Good basic form, but needs work <br> C = Attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
-    Level_25:
+    level25:
       '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 2.5 should ALSO possess all 2.0 skills.</span><p><div>A = Solid, consistent performance <br>B = Good basic form, but needs work <br> C = Attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
-    Level_30:
+    level30:
       '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 3.0 should ALSO possess all 2.5 skills.</span><p><div>A = Solid, consistent performance <br>B = Good basic form, but needs work <br> C = Attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
-    Level_35:
+    level35:
       '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 3.5 should ALSO possess all 3.0 skills.</span><p><div>A = Solid, consistent performance <br>B = Good basic form, but needs work <br> C = Attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
-    Level_40:
+    level40:
       '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 4.0 should ALSO possess all 3.5 skills.</span><p><div>A = Solid, consistent performance <br>B = Good basic form, but needs work <br> C = Attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
-    Level_45:
+    level45:
       '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 4.5 should ALSO possess all 4.0 skills.</span><p><div>A = Solid, consistent performance <br>B = Good basic form, but needs work <br> C = Attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
-    Level_50:
+    level50:
       '<div class="alert alert-success"><h4>Section 2 - Skill Evaluation</h4><span class="fw-normal">Select a rating for each skill code.  Skill level 5.0 should ALSO possess all 4.5 skills.</span><p><div>A = Solid, consistent performance <br>B = Good basic form, but needs work <br> C = Attempted but very poorly executed/needs work <br>D = Not observed or not able to execute </div></p></div>',
   },
   googleSheetsApiKey: 'AIzaSyC3AgyGHXMyj8j-iFZ4ucrenprWrZm0VKI',
@@ -39,22 +37,27 @@ export const environment = {
     worksheetGrades: 'Grades',
     worksheetSkills: 'Skills',
   },
+  youtubeApiUrl: 'https://www.googleapis.com/youtube/v3/search',
+  youtubeApiKey: 'AIzaSyAq9W0tD3SJxtn6RE0aUcBseMMz_WcKhAU',
 
-  // IdentityServer/OIDC Configuration
-  // Oidc_Issuer: 'https://localhost:44310',  //this is for IdentityServer4 Admin UI running on localhost
-  //Oidc_Issuer: 'https://cat-token-identity.azurewebsites.net',
-  Oidc_Issuer: 'https://mickleball-token-identity.azurewebsites.net',
-  Oidc_ClientId: 'MickleballClient', // client id setup in IdentityServer4
-  Oidc_responseType: 'code', //code flow PKCE,
-  Oidc_redirectUri: window.location.origin + '/auth-callback',
-  Oidc_postLogoutRedirectUri: window.location.origin,
-  Oidc_silentRefreshRedirectUri: window.location.origin + '/silent-refresh.html',
-  Oidc_scope: 'openid profile email roles app.api.employeeprofile.read', // Ask offline_access to support refresh token refreshes
-  Oidc_useSilentRefresh: true, // Needed for Code Flow to suggest using iframe-based refreshes
-  Oidc_silentRefreshTimeout: 5000, // For faster testing
-  Oidc_timeoutFactor: 0.25, // For faster testing
-  Oidc_sessionChecksEnabled: true,
-  Oidc_showDebugInformation: true, // Also requires enabling "Verbose" level in devtools
-  Oidc_clearHashAfterLogin: false, // https://github.com/manfredsteyer/angular-oauth2-oidc/issues/457#issuecomment-431807040,
-  Oidc_nonceStateSeparator: 'semicolon', // Real semicolon gets mangled by IdentityServer's URI encoding
+  //IdentityServer/OIDC Configuration
+
+  oidc: {
+    // issuer: 'https://localhost:44310', // running on localhost
+    // issuer: 'https://cat-token-identity.azurewebsites.net', // demo identityserver in Azure
+    issuer: 'https://mickleball-token-identity.azurewebsites.net', // identityserver in Azure
+    clientId: 'MickleballClient', // client id setup in IdentityServer4
+    responseType: 'code', //code flow PKCE
+    redirectUri: window.location.origin + '/auth-callback',
+    postLogoutRedirectUri: window.location.origin,
+    silentRefreshRedirectUri: window.location.origin + '/silent-refresh.html',
+    scope: 'openid profile email roles app.api.employeeprofile.read', // Ask offline_access to support refresh token refreshes
+    useSilentRefresh: true, // Needed for Code Flow to suggest using iframe-based refreshes
+    silentRefreshTimeout: 50000, // For faster testing
+    timeoutFactor: 0.25, // For faster testing
+    sessionChecksEnabled: false,
+    showDebugInformation: false, // Also requires enabling "Verbose" level in devtools
+    clearHashAfterLogin: false, // https://github.com/manfredsteyer/angular-oauth2-oidc/issues/457#issuecomment-431807040,
+    nonceStateSeparator: 'semicolon', // Real semicolon gets mangled by IdentityServer's URI encoding
+  },
 };

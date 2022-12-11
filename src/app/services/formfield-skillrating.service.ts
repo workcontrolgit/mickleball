@@ -30,31 +30,31 @@ export class FormfieldSkillRatingService {
 
     switch (skillLevel) {
       case '2.0': {
-        instructions = environment.Evaluation_Instruction.Level_20;
+        instructions = environment.evaluationInstruction.level20;
         break;
       }
       case '2.5': {
-        instructions = environment.Evaluation_Instruction.Level_25;
+        instructions = environment.evaluationInstruction.level25;
         break;
       }
       case '3.0': {
-        instructions = environment.Evaluation_Instruction.Level_30;
+        instructions = environment.evaluationInstruction.level30;
         break;
       }
       case '3.5': {
-        instructions = environment.Evaluation_Instruction.Level_35;
+        instructions = environment.evaluationInstruction.level35;
         break;
       }
       case '4.0': {
-        instructions = environment.Evaluation_Instruction.Level_40;
+        instructions = environment.evaluationInstruction.level40;
         break;
       }
       case '4.5': {
-        instructions = environment.Evaluation_Instruction.Level_45;
+        instructions = environment.evaluationInstruction.level45;
         break;
       }
       case '5.0': {
-        instructions = environment.Evaluation_Instruction.Level_50;
+        instructions = environment.evaluationInstruction.level50;
         break;
       }
       default: {

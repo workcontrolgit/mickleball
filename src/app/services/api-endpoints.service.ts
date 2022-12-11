@@ -86,7 +86,7 @@ export class ApiEndpointsService {
   // URL
   private createUrl(action: string, isMockAPI: boolean = false): string {
     const urlBuilder: UrlBuilder = new UrlBuilder(
-      isMockAPI ? environment.Api_Mock_Endpoint : environment.Api_Endpoint,
+      isMockAPI ? environment.apiMockEndpoint : environment.apiEndpoint,
       action
     );
     return urlBuilder.toString();
@@ -97,7 +97,7 @@ export class ApiEndpointsService {
     action: string,
     queryStringHandler?: (queryStringParameters: QueryStringParameters) => void
   ): string {
-    const urlBuilder: UrlBuilder = new UrlBuilder(environment.Api_Endpoint, action);
+    const urlBuilder: UrlBuilder = new UrlBuilder(environment.apiEndpoint, action);
     // Push extra query string params
     if (queryStringHandler) {
       queryStringHandler(urlBuilder.queryString);
@@ -114,7 +114,7 @@ export class ApiEndpointsService {
         encodedPathVariablesUrl += `/${encodeURIComponent(pathVariable.toString())}`;
       }
     }
-    const urlBuilder: UrlBuilder = new UrlBuilder(environment.Api_Endpoint, `${action}${encodedPathVariablesUrl}`);
+    const urlBuilder: UrlBuilder = new UrlBuilder(environment.apiEndpoint, `${action}${encodedPathVariablesUrl}`);
     return urlBuilder.toString();
   }
   /* #endregion */

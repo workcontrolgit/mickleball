@@ -21,7 +21,7 @@ const log = new Logger('App');
 })
 export class AppComponent implements OnInit, OnDestroy {
   // http loader filter
-  filteredUrlPatterns: string | null = environment.Oidc_Issuer + '/connect';
+  filteredUrlPatterns: string | null = environment.oidc.issuer + '/connect';
 
   constructor(
     private router: Router,

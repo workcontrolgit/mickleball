@@ -26,6 +26,10 @@ import { TableSkillsService } from './services/table-skills.service';
 
 import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 
+// import { ErrorHandler } from '@angular/core';
+// import { GlobalErrorHandler } from '@core/errors/global-error-handler';
+// import { ErrorDialogService } from '@shared/errors/error-dialog.service';
+
 export function initTableGrades(configService: TableGradesService) {
   return () => configService.load();
 }
@@ -72,6 +76,11 @@ export function initTableSkills(configService: TableSkillsService) {
       useValue: environment.googleSheetsApiKey,
     },
     GoogleSheetsDbService,
+    // {
+    //   provide: ErrorHandler,
+    //   useClass: GlobalErrorHandler,
+    // },
+    // ErrorDialogService,
   ],
   bootstrap: [AppComponent],
 })
