@@ -12,6 +12,8 @@ export const environment = {
   serverUrl: '/api',
   defaultLanguage: 'en-US',
   supportedLanguages: ['en-US'],
+  //REST API server
+  apiEndpoint: 'https://mickleball-netcore-api.azurewebsites.net/api/v1',
   //Api_Endpoint: 'https://cat-netcore-api.azurewebsites.net/api/v1',
   //Api_Endpoint: 'https://mickleball-netcore-api.azurewebsites.net/api/v1',
   apiMockEndpoint: 'https://angular-datatables-demo-server.herokuapp.com',
