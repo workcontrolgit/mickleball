@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { FormControl, ValidationErrors } from '@angular/forms';
 import { FormlyFieldConfig } from '@ngx-formly/core';
-import { DatabaseService } from './database.service';
-import { TableGradesService } from '@app/services/table-grades.service';
-import { TableSkillsService } from '@app/services/table-skills.service';
+import { TableGradesService } from '@app/services/api/table-grades.service';
+import { TableSkillsService } from '@app/services/api/table-skills.service';
 
 type TypeLabelValue = Array<{ label: string; value: string }>;
 
@@ -11,11 +10,7 @@ type TypeLabelValue = Array<{ label: string; value: string }>;
   providedIn: 'root',
 })
 export class FormfieldControlService {
-  constructor(
-    private databaseService: DatabaseService,
-    private tblGradesService: TableGradesService,
-    private tblSkillsService: TableSkillsService
-  ) {}
+  constructor(private tblGradesService: TableGradesService, private tblSkillsService: TableSkillsService) {}
 
   public readonly SelectRatingPlaceholder: string = 'Select a rating';
 

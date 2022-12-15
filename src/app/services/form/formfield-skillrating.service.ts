@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormlyFieldConfig } from '@ngx-formly/core';
-import { FormfieldControlService } from '@app/services/formfield-control.service';
+import { FormfieldControlService } from '@app/services/form/formfield-control.service';
 import { environment } from '@env/environment';
 
 @Injectable({

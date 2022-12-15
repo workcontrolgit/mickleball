@@ -2,7 +2,7 @@ import { OnInit } from '@angular/core';
 // search-container.component.ts
 
 import { Component } from '@angular/core';
-import { VideoService } from '@app/services/video.service';
+import { VideoService } from '@app/services/api/video.service';
 import { Video } from '@shared/models/search.interface';
 
 @Component({
