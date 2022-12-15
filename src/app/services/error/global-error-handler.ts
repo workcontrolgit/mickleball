@@ -1,16 +1,10 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { ErrorHandler, Injectable, Injector, NgZone } from '@angular/core';
 import { ErrorDialogService } from '@shared/errors/error-dialog.service';
-import { ToastService } from '@app/services/dialog/toast.service';
-//import { ConfirmationDialogService } from '@app/services/confirmation-dialog.service';
 
 @Injectable()
 export class GlobalErrorHandler implements ErrorHandler {
-  constructor(
-    private errorDialogService: ErrorDialogService,
-    private zone: NgZone,
-    public toastService: ToastService //private confirmationDialogService: ConfirmationDialogService,
-  ) {}
+  constructor(private errorDialogService: ErrorDialogService, private zone: NgZone) {}
 
   handleError(error: any) {
     // Check if it's an error from an HTTP response
