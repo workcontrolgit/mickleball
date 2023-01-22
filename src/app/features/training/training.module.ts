@@ -9,10 +9,11 @@ import { SearchListComponent } from './components/search-list/search-list.compon
 import { SearchContainerComponent } from './components/search-container/search-container.component';
 
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [TrainingComponent, SearchInputComponent, SearchListComponent, SearchContainerComponent],
-  imports: [CommonModule, YouTubePlayerModule, TrainingRoutingModule],
+  imports: [CommonModule, YouTubePlayerModule, TrainingRoutingModule, NgbAccordionModule],
   providers: [],
 })
 export class TraininghModule {}
