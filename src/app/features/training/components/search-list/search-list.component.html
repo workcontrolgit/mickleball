@@ -32,9 +32,9 @@
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              <strong>Video by</strong> <a href="{{ video.channelUrl }}" class="card-link">{{ video.channelTitle }}</a>
+              <i>Video by</i> <a href="{{ video.channelUrl }}" class="card-link">{{ video.channelTitle }}</a>
             </li>
-            <li class="list-group-item"><strong>Published on</strong> {{ video.publishedAt | date }}</li>
+            <li class="list-group-item"><i>Published on</i> {{ video.publishedAt | date }}</li>
           </ul>
         </div>
       </ng-template>
