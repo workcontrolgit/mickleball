@@ -16,9 +16,13 @@
   </div>
 </div> -->
 
-<div class="col" *ngFor="let video of videos; index as i">
-  <ngb-accordion [closeOthers]="true" activeIds="static-1">
-    <ngb-panel id="static-{{ i + 1 }}" title="{{ video.title }}">
+<div class="col">
+  <!-- <ngb-accordion [closeOthers]="true"  activeIds="static-1"> -->
+  <ngb-accordion [closeOthers]="true" activeIds="video-1">
+    <ngb-panel *ngFor="let video of videos; index as i" id="video-{{ i + 1 }}">
+      <ng-template ngbPanelTitle>
+        <b>{{ video.title }}</b>
+      </ng-template>
       <ng-template ngbPanelContent>
         <div class="card border-0">
           <youtube-player width="100%" [videoId]="video.videoId"></youtube-player>
