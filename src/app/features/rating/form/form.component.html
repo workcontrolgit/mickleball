@@ -14,29 +14,10 @@
         <app-reportcard [model]="model"></app-reportcard>
       </ng-template>
     </li>
-    <!-- <li [ngbNavItem]="3">
-        <a ngbNavLink>Training</a>
-        <ng-template ngbNavContent>
-        </ng-template>
-      </li> -->
   </ul>
 
   <!-- Content output -->
   <div [ngbNavOutlet]="nav" class="mt-2"></div>
 </div>
-
-<!-- <ngx-teleport to="destination">
-  <div class="alert alert-success">
-    <h4>Section 2 - Skill Evaluation</h4>
-    <span class="fw-normal">Select a rating for each skill code.</span>
-    <p>
-      A = Solid, consistent performance
-      <br />B = Good basic form, but needs work <br />
-      C = Attempted but very poorly executed/needs work <br />D = Not observed or not able to execute
-    </p>
-  </div>
-</ngx-teleport> -->
-
-<!-- <pre>Active: {{ active }}</pre> -->
 
 <p *ngIf="debug">{{ model | json }}</p>
