@@ -22,7 +22,7 @@ export class FormComponent implements OnInit {
   //options: FormlyFormOptions = {};
   //fields: FormlyFieldConfig[];
 
-  debug: boolean = false;
+  debug: boolean = true;
   //level: any;
 
   modelDebug = {
@@ -72,7 +72,9 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.model = this.modelDebug;
+    if (this.debug) {
+      this.model = this.modelDebug;
+    }
   }
 
   // CRUD > Read, map to REST/HTTP GET

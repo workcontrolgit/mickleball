@@ -59,4 +59,10 @@ export class ReportcardComponent implements OnInit {
       });
     }
   }
+
+  getClassOf(rating: string) {
+    console.log(rating);
+    if ((rating = 'A')) return 'text-success fw-bolder';
+    else return 'text-danger fw-bolder';
+  }
 }
