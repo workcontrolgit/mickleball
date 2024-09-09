@@ -7,7 +7,6 @@ import { ShopComponent } from './shop.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  imports: [CommonModule, TranslateModule, ShopRoutingModule, NgbModule],
-  declarations: [ShopComponent],
+    imports: [CommonModule, TranslateModule, ShopRoutingModule, NgbModule, ShopComponent],
 })
 export class ShopModule {}

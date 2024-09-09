@@ -2,12 +2,28 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Logger } from '@core';
 import { ActivatedRoute } from '@angular/router';
+import { NgIf, JsonPipe } from '@angular/common';
+import { ReportcardComponent } from '../reportcard/reportcard.component';
+import { EvaluationComponent } from '../evaluation/evaluation.component';
+import { NgbNav, NgbNavItem, NgbNavLink, NgbNavContent, NgbNavOutlet } from '@ng-bootstrap/ng-bootstrap';
 
 const log = new Logger('Evaluation');
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css'],
+    selector: 'app-form',
+    templateUrl: './form.component.html',
+    styleUrls: ['./form.component.css'],
+    standalone: true,
+    imports: [
+        NgbNav,
+        NgbNavItem,
+        NgbNavLink,
+        NgbNavContent,
+        EvaluationComponent,
+        ReportcardComponent,
+        NgbNavOutlet,
+        NgIf,
+        JsonPipe,
+    ],
 })
 export class FormComponent implements OnInit {
   // ngx formly

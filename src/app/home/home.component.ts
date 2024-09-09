@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Logger } from '@core';
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { RouterLink } from '@angular/router';
 
 const log = new Logger('app-home');
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
-  providers: [NgbCarouselConfig], // add NgbCarouselConfig to the component providers
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+    providers: [NgbCarouselConfig],
+    standalone: true,
+    imports: [RouterLink, ShareButtonsModule],
 })
 export class HomeComponent implements OnInit {
   showNavigationArrows = true;

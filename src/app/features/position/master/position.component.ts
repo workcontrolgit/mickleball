@@ -5,12 +5,22 @@ import { ApiHttpService } from '@app/services/api/api-http.service';
 import { ApiEndpointsService } from '@app/services/api/api-endpoints.service';
 import { DataTablesResponse } from '@shared/classes/data-tables-response';
 import { Logger } from '@core';
+import { NgIf, NgFor } from '@angular/common';
+import { DataTablesModule } from 'angular-datatables';
+import { RouterLink } from '@angular/router';
 
 const log = new Logger('Position');
 @Component({
-  selector: 'app-position',
-  templateUrl: './position.component.html',
-  styleUrls: ['./position.component.scss'],
+    selector: 'app-position',
+    templateUrl: './position.component.html',
+    styleUrls: ['./position.component.scss'],
+    standalone: true,
+    imports: [
+        RouterLink,
+        DataTablesModule,
+        NgIf,
+        NgFor,
+    ],
 })
 export class PositionComponent implements OnInit {
   dtOptions: DataTables.Settings = {};

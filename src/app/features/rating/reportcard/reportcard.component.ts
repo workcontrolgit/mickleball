@@ -3,13 +3,22 @@ import { Observable } from 'rxjs/internal/Observable';
 import { FormfieldControlService } from '@app/services/form/formfield-control.service';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { NgFor, NgClass, DatePipe } from '@angular/common';
+import { NgxPrintElementModule } from 'ngx-print-element';
 
 type TypeSkillRating = Array<{ Skillcode: string; Description: string; Rating: string }>;
 
 @Component({
-  selector: 'app-reportcard',
-  templateUrl: './reportcard.component.html',
-  styleUrls: ['./reportcard.component.css'],
+    selector: 'app-reportcard',
+    templateUrl: './reportcard.component.html',
+    styleUrls: ['./reportcard.component.css'],
+    standalone: true,
+    imports: [
+        NgxPrintElementModule,
+        NgFor,
+        NgClass,
+        DatePipe,
+    ],
 })
 export class ReportcardComponent implements OnInit {
   state$: Observable<object>;
