@@ -2,11 +2,30 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { AuthService } from '@app/@core/auth/auth.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { LanguageSelectorComponent } from '../../i18n/language-selector.component';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { NgbNavbar, NgbCollapse, NgbDropdown, NgbDropdownToggle, NgbDropdownMenu } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss'],
+    standalone: true,
+    imports: [
+        NgbNavbar,
+        TranslateModule,
+        NgbCollapse,
+        RouterLink,
+        RouterLinkActive,
+        LanguageSelectorComponent,
+        NgbDropdown,
+        NgbDropdownToggle,
+        NgbDropdownMenu,
+        NgIf,
+        AsyncPipe,
+    ],
 })
 export class HeaderComponent implements OnInit {
   menuHidden = true;

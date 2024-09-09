@@ -42,7 +42,16 @@
             <td>{{ skill.Skillcode }}</td>
             <td>{{ skill.Description }}</td>
             <td>
-              <span [ngClass]="{ A: success, B: info, C: warning, D: danger }[skill.Rating]">{{ skill.Rating }}</span>
+              <span
+                [ngClass]="
+                  skill.Rating == 'A' ? success : skill.Rating == 'B' ? info : skill.Rating == 'C' ? warning : danger
+                "
+                >{{ skill.Rating }}</span
+              >
+              <!-- <span [ngClass]="getClassOf(skill.Rating)">{{ skill.Rating }}</span> -->
+              <!-- <span [ngClass]="{success: skill.Rating == 'A'}">{{ skill.Rating }}</span> -->
+              <!-- <span [ngClass]="{ A: success, B: info, C: warning, D: danger }[skill.Rating]">{{ skill.Rating }}</span> -->
+              <!-- {{ skill.Rating }} -->
             </td>
           </tr>
         </tbody>

@@ -33,39 +33,37 @@ import { NgxPrintElementModule } from 'ngx-print-element';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    RatingComponent,
-    DashboardComponent,
-    FormComponent,
-    ReportcardComponent,
-    EvaluationComponent,
-    WarningDialogComponent,
-    DatePikerComponent,
-    DatePickerValueAccessor,
-    FieldsetWrapper,
-    LabelWrapper,
-  ],
-  imports: [
-    CommonModule,
-    NgbModule,
-    ReactiveFormsModule,
-    FormlyModule.forRoot({
-      types: [{ name: 'date', component: DatePikerComponent, wrappers: ['label', 'fieldset'] }],
-      wrappers: [
-        { name: 'label', component: LabelWrapper },
-        { name: 'fieldset', component: FieldsetWrapper },
-      ],
-      validationMessages: [
-        { name: 'required', message: 'This field is required' },
-        { name: 'email', message: EmailValidatorMessage },
-      ],
-      validators: [{ name: 'email', validation: EmailValidator }],
-    }),
-    FormsModule,
-    NgxPrintElementModule,
-    FormlyBootstrapModule, // must be imported as the last module as it contains the fallback route
-    RatingRoutingModule,
-  ],
-  providers: [],
+    imports: [
+        CommonModule,
+        NgbModule,
+        ReactiveFormsModule,
+        FormlyModule.forRoot({
+            types: [{ name: 'date', component: DatePikerComponent, wrappers: ['label', 'fieldset'] }],
+            wrappers: [
+                { name: 'label', component: LabelWrapper },
+                { name: 'fieldset', component: FieldsetWrapper },
+            ],
+            validationMessages: [
+                { name: 'required', message: 'This field is required' },
+                { name: 'email', message: EmailValidatorMessage },
+            ],
+            validators: [{ name: 'email', validation: EmailValidator }],
+        }),
+        FormsModule,
+        NgxPrintElementModule,
+        FormlyBootstrapModule,
+        RatingRoutingModule,
+        RatingComponent,
+        DashboardComponent,
+        FormComponent,
+        ReportcardComponent,
+        EvaluationComponent,
+        WarningDialogComponent,
+        DatePikerComponent,
+        DatePickerValueAccessor,
+        FieldsetWrapper,
+        LabelWrapper,
+    ],
+    providers: [],
 })
 export class RatingModule {}

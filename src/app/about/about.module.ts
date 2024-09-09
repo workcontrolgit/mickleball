@@ -8,7 +8,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
-  imports: [CommonModule, TranslateModule, AboutRoutingModule, NgbModule, YouTubePlayerModule],
-  declarations: [AboutComponent],
+    imports: [CommonModule, TranslateModule, AboutRoutingModule, NgbModule, YouTubePlayerModule, AboutComponent],
 })
 export class AboutModule {}

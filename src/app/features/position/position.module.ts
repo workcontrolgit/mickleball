@@ -13,15 +13,15 @@ import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
 import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
-  declarations: [PositionComponent, DetailComponent],
-  imports: [
-    CommonModule,
-    TranslateModule,
-    PositionRoutingModule,
-    ReactiveFormsModule,
-    SharedModule,
-    RxReactiveFormsModule,
-    DataTablesModule,
-  ],
+    imports: [
+        CommonModule,
+        TranslateModule,
+        PositionRoutingModule,
+        ReactiveFormsModule,
+        SharedModule,
+        RxReactiveFormsModule,
+        DataTablesModule,
+        PositionComponent, DetailComponent,
+    ],
 })
 export class PositionModule {}
