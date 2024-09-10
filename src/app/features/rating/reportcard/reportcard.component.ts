@@ -9,16 +9,11 @@ import { NgxPrintElementModule } from 'ngx-print-element';
 type TypeSkillRating = Array<{ Skillcode: string; Description: string; Rating: string }>;
 
 @Component({
-    selector: 'app-reportcard',
-    templateUrl: './reportcard.component.html',
-    styleUrls: ['./reportcard.component.css'],
-    standalone: true,
-    imports: [
-        NgxPrintElementModule,
-        NgFor,
-        NgClass,
-        DatePipe,
-    ],
+  selector: 'app-reportcard',
+  templateUrl: './reportcard.component.html',
+  styleUrls: ['./reportcard.component.css'],
+  standalone: true,
+  imports: [NgxPrintElementModule, NgFor, NgClass, DatePipe],
 })
 export class ReportcardComponent implements OnInit {
   state$: Observable<object>;
@@ -68,10 +63,14 @@ export class ReportcardComponent implements OnInit {
       });
     }
   }
+  getClass(rating: string): string {
+    const classMap: { [key: string]: string } = {
+      A: 'success',
+      B: 'info',
+      C: 'warning',
+      D: 'danger',
+    };
 
-  getClassOf(rating: string) {
-    console.log(rating);
-    if ((rating = 'A')) return 'text-success fw-bolder';
-    else return 'text-danger fw-bolder';
+    return classMap[rating] || ''; // Default to an empty string if no match
   }
 }
