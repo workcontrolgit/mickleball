@@ -59,4 +59,14 @@ export class ReportcardComponent implements OnInit {
       });
     }
   }
+  getClass(rating: string): string {
+    const classMap: { [key: string]: string } = {
+      A: 'success',
+      B: 'info',
+      C: 'warning',
+      D: 'danger',
+    };
+
+    return classMap[rating] || ''; // Default to an empty string if no match
+  }
 }
