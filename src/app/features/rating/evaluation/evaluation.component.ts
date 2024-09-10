@@ -1,18 +1,26 @@
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { FormfieldSkillRatingService } from '@app/services/form/formfield-skillrating.service';
 import { environment } from '@env/environment';
-import { FormGroup } from '@angular/forms';
-import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormlyFormOptions, FormlyFieldConfig, FormlyModule } from '@ngx-formly/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { WarningDialogComponent } from '@app/@shared/components/warning-dialog/warning-dialog-component';
 import { Evaluation } from '@shared/models/evaluation';
 import { Logger } from '@core';
+import { NgIf, JsonPipe } from '@angular/common';
 
 const log = new Logger('Evaluation');
 @Component({
-  selector: 'app-evaluation',
-  templateUrl: './evaluation.component.html',
-  styleUrls: ['./evaluation.component.css'],
+    selector: 'app-evaluation',
+    templateUrl: './evaluation.component.html',
+    styleUrls: ['./evaluation.component.css'],
+    standalone: true,
+    imports: [
+        ReactiveFormsModule,
+        FormlyModule,
+        NgIf,
+        JsonPipe,
+    ],
 })
 export class EvaluationComponent implements OnInit {
   // ngx formly

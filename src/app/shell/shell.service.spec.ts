@@ -6,8 +6,8 @@ import { Shell } from './shell.service';
 describe('Shell', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ShellComponent],
-    });
+    imports: [ShellComponent],
+});
   });
 
   describe('childRoutes', () => {

@@ -12,8 +12,7 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  declarations: [TrainingComponent, SearchInputComponent, SearchListComponent, SearchContainerComponent],
-  imports: [CommonModule, YouTubePlayerModule, TrainingRoutingModule, NgbAccordionModule],
-  providers: [],
+    imports: [CommonModule, YouTubePlayerModule, TrainingRoutingModule, NgbAccordionModule, TrainingComponent, SearchInputComponent, SearchListComponent, SearchContainerComponent],
+    providers: [],
 })
 export class TraininghModule {}

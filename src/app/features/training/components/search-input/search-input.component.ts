@@ -6,9 +6,10 @@ import { fromEvent } from 'rxjs';
 import { debounceTime, pluck, distinctUntilChanged, filter, map } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-search-input',
-  templateUrl: './search-input.component.html',
-  styleUrls: ['./search-input.component.css'],
+    selector: 'app-search-input',
+    templateUrl: './search-input.component.html',
+    styleUrls: ['./search-input.component.css'],
+    standalone: true,
 })
 export class SearchInputComponent implements AfterViewInit {
   @ViewChild('input') inputElement: ElementRef;
