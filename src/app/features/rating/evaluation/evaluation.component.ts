@@ -11,16 +11,11 @@ import { NgIf, JsonPipe } from '@angular/common';
 
 const log = new Logger('Evaluation');
 @Component({
-    selector: 'app-evaluation',
-    templateUrl: './evaluation.component.html',
-    styleUrls: ['./evaluation.component.css'],
-    standalone: true,
-    imports: [
-        ReactiveFormsModule,
-        FormlyModule,
-        NgIf,
-        JsonPipe,
-    ],
+  selector: 'app-evaluation',
+  templateUrl: './evaluation.component.html',
+  styleUrls: ['./evaluation.component.css'],
+  standalone: true,
+  imports: [ReactiveFormsModule, FormlyModule, NgIf, JsonPipe],
 })
 export class EvaluationComponent implements OnInit {
   // ngx formly
@@ -82,7 +77,6 @@ export class EvaluationComponent implements OnInit {
       }
     }
 
-    //this.fields = this.serviceFormFields.getFormFields(skillLevel, instructions);
     this.fields = this.serviceFormFields.getFormFields(skillLevel);
   }
 
@@ -96,45 +90,5 @@ export class EvaluationComponent implements OnInit {
 
   open() {
     const modalRef = this.modalService.open(WarningDialogComponent);
-    //modalRef.componentInstance.title = "Uh oh";
   }
-
-  // CRUD > Read, map to REST/HTTP GET
-  // read2(playerId: any, skillLevel: any): void {
-  //   this.apiHttpService
-  //     .get(this.apiEndpointsService.getEvaluationByPlayerIdAndSkillLevelEndpoint(playerId, skillLevel))
-  //     .subscribe(
-  //       //Assign resp to class-level model object.
-  //       (resp: any) => {
-  //         //Assign data to class-level model object.
-  //         this.evaluations = resp.data;
-
-  //         if (Array.isArray(this.evaluations) && this.evaluations.length) {
-  //           var firstItem: any = this.evaluations.splice(0, 1)[0];
-  //           this.model = JSON.parse(firstItem.result);
-  //         }
-  //       },
-  //       (error) => {
-  //         log.debug(error);
-  //       }
-  //     );
-  // }
-
-  // read(id: any): void {
-  //   this.apiHttpService.get(this.apiEndpointsService.getEvaluationByIdEndpoint(id)).subscribe(
-  //     //Assign resp to class-level model object.
-  //     (resp: DataResponseEvaluation) => {
-  //       //Assign data to class-level model object.
-  //       this.evaluation = resp.data;
-  //       this.model = JSON.parse(this.evaluation.result);
-  //     },
-  //     (error) => {
-  //       log.debug(error);
-  //     }
-  //   );
-  // }
-
-  // get sub(): string | null {
-  //   return this.authService.identityClaims ? (this.authService.identityClaims as any)['sub'] : null;
-  // }
 }
