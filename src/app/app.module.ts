@@ -26,9 +26,9 @@ import { TableSkillsService } from './services/api/table-skills.service';
 
 import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 
-// import { ErrorHandler } from '@angular/core';
-// import { GlobalErrorHandler } from '@core/errors/global-error-handler';
-// import { ErrorDialogService } from '@shared/errors/error-dialog.service';
+import { ErrorHandler } from '@angular/core';
+import { GlobalErrorHandler } from './services/error/global-error-handler';
+import { ErrorDialogService } from '@shared/errors/error-dialog.service';
 
 export function initTableGrades(configService: TableGradesService) {
   return () => configService.load();
@@ -39,50 +39,51 @@ export function initTableSkills(configService: TableSkillsService) {
 }
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production }),
-        FormsModule,
-        HttpClientModule,
-        TranslateModule.forRoot(),
-        NgHttpLoaderModule.forRoot(),
-        NgbModule,
-        CoreModule.forRoot(),
-        SharedModule,
-        ShellModule,
-        HomeModule,
-        NgxGoogleAnalyticsModule.forRoot('G-G7BYVD349P'),
-        NgxGoogleAnalyticsRouterModule,
-        ReactiveFormsModule,
-        Angulartics2Module.forRoot(),
-        AppRoutingModule,
-        FallbackComponent, ShouldLoginComponent,
-    ],
-    declarations: [AppComponent],
-    providers: [
-        {
-            provide: APP_INITIALIZER,
-            deps: [TableGradesService],
-            multi: true,
-            useFactory: initTableGrades,
-        },
-        {
-            provide: APP_INITIALIZER,
-            deps: [TableSkillsService],
-            multi: true,
-            useFactory: initTableSkills,
-        },
-        {
-            provide: API_KEY,
-            useValue: environment.googleSheet.apiKey,
-        },
-        GoogleSheetsDbService,
-        // {
-        //   provide: ErrorHandler,
-        //   useClass: GlobalErrorHandler,
-        // },
-        // ErrorDialogService,
-    ],
-    bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production }),
+    FormsModule,
+    HttpClientModule,
+    TranslateModule.forRoot(),
+    NgHttpLoaderModule.forRoot(),
+    NgbModule,
+    CoreModule.forRoot(),
+    SharedModule,
+    ShellModule,
+    HomeModule,
+    NgxGoogleAnalyticsModule.forRoot('G-G7BYVD349P'),
+    NgxGoogleAnalyticsRouterModule,
+    ReactiveFormsModule,
+    Angulartics2Module.forRoot(),
+    AppRoutingModule,
+    FallbackComponent,
+    ShouldLoginComponent,
+  ],
+  declarations: [AppComponent],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      deps: [TableGradesService],
+      multi: true,
+      useFactory: initTableGrades,
+    },
+    {
+      provide: APP_INITIALIZER,
+      deps: [TableSkillsService],
+      multi: true,
+      useFactory: initTableSkills,
+    },
+    {
+      provide: API_KEY,
+      useValue: environment.googleSheet.apiKey,
+    },
+    GoogleSheetsDbService,
+    {
+      provide: ErrorHandler,
+      useClass: GlobalErrorHandler,
+    },
+    ErrorDialogService,
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
