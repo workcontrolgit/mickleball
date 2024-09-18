@@ -9,15 +9,11 @@ import { NgIf } from '@angular/common';
 import { SearchInputComponent } from '../search-input/search-input.component';
 
 @Component({
-    selector: 'app-search-container',
-    templateUrl: './search-container.component.html',
-    styleUrls: ['./search-container.component.css'],
-    standalone: true,
-    imports: [
-        SearchInputComponent,
-        NgIf,
-        SearchListComponent,
-    ],
+  selector: 'app-search-container',
+  templateUrl: './search-container.component.html',
+  styleUrls: ['./search-container.component.css'],
+  standalone: true,
+  imports: [SearchInputComponent, NgIf, SearchListComponent],
 })
 export class SearchContainerComponent {
   inputTouched = false;

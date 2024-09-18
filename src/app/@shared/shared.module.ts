@@ -12,8 +12,8 @@ import { ErrorDialogComponent } from '@shared/errors/error-dialog/error-dialog.c
 const sharedComponents = [LoaderComponent, ConfirmationDialogComponent, ToastComponent, ErrorDialogComponent];
 
 @NgModule({
-    imports: [CommonModule, NgbModule, ReactiveFormsModule, sharedComponents],
-    exports: [sharedComponents],
-    providers: [],
+  imports: [CommonModule, NgbModule, ReactiveFormsModule, sharedComponents],
+  exports: [sharedComponents],
+  providers: [],
 })
 export class SharedModule {}

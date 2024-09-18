@@ -5,11 +5,11 @@ import { AuthService } from '@app/@core/auth/auth.service';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-    selector: 'app-shop',
-    templateUrl: './shop.component.html',
-    styleUrls: ['./shop.component.scss'],
-    standalone: true,
-    imports: [TranslateModule],
+  selector: 'app-shop',
+  templateUrl: './shop.component.html',
+  styleUrls: ['./shop.component.scss'],
+  standalone: true,
+  imports: [TranslateModule],
 })
 export class ShopComponent implements OnInit {
   version: string | null = environment.version;

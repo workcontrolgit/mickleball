@@ -5,11 +5,11 @@ import { environment } from '@env/environment';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-    selector: 'app-should-login',
-    templateUrl: './should-login.component.html',
-    styleUrls: ['./should-login.component.scss'],
-    standalone: true,
-    imports: [TranslateModule],
+  selector: 'app-should-login',
+  templateUrl: './should-login.component.html',
+  styleUrls: ['./should-login.component.scss'],
+  standalone: true,
+  imports: [TranslateModule],
 })
 export class ShouldLoginComponent {
   version: string | null = environment.version;

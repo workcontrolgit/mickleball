@@ -11,8 +11,8 @@ describe('ReportcardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-    imports: [ReportcardComponent],
-}).compileComponents();
+      imports: [ReportcardComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
