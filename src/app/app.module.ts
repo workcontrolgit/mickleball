@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -39,11 +39,12 @@ export function initTableSkills(configService: TableSkillsService) {
 }
 
 @NgModule({
+  declarations: [AppComponent],
+  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production }),
     FormsModule,
-    HttpClientModule,
     TranslateModule.forRoot(),
     NgHttpLoaderModule.forRoot(),
     NgbModule,
@@ -59,7 +60,6 @@ export function initTableSkills(configService: TableSkillsService) {
     FallbackComponent,
     ShouldLoginComponent,
   ],
-  declarations: [AppComponent],
   providers: [
     {
       provide: APP_INITIALIZER,
@@ -83,7 +83,7 @@ export function initTableSkills(configService: TableSkillsService) {
       useClass: GlobalErrorHandler,
     },
     ErrorDialogService,
+    provideHttpClient(withInterceptorsFromDi()),
   ],
-  bootstrap: [AppComponent],
 })
 export class AppModule {}
