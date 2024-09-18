@@ -8,8 +8,8 @@ describe('PositionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [PositionComponent],
-}).compileComponents();
+      imports: [PositionComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -8,10 +8,10 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [RouterTestingModule, TranslateModule.forRoot(), CoreModule],
-    declarations: [AppComponent],
-    providers: [],
-}).compileComponents();
+      imports: [RouterTestingModule, TranslateModule.forRoot(), CoreModule],
+      declarations: [AppComponent],
+      providers: [],
+    }).compileComponents();
   }));
 
   it('should create the app', waitForAsync(() => {

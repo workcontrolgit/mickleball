@@ -16,17 +16,11 @@ import { TranslateModule } from '@ngx-translate/core';
 const log = new Logger('Detail');
 
 @Component({
-    selector: 'app-detail',
-    templateUrl: './detail.component.html',
-    styleUrls: ['./detail.component.scss'],
-    standalone: true,
-    imports: [
-        ReactiveFormsModule,
-        RxReactiveFormsModule,
-        RouterLink,
-        TranslateModule,
-        NgIf,
-    ],
+  selector: 'app-detail',
+  templateUrl: './detail.component.html',
+  styleUrls: ['./detail.component.scss'],
+  standalone: true,
+  imports: [ReactiveFormsModule, RxReactiveFormsModule, RouterLink, TranslateModule, NgIf],
 })
 export class DetailComponent implements OnInit {
   formMode = 'New';

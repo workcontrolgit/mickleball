@@ -11,16 +11,11 @@ import { RouterLink } from '@angular/router';
 
 const log = new Logger('Position');
 @Component({
-    selector: 'app-position',
-    templateUrl: './position.component.html',
-    styleUrls: ['./position.component.scss'],
-    standalone: true,
-    imports: [
-        RouterLink,
-        DataTablesModule,
-        NgIf,
-        NgFor,
-    ],
+  selector: 'app-position',
+  templateUrl: './position.component.html',
+  styleUrls: ['./position.component.scss'],
+  standalone: true,
+  imports: [RouterLink, DataTablesModule, NgIf, NgFor],
 })
 export class PositionComponent implements OnInit {
   dtOptions: DataTables.Settings = {};

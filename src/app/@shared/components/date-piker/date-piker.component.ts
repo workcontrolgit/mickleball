@@ -4,14 +4,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgbInputDatepicker } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-    selector: 'formly-field-date-piker',
-    templateUrl: './date-piker.component.html',
-    styleUrls: ['./date-piker.component.css'],
-    standalone: true,
-    imports: [
-        NgbInputDatepicker,
-        ReactiveFormsModule,
-        FormlyModule,
-    ],
+  selector: 'formly-field-date-piker',
+  templateUrl: './date-piker.component.html',
+  styleUrls: ['./date-piker.component.css'],
+  standalone: true,
+  imports: [NgbInputDatepicker, ReactiveFormsModule, FormlyModule],
 })
 export class DatePikerComponent extends FieldType {}

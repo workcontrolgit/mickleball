@@ -10,21 +10,21 @@ import { NgbAccordion, NgbPanel, NgbPanelTitle, NgbPanelContent } from '@ng-boot
 const log = new Logger('search-list');
 
 @Component({
-    selector: 'app-search-list',
-    templateUrl: './search-list.component.html',
-    styleUrls: ['./search-list.component.css'],
-    standalone: true,
-    imports: [
-        NgbAccordion,
-        NgFor,
-        NgbPanel,
-        NgbPanelTitle,
-        NgbPanelContent,
-        YouTubePlayerModule,
-        NgIf,
-        JsonPipe,
-        DatePipe,
-    ],
+  selector: 'app-search-list',
+  templateUrl: './search-list.component.html',
+  styleUrls: ['./search-list.component.css'],
+  standalone: true,
+  imports: [
+    NgbAccordion,
+    NgFor,
+    NgbPanel,
+    NgbPanelTitle,
+    NgbPanelContent,
+    YouTubePlayerModule,
+    NgIf,
+    JsonPipe,
+    DatePipe,
+  ],
 })
 export class SearchListComponent implements OnInit {
   @Input() videos: Video[];

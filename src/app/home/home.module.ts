@@ -11,15 +11,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 @NgModule({
-    imports: [
-        CommonModule,
-        TranslateModule,
-        SharedModule,
-        HomeRoutingModule,
-        NgbModule,
-        ShareButtonsModule,
-        ShareIconsModule,
-        HomeComponent, DashboardComponent,
-    ],
+  imports: [
+    CommonModule,
+    TranslateModule,
+    SharedModule,
+    HomeRoutingModule,
+    NgbModule,
+    ShareButtonsModule,
+    ShareIconsModule,
+    HomeComponent,
+    DashboardComponent,
+  ],
 })
 export class HomeModule {}

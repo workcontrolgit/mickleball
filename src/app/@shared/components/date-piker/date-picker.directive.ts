@@ -2,13 +2,13 @@ import { Directive } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 @Directive({
-    selector: 'input[type=bootstrap-date]',
-    host: {
-        '(change)': 'onChange($event)',
-        '(blur)': 'onTouched()',
-    },
-    providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: DatePickerValueAccessor, multi: true }],
-    standalone: true,
+  selector: 'input[type=bootstrap-date]',
+  host: {
+    '(change)': 'onChange($event)',
+    '(blur)': 'onTouched()',
+  },
+  providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: DatePickerValueAccessor, multi: true }],
+  standalone: true,
 })
 export class DatePickerValueAccessor implements ControlValueAccessor {
   value: any;
