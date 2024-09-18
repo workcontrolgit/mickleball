@@ -9,13 +9,15 @@ import { Angulartics2Module } from 'angulartics2';
 
 import { environment } from '@env/environment';
 import { CoreModule } from '@core';
-import { SharedModule } from '@shared';
+
 import { HomeModule } from './home/home.module';
-import { ShellModule } from './shell/shell.module';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FallbackComponent } from './fallback.component';
 import { ShouldLoginComponent } from './should-login.component';
+
+import { ToastComponent } from '@shared/toast/toast.component';
 
 import { NgHttpLoaderModule } from 'ng-http-loader';
 
@@ -49,8 +51,6 @@ export function initTableSkills(configService: TableSkillsService) {
     NgHttpLoaderModule.forRoot(),
     NgbModule,
     CoreModule.forRoot(),
-    SharedModule,
-    ShellModule,
     HomeModule,
     NgxGoogleAnalyticsModule.forRoot('G-G7BYVD349P'),
     NgxGoogleAnalyticsRouterModule,
@@ -59,6 +59,7 @@ export function initTableSkills(configService: TableSkillsService) {
     AppRoutingModule,
     FallbackComponent,
     ShouldLoginComponent,
+    ToastComponent,
   ],
   providers: [
     {

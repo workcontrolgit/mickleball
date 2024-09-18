@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-import { SharedModule } from '@shared';
 
 import { PositionRoutingModule } from './position-routing.module';
 import { PositionComponent } from './master/position.component';
@@ -18,7 +17,6 @@ import { DataTablesModule } from 'angular-datatables';
     TranslateModule,
     PositionRoutingModule,
     ReactiveFormsModule,
-    SharedModule,
     RxReactiveFormsModule,
     DataTablesModule,
     PositionComponent,
