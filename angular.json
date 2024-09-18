@@ -84,11 +84,11 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Mickleball:build"
+            "buildTarget": "Mickleball:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Mickleball:build:production"
+              "buildTarget": "Mickleball:build:production"
             },
             "ci": {}
           }
@@ -96,7 +96,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Mickleball:build"
+            "buildTarget": "Mickleball:build"
           }
         },
         "test": {
