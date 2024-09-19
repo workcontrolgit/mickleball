@@ -7,12 +7,12 @@ import { RouterLink } from '@angular/router';
 const log = new Logger('app-home');
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss'],
-    providers: [NgbCarouselConfig],
-    standalone: true,
-    imports: [RouterLink, ShareButtonsModule],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
+  providers: [NgbCarouselConfig],
+  standalone: true,
+  imports: [RouterLink, ShareButtonsModule],
 })
 export class HomeComponent implements OnInit {
   showNavigationArrows = true;

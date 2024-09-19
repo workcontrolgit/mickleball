@@ -36,10 +36,9 @@
               "node_modules/ngx-sharebuttons/themes/modern.scss",
               "node_modules/ngx-print-element/styles.css",
               "src/main.scss",
-              "node_modules/datatables.net-dt/css/jquery.dataTables.css",
               "node_modules/ngx-print-element/styles.css"
             ],
-            "scripts": ["node_modules/jquery/dist/jquery.js", "node_modules/datatables.net/js/jquery.dataTables.js"],
+            "scripts": ["node_modules/jquery/dist/jquery.js"],
             "vendorChunk": true,
             "extractLicenses": false,
             "buildOptimizer": false,
@@ -84,11 +83,11 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Mickleball:build"
+            "buildTarget": "Mickleball:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Mickleball:build:production"
+              "buildTarget": "Mickleball:build:production"
             },
             "ci": {}
           }
@@ -96,7 +95,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Mickleball:build"
+            "buildTarget": "Mickleball:build"
           }
         },
         "test": {

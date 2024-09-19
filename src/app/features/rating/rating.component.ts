@@ -4,11 +4,11 @@ import { NgxPrintElementService } from 'ngx-print-element';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 @Component({
-    selector: 'app-rating',
-    templateUrl: './rating.component.html',
-    styleUrls: ['./rating.component.scss'],
-    standalone: true,
-    imports: [DashboardComponent],
+  selector: 'app-rating',
+  templateUrl: './rating.component.html',
+  styleUrls: ['./rating.component.scss'],
+  standalone: true,
+  imports: [DashboardComponent],
 })
 export class RatingComponent implements OnInit {
   constructor(public print: NgxPrintElementService) {}
