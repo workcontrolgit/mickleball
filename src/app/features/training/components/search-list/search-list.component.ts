@@ -3,9 +3,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Video } from '@shared/models/search.interface';
 import { Logger } from '@core';
-import { YouTubePlayerModule } from '@angular/youtube-player';
+import { YouTubePlayer } from '@angular/youtube-player';
 import { NgFor, NgIf, JsonPipe, DatePipe } from '@angular/common';
-import { NgbAccordion, NgbPanel, NgbPanelTitle, NgbPanelContent } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
 const log = new Logger('search-list');
 
@@ -14,19 +14,10 @@ const log = new Logger('search-list');
   templateUrl: './search-list.component.html',
   styleUrls: ['./search-list.component.css'],
   standalone: true,
-  imports: [
-    NgbAccordion,
-    NgFor,
-    NgbPanel,
-    NgbPanelTitle,
-    NgbPanelContent,
-    YouTubePlayerModule,
-    NgIf,
-    JsonPipe,
-    DatePipe,
-  ],
+  imports: [YouTubePlayer, NgbAccordionModule, NgFor, NgIf, JsonPipe, DatePipe],
 })
 export class SearchListComponent implements OnInit {
+  items = ['First', 'Second', 'Third'];
   @Input() videos: Video[];
   debug: boolean = false;
   private apiLoaded = false;

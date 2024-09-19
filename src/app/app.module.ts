@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -9,13 +9,15 @@ import { Angulartics2Module } from 'angulartics2';
 
 import { environment } from '@env/environment';
 import { CoreModule } from '@core';
-import { SharedModule } from '@shared';
+
 import { HomeModule } from './home/home.module';
-import { ShellModule } from './shell/shell.module';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FallbackComponent } from './fallback.component';
 import { ShouldLoginComponent } from './should-login.component';
+
+import { ToastComponent } from '@shared/toast/toast.component';
 
 import { NgHttpLoaderModule } from 'ng-http-loader';
 
@@ -39,17 +41,16 @@ export function initTableSkills(configService: TableSkillsService) {
 }
 
 @NgModule({
+  declarations: [AppComponent],
+  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production }),
     FormsModule,
-    HttpClientModule,
     TranslateModule.forRoot(),
     NgHttpLoaderModule.forRoot(),
     NgbModule,
     CoreModule.forRoot(),
-    SharedModule,
-    ShellModule,
     HomeModule,
     NgxGoogleAnalyticsModule.forRoot('G-G7BYVD349P'),
     NgxGoogleAnalyticsRouterModule,
@@ -58,8 +59,8 @@ export function initTableSkills(configService: TableSkillsService) {
     AppRoutingModule,
     FallbackComponent,
     ShouldLoginComponent,
+    ToastComponent,
   ],
-  declarations: [AppComponent],
   providers: [
     {
       provide: APP_INITIALIZER,
@@ -83,7 +84,7 @@ export function initTableSkills(configService: TableSkillsService) {
       useClass: GlobalErrorHandler,
     },
     ErrorDialogService,
+    provideHttpClient(withInterceptorsFromDi()),
   ],
-  bootstrap: [AppComponent],
 })
 export class AppModule {}

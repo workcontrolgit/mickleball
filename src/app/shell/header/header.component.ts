@@ -6,7 +6,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
 import { LanguageSelectorComponent } from '../../i18n/language-selector.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { NgbNavbar, NgbCollapse, NgbDropdown, NgbDropdownToggle, NgbDropdownMenu } from '@ng-bootstrap/ng-bootstrap';
+import { NgbNavModule, NgbCollapse, NgbDropdown, NgbDropdownToggle, NgbDropdownMenu } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +14,7 @@ import { NgbNavbar, NgbCollapse, NgbDropdown, NgbDropdownToggle, NgbDropdownMenu
   styleUrls: ['./header.component.scss'],
   standalone: true,
   imports: [
-    NgbNavbar,
+    NgbNavModule,
     TranslateModule,
     NgbCollapse,
     RouterLink,

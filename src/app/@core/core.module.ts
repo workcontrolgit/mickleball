@@ -1,6 +1,6 @@
 import { APP_INITIALIZER, ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -29,7 +29,7 @@ export function storageFactory(): OAuthStorage {
 }
 
 @NgModule({
-  imports: [CommonModule, HttpClientModule, OAuthModule.forRoot(), TranslateModule, RouterModule],
+  imports: [CommonModule, OAuthModule.forRoot(), TranslateModule, RouterModule],
   providers: [
     AuthService,
     AuthGuard,
@@ -53,6 +53,7 @@ export function storageFactory(): OAuthStorage {
       provide: ErrorHandler,
       useClass: GlobalErrorHandler,
     },
+    provideHttpClient(withInterceptorsFromDi()),
   ],
 })
 export class CoreModule {
