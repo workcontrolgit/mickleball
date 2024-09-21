@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { FormfieldControlService } from '@app/services/form/formfield-control.service';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { NgFor, NgClass, DatePipe } from '@angular/common';
+import { NgClass, DatePipe } from '@angular/common';
 import { NgxPrintElementModule } from 'ngx-print-element';
 
 type TypeSkillRating = Array<{ Skillcode: string; Description: string; Rating: string }>;
@@ -13,16 +13,16 @@ type TypeSkillRating = Array<{ Skillcode: string; Description: string; Rating: s
   templateUrl: './reportcard.component.html',
   styleUrls: ['./reportcard.component.css'],
   standalone: true,
-  imports: [NgxPrintElementModule, NgFor, NgClass, DatePipe],
+  imports: [NgxPrintElementModule, NgClass, DatePipe],
 })
 export class ReportcardComponent implements OnInit {
   state$: Observable<object>;
   @Input() model: any = {};
 
-  success: string = 'text-success fw-bolder';
-  info: string = 'text-info fw-bolder';
-  warning: string = 'text-warning fw-bolder';
-  danger: string = 'text-danger fw-bolder';
+  colorGradeA: string = 'text-success fw-bolder';
+  colorGradeB: string = 'text-info fw-bolder';
+  colorGradeC: string = 'text-warning fw-bolder';
+  colorGradeD: string = 'text-danger fw-bolder';
 
   //myObjArray: any = [];
 
@@ -63,12 +63,12 @@ export class ReportcardComponent implements OnInit {
       });
     }
   }
-  getClass(rating: string): string {
+  getGradeColor(rating: string): string {
     const classMap: { [key: string]: string } = {
-      A: 'success',
-      B: 'info',
-      C: 'warning',
-      D: 'danger',
+      A: this.colorGradeA,
+      B: this.colorGradeB,
+      C: this.colorGradeC,
+      D: this.colorGradeD,
     };
 
     return classMap[rating] || ''; // Default to an empty string if no match

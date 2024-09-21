@@ -7,7 +7,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { WarningDialogComponent } from '@app/@shared/components/warning-dialog/warning-dialog-component';
 import { Evaluation } from '@shared/models/evaluation';
 import { Logger } from '@core';
-import { NgIf, JsonPipe } from '@angular/common';
+import { JsonPipe } from '@angular/common';
 
 const log = new Logger('Evaluation');
 @Component({
@@ -15,7 +15,7 @@ const log = new Logger('Evaluation');
   templateUrl: './evaluation.component.html',
   styleUrls: ['./evaluation.component.css'],
   standalone: true,
-  imports: [ReactiveFormsModule, FormlyModule, NgIf, JsonPipe],
+  imports: [ReactiveFormsModule, FormlyModule, JsonPipe],
 })
 export class EvaluationComponent implements OnInit {
   // ngx formly

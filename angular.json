@@ -83,7 +83,10 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "buildTarget": "Mickleball:build"
+            "buildTarget": "Mickleball:build",
+            "ssl": true,
+            "sslKey": "src/assets/cert/localhost-key.pem",
+            "sslCert": "src/assets/cert/localhost.pem"
           },
           "configurations": {
             "production": {
