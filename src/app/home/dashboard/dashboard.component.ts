@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
   standalone: true,
-  imports: [NgFor, RouterLink],
+  imports: [RouterLink],
 })
 export class DashboardComponent implements OnInit {
   itemList: any;
