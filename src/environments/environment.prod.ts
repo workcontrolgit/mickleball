@@ -54,7 +54,7 @@ export const environment = {
   oidc: {
     // issuer: 'https://localhost:44310', // running on localhost
     // issuer: 'https://cat-token-identity.azurewebsites.net', // demo identityserver in Azure
-    issuer: 'https://mickleball-token-identity.azurewebsites.net', // identityserver in Azure
+    issuer: 'https://cat-token-identity.azurewebsites.net', // identityserver in Azure
     clientId: 'MickleballClient', // client id setup in IdentityServer4
     responseType: 'code', //code flow PKCE
     redirectUri: window.location.origin + '/auth-callback',
