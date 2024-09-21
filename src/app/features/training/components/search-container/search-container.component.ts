@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 import { VideoService } from '@app/services/api/video.service';
 import { Video } from '@shared/models/search.interface';
 import { SearchListComponent } from '../search-list/search-list.component';
-import { NgIf } from '@angular/common';
+
 import { SearchInputComponent } from '../search-input/search-input.component';
 
 @Component({
@@ -13,7 +13,7 @@ import { SearchInputComponent } from '../search-input/search-input.component';
   templateUrl: './search-container.component.html',
   styleUrls: ['./search-container.component.css'],
   standalone: true,
-  imports: [SearchInputComponent, NgIf, SearchListComponent],
+  imports: [SearchInputComponent, SearchListComponent],
 })
 export class SearchContainerComponent {
   inputTouched = false;

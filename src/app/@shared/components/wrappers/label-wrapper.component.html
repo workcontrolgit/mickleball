@@ -1,5 +1,7 @@
-<label [attr.for]="id" class="form-control-label control-label" *ngIf="to.label">
+@if (to.label) {
+<label [attr.for]="id" class="form-control-label control-label">
   {{ to.label }}
-  <ng-container *ngIf="to.required && to.hideRequiredMarker !== true">*</ng-container>
+  @if (to.required && to.hideRequiredMarker !== true) { * }
 </label>
+}
 <ng-template #fieldComponent></ng-template>

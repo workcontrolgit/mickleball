@@ -20,4 +20,6 @@
   <div [ngbNavOutlet]="nav" class="mt-2"></div>
 </div>
 
-<p *ngIf="debug">{{ model | json }}</p>
+@if (debug) {
+<p>{{ model | json }}</p>
+}

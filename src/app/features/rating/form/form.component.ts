@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Logger } from '@core';
 import { ActivatedRoute } from '@angular/router';
-import { NgIf, JsonPipe } from '@angular/common';
+import { JsonPipe } from '@angular/common';
 import { ReportcardComponent } from '../reportcard/reportcard.component';
 import { EvaluationComponent } from '../evaluation/evaluation.component';
 import { NgbNav, NgbNavItem, NgbNavLink, NgbNavContent, NgbNavOutlet } from '@ng-bootstrap/ng-bootstrap';
@@ -22,7 +22,6 @@ const log = new Logger('Evaluation');
     EvaluationComponent,
     ReportcardComponent,
     NgbNavOutlet,
-    NgIf,
     JsonPipe,
   ],
 })

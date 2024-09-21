@@ -38,15 +38,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let skill of objSkillRating">
+          @for (skill of objSkillRating; track skill) {
+          <tr>
             <td>{{ skill.Skillcode }}</td>
             <td>{{ skill.Description }}</td>
             <td>
-              <span [ngClass]="getClass(skill.Rating)">{{ skill.Rating }}</span>
-
-              <!-- <span [ngClass]="{ A: success, B: info, C: warning, D: danger }[skill.Rating]">{{ skill.Rating }}</span> -->
+              <span [ngClass]="getGradeColor(skill.Rating)">{{ skill.Rating }}</span>
             </td>
           </tr>
+          }
         </tbody>
       </table>
     </div>
